@@ -1291,3 +1291,138 @@ body.gallery-page {
 @media (max-width: 760px) {
   .books { grid-template-columns: 1fr; }
 }
+
+/* ---------- Trang nghe nhạc ---------- */
+
+.music-panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(1.2rem, 3.5vw, 2rem);
+}
+
+.music-note {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 62ch;
+}
+
+.tracks {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.track {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.5rem 1rem;
+  padding: 0.95rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg);
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.track.is-playing {
+  border-color: var(--accent);
+  background: rgba(111, 139, 106, 0.12);
+}
+
+.track-play {
+  grid-row: 1 / span 2;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 0.82rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.track-play:hover { background: var(--btn-bg); border-color: var(--btn-bg); color: var(--btn-ink); }
+
+.track-play:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.track.is-playing .track-play {
+  background: var(--btn-bg);
+  border-color: var(--btn-bg);
+  color: var(--btn-ink);
+}
+
+.track-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.1rem 0.7rem;
+}
+
+.track-title {
+  font-family: "Lora", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.02rem;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.track-meta {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+}
+
+.track-meta a { color: var(--accent); }
+
+.track-line {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+}
+
+.track-line input[type="range"] {
+  accent-color: var(--accent);
+  min-width: 0;
+  cursor: pointer;
+}
+
+.track-seek { flex: 1 1 4rem; }
+.track-vol { flex: 0 0 76px; }
+
+.track-time,
+.track-dur {
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-soft);
+  flex: 0 0 auto;
+}
+
+.music-status {
+  margin: 1.1rem 0 0;
+  font-family: "Lora", Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  min-height: 1.6em;
+}
+
+@media (max-width: 520px) {
+  .track { grid-template-columns: auto minmax(0, 1fr); }
+  .track-vol { flex: 0 0 60px; }
+  .track-head { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track, .track-play { transition: none; }
+}

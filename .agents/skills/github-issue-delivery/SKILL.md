@@ -46,11 +46,16 @@ git add <các tệp của issue>
 git commit -m "$(cat <<'EOF'
 <Mô tả ngắn gọn mục đích thay đổi>
 
-Closes #<số>
+Refs #<số>
 EOF
 )"
 git push
 ```
+
+Dùng `Refs #<số>` chứ không phải `Closes #<số>`: GitHub tự đóng issue ngay khi
+push nếu commit có `Closes`, tức là comment tổng kết sẽ bị đăng **sau** khi issue
+đã đóng. Muốn đúng thứ tự "comment → đóng", hãy `Refs` rồi đóng tay ở bước 6.
+Dòng `Closes #<số>` chỉ thêm được khi không cần comment (không khuyến khích).
 
 Repo này dùng GitHub Pages từ nhánh `main`, thư mục gốc — push là deploy.
 Nếu người dùng chưa cho phép push, dừng lại và hỏi.
@@ -78,8 +83,12 @@ Comment phải đọc được như một biên bản, không phải "đã xong"
 ```bash
 gh issue comment <số> --body-file - <<'EOF'
 ...
+
+@<login-người-phụ-trách>
 EOF
 ```
+
+Dòng mention đặt ở cuối comment để thông báo trong app GitHub trỏ đúng nội dung.
 
 ## 6. Đóng issue
 
@@ -89,6 +98,21 @@ gh issue close <số> --reason completed
 
 Nếu chỉ hoàn thành một phần: giữ issue mở, comment phần còn lại và tách issue mới
 cho phần chưa làm. Không đóng issue khi tiêu chí "Xong khi" chưa đạt.
+
+## 6b. Báo cho người dùng qua ứng dụng GitHub
+
+Người dùng repo này cài ứng dụng GitHub trên điện thoại, nên mỗi comment cần một tín
+hiệu có chủ đích thay vì chỉ đăng chữ:
+
+- **Luôn @-mention người phụ trách** trong comment tổng kết, ví dụ `@lamminhthien`
+  (lấy bằng `gh repo view --json owner -q .owner.login`). Mention tạo thông báo
+  `mention` trong app.
+- **Nếu làm qua pull request:** thêm `gh pr edit <số> --add-reviewer <login>` để gửi
+  `review_requested`; chỉ định reviewer khi PR thực sự sẵn sàng review.
+- **Nếu chỉ có issue:** comment + mention là đủ; đừng mở PR rỗng chỉ để tạo thông báo.
+- **Không spam:** một mention cho mỗi issue/lần bàn giao, không mention ở mọi comment
+  trung gian.
+- Nếu cần báo gấp ngoài luồng issue, dùng `gh issue comment` vào issue ghi chú đang pin.
 
 ## 7. Cập nhật note tổng hợp
 

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nghe nhạc — 3 bản ambient CC0 để thở chậm</title>
+  <meta name="description" content="Nghe trực tiếp 3 bản nhạc ambient/piano CC0: tua, chỉnh âm lượng, chuyển bài — không cần bật trình chiếu." />
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.className += " js";
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") d.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="album-page">
+  <a class="skip" href="#nhac">Tới phần nghe nhạc</a>
+
+  <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Chuyển sang giao diện tối" title="Giao diện sáng đang bật">
+    <span class="theme-icon" aria-hidden="true">☾</span>
+    <span class="theme-text">Tối</span>
+  </button>
+
+  <header class="album-hero">
+    <div class="wrap">
+      <a class="back" href="index.html">← Về trang chính</a>
+      <p class="eyebrow">Âm nhạc · nghe trực tiếp</p>
+      <h1>Ba bản nhạc<br /><em>để thở chậm</em>.</h1>
+      <p class="lede">
+        Ba bản ambient và piano, giấy phép CC0 — dùng tự do, không quảng cáo.
+        Bấm play là nghe, tua được, chỉnh âm lượng được, chuyển bài mà không mất chỗ đang nghe.
+      </p>
+      <nav class="jump" aria-label="Mục lục">
+        <a href="#nhac">Danh sách bản nhạc</a>
+        <a href="gallery.html">Nghe cùng trình chiếu ảnh</a>
+        <a href="index.html#chon-nhanh">Chọn theo mức độ căng thẳng</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="nhac">
+    <section class="section">
+      <div class="wrap">
+        <div class="music-panel">
+          <p class="music-note">
+            Chỉ một bản phát tại một thời điểm. Đổi bài thì bản cũ dừng lại và giữ đúng vị trí
+            đang nghe, quay lại vẫn tiếp tục từ đó.
+          </p>
+          <ul class="tracks">
+            <li class="track" data-src="audio/dunes.mp3" data-title="Dunes" data-by="Andrewkn">
+              <button class="track-play" type="button" aria-label="Phát Dunes">
+                <span class="track-icon" aria-hidden="true">▶</span>
+              </button>
+              <div class="track-head">
+                <h2 class="track-title">Dunes</h2>
+                <p class="track-meta">
+                  Andrewkn · CC0 ·
+                  <a href="https://freesound.org/people/Andrewkn/sounds/447511" target="_blank" rel="noopener nofollow">nguồn</a>
+                </p>
+              </div>
+              <div class="track-line">
+                <span class="track-time" data-time>0:00</span>
+                <input class="track-seek" type="range" min="0" max="100" step="1" value="0" aria-label="Vị trí phát của Dunes" disabled />
+                <span class="track-dur" data-dur>--:--</span>
+                <input class="track-vol" type="range" min="0" max="100" step="1" value="70" aria-label="Âm lượng" />
+              </div>
+            </li>
+
+            <li class="track" data-src="audio/piano-nhe.mp3" data-title="Relaxing piano AR22-2_43" data-by="AngeloRizzo">
+              <button class="track-play" type="button" aria-label="Phát Relaxing piano AR22-2_43">
+                <span class="track-icon" aria-hidden="true">▶</span>
+              </button>
+              <div class="track-head">
+                <h2 class="track-title">Relaxing piano AR22-2_43</h2>
+                <p class="track-meta">
+                  AngeloRizzo · CC0 ·
+                  <a href="https://freesound.org/people/AngeloRizzo/sounds/717150" target="_blank" rel="noopener nofollow">nguồn</a>
+                </p>
+              </div>
+              <div class="track-line">
+                <span class="track-time" data-time>0:00</span>
+                <input class="track-seek" type="range" min="0" max="100" step="1" value="0" aria-label="Vị trí phát của Relaxing piano AR22-2_43" disabled />
+                <span class="track-dur" data-dur>--:--</span>
+                <input class="track-vol" type="range" min="0" max="100" step="1" value="70" aria-label="Âm lượng" />
+              </div>
+            </li>
+
+            <li class="track" data-src="audio/parallel-universe.mp3" data-title="Parallel Universe" data-by="Andrewkn">
+              <button class="track-play" type="button" aria-label="Phát Parallel Universe">
+                <span class="track-icon" aria-hidden="true">▶</span>
+              </button>
+              <div class="track-head">
+                <h2 class="track-title">Parallel Universe</h2>
+                <p class="track-meta">
+                  Andrewkn · CC0 ·
+                  <a href="https://freesound.org/people/Andrewkn/sounds/404458" target="_blank" rel="noopener nofollow">nguồn</a>
+                </p>
+              </div>
+              <div class="track-line">
+                <span class="track-time" data-time>0:00</span>
+                <input class="track-seek" type="range" min="0" max="100" step="1" value="0" aria-label="Vị trí phát của Parallel Universe" disabled />
+                <span class="track-dur" data-dur>--:--</span>
+                <input class="track-vol" type="range" min="0" max="100" step="1" value="70" aria-label="Âm lượng" />
+              </div>
+            </li>
+          </ul>
+          <p class="music-status" role="status" aria-live="polite">Chưa phát bản nào.</p>
+        </div>
+
+        <aside class="tip">
+          <strong>Nghe thế nào cho dễ chịu</strong>
+          <p>
+            Để âm lượng ở mức nghe được tiếng thở của mình. Nhạc chỉ để lấp khoảng trống,
+            không cần to hơn tiếng quạt hay tiếng ngoài đường.
+          </p>
+        </aside>
+
+        <p class="album-cta">
+          <a class="btn" href="gallery.html">Nghe kèm 30 ảnh →</a>
+          <a class="btn btn-soft" href="listen.html">Nghe 30 câu nói</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="closing">Không cần nghe hết bản nào. Đến lúc thấy vai hạ xuống thì tắt cũng được.</p>
+      <p class="sign">3 bản nhạc · CC0 · nguồn ghi trong CREDITS.md</p>
+    </div>
+  </footer>
+
+  <script src="theme.js"></script>
+
+  <script>
+  (function () {
+    var items = Array.prototype.slice.call(document.querySelectorAll(".track"));
+    var status = document.querySelector(".music-status");
+    if (!items.length || !status) return;
+
+    var volume = 0.7;
+    var current = null;
+
+    function fmt(sec) {
+      if (!isFinite(sec) || sec < 0) return "--:--";
+      var m = Math.floor(sec / 60);
+      var s = Math.floor(sec % 60);
+      return m + ":" + (s < 10 ? "0" + s : s);
+    }
+
+    function paint(item) {
+      var on = item === current && !item._audio.paused;
+      var btn = item.querySelector(".track-play");
+      var icon = item.querySelector(".track-icon");
+      item.classList.toggle("is-playing", on);
+      btn.setAttribute("aria-label", (on ? "Tạm dừng " : "Phát ") + item.dataset.title);
+      btn.setAttribute("aria-pressed", String(on));
+      icon.textContent = on ? "❚❚" : "▶";
+    }
+
+    function pauseAll(except) {
+      items.forEach(function (item) {
+        if (item !== except && !item._audio.paused) item._audio.pause();
+      });
+    }
+
+    function setVolume(value) {
+      volume = value;
+      items.forEach(function (item) {
+        item._audio.volume = value;
+        item.querySelector(".track-vol").value = String(Math.round(value * 100));
+      });
+    }
+
+    items.forEach(function (item) {
+      var audio = new Audio();
+      audio.preload = "metadata";
+      audio.src = item.dataset.src;
+      audio.volume = volume;
+      item._audio = audio;
+
+      var btn = item.querySelector(".track-play");
+      var seek = item.querySelector(".track-seek");
+      var timeEl = item.querySelector("[data-time]");
+      var durEl = item.querySelector("[data-dur]");
+      var vol = item.querySelector(".track-vol");
+
+      audio.addEventListener("loadedmetadata", function () {
+        durEl.textContent = fmt(audio.duration);
+        seek.max = String(Math.max(1, Math.round(audio.duration)));
+        seek.disabled = false;
+      });
+
+      audio.addEventListener("play", function () {
+        pauseAll(item);
+        current = item;
+        paint(item);
+        status.textContent = "Đang phát " + item.dataset.title + " — " + item.dataset.by + ".";
+      });
+
+      audio.addEventListener("pause", function () {
+        paint(item);
+        if (current === item) status.textContent = "Đã tạm dừng " + item.dataset.title + ".";
+      });
+
+      audio.addEventListener("timeupdate", function () {
+        if (current !== item) return;
+        seek.value = String(Math.round(audio.currentTime));
+        timeEl.textContent = fmt(audio.currentTime);
+      });
+
+      audio.addEventListener("ended", function () {
+        current = item;
+        seek.value = "0";
+        timeEl.textContent = "0:00";
+        paint(item);
+        status.textContent = "Đã phát xong " + item.dataset.title + ". Bấm play để nghe lại.";
+      });
+
+      audio.addEventListener("error", function () {
+        status.textContent = "Không tải được " + item.dataset.title + ". Thử lại sau khi có mạng.";
+      });
+
+      btn.addEventListener("click", function () {
+        if (audio.paused) {
+          audio.play().catch(function () {
+            status.textContent = "Trình duyệt chặn phát nhạc. Bấm lại lần nữa.";
+          });
+        } else {
+          audio.pause();
+        }
+      });
+
+      seek.addEventListener("input", function () {
+        audio.currentTime = Number(seek.value) || 0;
+        timeEl.textContent = fmt(audio.currentTime);
+      });
+
+      vol.addEventListener("input", function () {
+        setVolume(Number(vol.value) / 100);
+      });
+    });
+
+    window.addEventListener("beforeunload", function () { pauseAll(null); });
+  })();
+  </script>
+</body>
+</html>

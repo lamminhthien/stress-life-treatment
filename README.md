@@ -13,6 +13,8 @@ xem ảnh, câu nói "hãm phanh", âm nhạc và đọc sách.
 - `books.html` — danh sách 15 đầu sách cụ thể theo 3 nhóm: tản văn nhẹ, truyện ngắn
   slice-of-life, tâm lý cảm xúc dễ hiểu; mỗi cuốn có ghi chú vì sao hợp lúc căng thẳng
   và nhịp đọc gợi ý
+- `music.html` — nghe riêng 3 bản nhạc CC0: play/pause, tua, âm lượng, chuyển bài mà
+  vẫn giữ vị trí đang nghe
 - `audio/` — 3 bản nhạc ambient/piano, giấy phép CC0
 - `images/` — 30 ảnh, giấy phép CC0 (nguồn ghi trong `CREDITS.md`)
 - `styles.css` — giao diện, responsive cho điện thoại
@@ -52,6 +54,13 @@ tiếng Việt, trang hiện hướng dẫn cài trên Android/iPhone.
 
 Cuối trang có sẵn vài nguồn nghe miễn phí (playlist YouTube nhạc thiền, kênh
 Fonos — Tự Chữa Lành, podcast Minh Niệm và Viết Chữa Lành trên Spotify).
+
+## Nghe nhạc riêng
+
+`music.html` phát trực tiếp 3 bản trong `audio/` mà không cần bật trình chiếu. Mỗi bản
+dùng một thẻ `Audio` riêng (preload metadata) nên vị trí đang nghe được giữ khi chuyển
+bài; chỉ một bản phát tại một thời điểm, âm lượng chỉnh chung và đồng bộ giữa các thanh
+trượt. Trạng thái đang phát / tạm dừng / phát xong được báo qua `role="status"`.
 
 ## Chế độ trình chiếu (ảnh + nhạc)
 

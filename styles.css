@@ -1698,3 +1698,219 @@ body.gallery-page {
 @media (prefers-reduced-motion: reduce) {
   .pick { transition: none; }
 }
+
+/* ---------- Nhật ký cảm xúc (nhat-ky page) ---------- */
+
+.mood-tool { display: none; }
+.js .mood-tool { display: block; }
+
+.mood-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(1.25rem, 3.5vw, 2rem);
+}
+
+.mood-q {
+  margin: 0 0 1rem;
+  font-family: "Lora", Georgia, serif;
+  font-size: clamp(1.2rem, 2.8vw, 1.5rem);
+  line-height: 1.35;
+}
+
+.mood-btns {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.mood-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.85rem 0.3rem;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.76rem;
+  line-height: 1.3;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+}
+
+.mood-btn:hover { border-color: var(--accent); transform: translateY(-2px); }
+.mood-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.mood-btn[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: rgba(111, 139, 106, 0.16);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.mood-dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.mood-dot.l1 { background: #b96a4f; }
+.mood-dot.l2 { background: #c58d5f; }
+.mood-dot.l3 { background: #c9b878; }
+.mood-dot.l4 { background: #9dbf92; }
+.mood-dot.l5 { background: #6f8b6a; }
+
+.mood-note { margin-top: 1.25rem; }
+
+.mood-note label {
+  display: block;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
+  margin-bottom: 0.4rem;
+}
+
+.mood-note textarea {
+  width: 100%;
+  min-height: 4.2rem;
+  resize: vertical;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.mood-note textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.mood-count {
+  display: block;
+  margin-top: 0.2rem;
+  text-align: right;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+}
+
+.mood-status {
+  margin: 1rem 0 0;
+  min-height: 1.4em;
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+}
+
+.mood-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 0.35rem;
+}
+
+.mood-delete {
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: color 0.25s, border-color 0.25s;
+}
+
+.mood-delete:hover { color: var(--accent-warm); border-color: var(--accent-warm); }
+.mood-delete:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.mood-privacy {
+  margin: 1rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.mood-week {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.5rem;
+  padding: 1.2rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.mood-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  text-align: center;
+}
+
+.mood-track {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 46px;
+  height: 120px;
+  overflow: hidden;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.mood-day.is-empty .mood-track { border-style: dashed; background: transparent; }
+
+.mood-bar {
+  display: block;
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+  background: linear-gradient(var(--accent), var(--btn-bg));
+  transition: height 0.4s ease;
+}
+
+.mood-day-name {
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+}
+
+.mood-day-date {
+  font-size: 0.64rem;
+  color: var(--ink-soft);
+}
+
+.mood-day-mood {
+  font-family: "Lora", Georgia, serif;
+  font-size: 0.68rem;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.mood-day.is-empty .mood-day-mood { color: var(--ink-soft); }
+
+.mood-streak {
+  margin: 1.1rem 0 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 560px) {
+  .mood-btns { gap: 0.35rem; }
+  .mood-btn { padding: 0.7rem 0.2rem; font-size: 0.68rem; }
+  .mood-week { gap: 0.3rem; padding: 0.9rem 0.6rem; }
+  .mood-track { height: 96px; }
+  .mood-day-date { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mood-btn, .mood-bar { transition: none; }
+  .mood-btn:hover { transform: none; }
+}

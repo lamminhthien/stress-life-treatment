@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nhật ký 30 giây — hôm nay bạn thấy thế nào?</title>
+  <meta name="description" content="Ghi lại cảm xúc hôm nay trong 30 giây: chọn một mức, thêm một dòng ghi chú. Dữ liệu chỉ nằm trên máy bạn và xem lại được 7 ngày gần nhất." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://lamminhthien.github.io/stress-life-treatment/nhat-ky.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hạ nhiệt" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta property="og:title" content="Nhật ký 30 giây — hôm nay bạn thấy thế nào?" />
+  <meta property="og:description" content="Ghi lại cảm xúc hôm nay trong 30 giây: chọn một mức, thêm một dòng ghi chú. Dữ liệu chỉ nằm trên máy bạn và xem lại được 7 ngày gần nhất." />
+  <meta property="og:url" content="https://lamminhthien.github.io/stress-life-treatment/nhat-ky.html" />
+  <meta property="og:image" content="https://lamminhthien.github.io/stress-life-treatment/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Dấu chân trên bãi biển lúc chiều, phủ lớp tối nhẹ ở chân ảnh." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nhật ký 30 giây — hôm nay bạn thấy thế nào?" />
+  <meta name="twitter:description" content="Ghi lại cảm xúc hôm nay trong 30 giây: chọn một mức, thêm một dòng ghi chú. Dữ liệu chỉ nằm trên máy bạn và xem lại được 7 ngày gần nhất." />
+  <meta name="twitter:image" content="https://lamminhthien.github.io/stress-life-treatment/og-image.png" />
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.className += " js";
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") d.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="album-page">
+  <a class="skip" href="#hom-nay">Tới phần ghi cảm xúc</a>
+
+  <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Chuyển sang giao diện tối" title="Giao diện sáng đang bật">
+    <span class="theme-icon" aria-hidden="true">☾</span>
+    <span class="theme-text">Tối</span>
+  </button>
+
+  <header class="album-hero">
+    <div class="wrap">
+      <a class="back" href="index.html">← Về trang chính</a>
+      <p class="eyebrow">Nhật ký cảm xúc · 30 giây</p>
+      <h1>Ghi một dòng.<br /><em>Để thấy mình đi đâu.</em></h1>
+      <p class="lede">
+        Mỗi ngày một lần, chọn mức cảm xúc và — nếu muốn — thêm một câu ngắn. Ba mươi giây,
+        không cần viết hay. Nhìn lại bảy ngày gần nhất để thấy điều gì lặp lại trước những
+        ngày nặng, thay vì chỉ đoán.
+      </p>
+      <nav class="jump" aria-label="Mục lục">
+        <a href="#hom-nay">Hôm nay</a>
+        <a href="#bay-ngay">7 ngày gần nhất</a>
+        <a href="#cach-dung">Cách dùng &amp; riêng tư</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="hom-nay">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="num">30s</span>
+          <h2>Hôm nay bạn thấy thế nào?</h2>
+          <p class="sub">Chọn một mức là đủ. Không có mức nào là mức "đúng".</p>
+        </div>
+
+        <div class="mood-tool" data-mood>
+          <div class="mood-card">
+            <p class="mood-q" id="mood-q">Bấm vào mức gần nhất với bạn lúc này</p>
+            <div class="mood-btns" role="group" aria-labelledby="mood-q">
+              <button class="mood-btn" type="button" data-level="1" aria-pressed="false">
+                <span class="mood-dot l1" aria-hidden="true"></span>
+                <span>Rất nặng</span>
+              </button>
+              <button class="mood-btn" type="button" data-level="2" aria-pressed="false">
+                <span class="mood-dot l2" aria-hidden="true"></span>
+                <span>Nặng</span>
+              </button>
+              <button class="mood-btn" type="button" data-level="3" aria-pressed="false">
+                <span class="mood-dot l3" aria-hidden="true"></span>
+                <span>Bình thường</span>
+              </button>
+              <button class="mood-btn" type="button" data-level="4" aria-pressed="false">
+                <span class="mood-dot l4" aria-hidden="true"></span>
+                <span>Ổn</span>
+              </button>
+              <button class="mood-btn" type="button" data-level="5" aria-pressed="false">
+                <span class="mood-dot l5" aria-hidden="true"></span>
+                <span>Rất ổn</span>
+              </button>
+            </div>
+
+            <div class="mood-note">
+              <label for="mood-note">Một dòng ghi chú (không bắt buộc)</label>
+              <textarea id="mood-note" rows="2" maxlength="140" placeholder="Ví dụ: sáng họp căng, nhưng trưa đi bộ nên nhẹ hơn." aria-describedby="mood-count"></textarea>
+              <span class="mood-count" id="mood-count">0/140</span>
+            </div>
+
+            <p class="mood-status" role="status" aria-live="polite" data-status>
+              Chưa ghi gì hôm nay. Chọn một mức để bắt đầu.
+            </p>
+
+            <div class="mood-actions">
+              <button class="mood-delete" type="button" data-delete>Xoá dữ liệu trên máy này</button>
+            </div>
+
+            <p class="mood-privacy">
+              Nhật ký chỉ được lưu trong trình duyệt này, trên máy bạn. Không có tài khoản,
+              không gửi lên máy chủ, không ai khác đọc được.
+            </p>
+          </div>
+        </div>
+
+        <noscript>
+          <p class="tip">Phần ghi cảm xúc cần JavaScript để lưu trên máy bạn. Phần hướng dẫn bên dưới vẫn đọc được bình thường.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <section class="section alt" id="bay-ngay">
+      <div class="wrap">
+        <div class="section-head center">
+          <span class="num">07</span>
+          <h2>Bảy ngày gần nhất</h2>
+          <p class="sub">Một cột cho mỗi ngày — không phải để chấm điểm bản thân</p>
+        </div>
+
+        <div class="mood-week" data-week>Bật JavaScript để xem bảy ngày gần nhất.</div>
+
+        <p class="mood-streak" role="status" aria-live="polite" data-streak></p>
+
+        <aside class="tip">
+          <strong>Đọc bảng này thế nào</strong>
+          <p>
+            Đừng tìm "xu hướng đi lên". Chỉ để ý xem ngày nặng thường đến sau việc gì —
+            thiếu ngủ, họp dày, ăn muộn. Biết được một mẫu nhỏ như vậy là đủ để lần sau
+            đỡ bất ngờ.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="cach-dung">
+      <div class="wrap grid">
+        <div class="section-head">
+          <span class="num">∞</span>
+          <h2>Cách dùng &amp; riêng tư</h2>
+          <p class="sub">Không cần đủ chuỗi, không cần viết hay</p>
+        </div>
+        <div class="section-body">
+          <ul class="cards">
+            <li class="card">
+              <span class="icon" aria-hidden="true">⏱️</span>
+              <h3>Một lần mỗi ngày, 30 giây</h3>
+              <p>Chọn mức, thêm một câu nếu muốn. Bản ghi hôm nay luôn sửa được — bấm lại mức khác là thay.</p>
+            </li>
+            <li class="card">
+              <span class="icon" aria-hidden="true">🔒</span>
+              <h3>Chỉ nằm trên máy bạn</h3>
+              <p>Dữ liệu lưu bằng <code>localStorage</code> của trình duyệt. Xoá dữ liệu trình duyệt là mất; nút xoá bên trên cũng xoá sạch ngay.</p>
+            </li>
+            <li class="card">
+              <span class="icon" aria-hidden="true">🌱</span>
+              <h3>Ghi lại là đủ</h3>
+              <p>Chuỗi ngày chỉ để bạn dễ nhớ, không phải thành tích. Quên vài hôm rồi quay lại vẫn có ích như thường.</p>
+            </li>
+            <li class="card">
+              <span class="icon" aria-hidden="true">🫁</span>
+              <h3>Đang rất nặng?</h3>
+              <p>Ghi xong, <a href="index.html#tho">thở 30 giây</a> hoặc <a href="grounding.html">làm bài neo 5-4-3-2-1</a> trước khi quyết định điều gì.</p>
+            </li>
+          </ul>
+          <aside class="tip">
+            <strong>Đây không phải công cụ chẩn đoán</strong>
+            <p>
+              Nhật ký giúp bạn tự quan sát, không thay cho tư vấn y khoa. Nếu nhiều ngày liền
+              cảm thấy nặng, mất ngủ hoặc không làm nổi việc thường ngày, hãy tìm người hỗ trợ
+              chuyên môn. Trang <a href="hieu-stress.html">Hiểu cơn căng thẳng</a> có gợi ý khi nào nên tìm giúp đỡ.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="closing">Một dòng mỗi ngày không làm cơn căng thẳng biến mất, nhưng giúp bạn bớt đi một mình với nó.</p>
+      <p class="sign">stress-life-treatment · nhật ký lưu trên máy bạn</p>
+    </div>
+  </footer>
+
+  <script src="theme.js"></script>
+
+  <script>
+  (function () {
+    var root = document.querySelector("[data-mood]");
+    if (!root) return;
+
+    var KEY = "mood-log-v1";
+    var LEVELS = {
+      1: { label: "Rất nặng", short: "Rất nặng" },
+      2: { label: "Nặng", short: "Nặng" },
+      3: { label: "Bình thường", short: "Bình thường" },
+      4: { label: "Ổn", short: "Ổn" },
+      5: { label: "Rất ổn", short: "Rất ổn" }
+    };
+    var DAYS = ["CN", "T2", "T3", "T4", "T5", "T6", "T7"];
+
+    var buttons = Array.prototype.slice.call(root.querySelectorAll("[data-level]"));
+    var note = root.querySelector("#mood-note");
+    var count = root.querySelector("#mood-count");
+    var status = root.querySelector("[data-status]");
+    var deleteBtn = root.querySelector("[data-delete]");
+    var weekEl = document.querySelector("[data-week]");
+    var streakEl = document.querySelector("[data-streak]");
+
+    var log = load();
+    var noteTimer = null;
+
+    function pad(n) { return n < 10 ? "0" + n : String(n); }
+
+    function keyOf(date) {
+      return date.getFullYear() + "-" + pad(date.getMonth() + 1) + "-" + pad(date.getDate());
+    }
+
+    function todayKey() { return keyOf(new Date()); }
+
+    function load() {
+      try {
+        var raw = localStorage.getItem(KEY);
+        var data = raw ? JSON.parse(raw) : {};
+        return data && typeof data === "object" ? data : {};
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function write() {
+      try {
+        localStorage.setItem(KEY, JSON.stringify(log));
+        return true;
+      } catch (e) {
+        status.textContent = "Trình duyệt không cho lưu dữ liệu (chế độ riêng tư?). Lần ghi này sẽ mất khi tải lại.";
+        return false;
+      }
+    }
+
+    function clock() {
+      var d = new Date();
+      return pad(d.getHours()) + ":" + pad(d.getMinutes());
+    }
+
+    function isValid(entry) {
+      return entry && LEVELS[entry.level];
+    }
+
+    function paintButtons(level) {
+      buttons.forEach(function (b) {
+        b.setAttribute("aria-pressed", String(Number(b.getAttribute("data-level")) === level));
+      });
+    }
+
+    function paintCount() {
+      count.textContent = note.value.length + "/140";
+    }
+
+    function saveEntry(level) {
+      var entry = log[todayKey()] || {};
+      entry.level = level;
+      entry.note = note.value.trim().slice(0, 140);
+      entry.updated = clock();
+      log[todayKey()] = entry;
+      if (write()) {
+        status.textContent = "Đã lưu hôm nay lúc " + entry.updated + " · " + LEVELS[level].label + ". Sửa lại lúc nào trong ngày cũng được.";
+      }
+      paintButtons(level);
+      renderWeek();
+    }
+
+    function saveNoteSoon() {
+      paintCount();
+      if (noteTimer) clearTimeout(noteTimer);
+      var entry = log[todayKey()];
+      if (!isValid(entry)) {
+        status.textContent = "Chọn một mức bên trên trước, ghi chú sẽ tự lưu theo.";
+        return;
+      }
+      noteTimer = setTimeout(function () {
+        noteTimer = null;
+        var latest = log[todayKey()];
+        if (!isValid(latest)) return;
+        latest.note = note.value.trim().slice(0, 140);
+        latest.updated = clock();
+        if (write()) {
+          status.textContent = "Đã lưu ghi chú hôm nay lúc " + latest.updated + ".";
+        }
+        renderWeek();
+      }, 600);
+    }
+
+    function renderToday() {
+      var entry = log[todayKey()];
+      paintCount();
+      if (isValid(entry)) {
+        paintButtons(entry.level);
+        note.value = entry.note || "";
+        paintCount();
+        status.textContent = "Hôm nay đã ghi: " + LEVELS[entry.level].label +
+          (entry.updated ? " (lúc " + entry.updated + ")" : "") +
+          ". Bấm mức khác nếu cảm xúc đã đổi.";
+      } else {
+        paintButtons(0);
+        status.textContent = "Chưa ghi gì hôm nay. Chọn một mức để bắt đầu.";
+      }
+    }
+
+    function renderWeek() {
+      if (!weekEl) return;
+      weekEl.textContent = "";
+
+      var today = new Date();
+      var days = [];
+      var i;
+      for (i = 6; i >= 0; i--) {
+        var d = new Date(today.getFullYear(), today.getMonth(), today.getDate() - i);
+        days.push(d);
+      }
+
+      days.forEach(function (d, idx) {
+        var key = keyOf(d);
+        var entry = log[key];
+        var has = isValid(entry);
+
+        var col = document.createElement("div");
+        col.className = "mood-day" + (has ? "" : " is-empty");
+        col.setAttribute("aria-label",
+          (idx === 6 ? "Hôm nay" : DAYS[d.getDay()]) + " " + d.getDate() + "/" + (d.getMonth() + 1) +
+          ": " + (has ? LEVELS[entry.level].label : "chưa ghi"));
+
+        var track = document.createElement("span");
+        track.className = "mood-track";
+        var bar = document.createElement("span");
+        bar.className = "mood-bar";
+        bar.style.height = has ? (entry.level * 20) + "%" : "0%";
+        track.appendChild(bar);
+
+        var name = document.createElement("span");
+        name.className = "mood-day-name";
+        name.textContent = idx === 6 ? "Hôm nay" : DAYS[d.getDay()];
+
+        var date = document.createElement("span");
+        date.className = "mood-day-date";
+        date.textContent = d.getDate() + "/" + (d.getMonth() + 1);
+
+        var mood = document.createElement("span");
+        mood.className = "mood-day-mood";
+        mood.textContent = has ? LEVELS[entry.level].label : "—";
+
+        col.appendChild(track);
+        col.appendChild(name);
+        col.appendChild(date);
+        col.appendChild(mood);
+        weekEl.appendChild(col);
+      });
+
+      renderStreak();
+    }
+
+    function countLog() {
+      return Object.keys(log).filter(function (k) { return isValid(log[k]); }).length;
+    }
+
+    function renderStreak() {
+      if (!streakEl) return;
+      var today = new Date();
+      var start = isValid(log[keyOf(today)]) ? 0 : 1;
+
+      var run = 0;
+      while (run < 400) {
+        var d = new Date(today.getFullYear(), today.getMonth(), today.getDate() - (start + run));
+        if (!isValid(log[keyOf(d)])) break;
+        run += 1;
+      }
+
+      var total = countLog();
+      var message;
+      if (run >= 2) {
+        message = "Bạn đã ghi " + run + " ngày liền. Nếu mai quên, cũng không sao — quay lại lúc nào cũng được.";
+      } else if (run === 1) {
+        message = "Hôm nay đã ghi một lần. Không cần chuỗi dài mới có ích.";
+      } else {
+        message = "Chưa có ngày nào được ghi trong bảy ngày qua. Bắt đầu từ hôm nay là vừa đủ.";
+      }
+      if (total > 0) message += " Tổng cộng: " + total + " ngày.";
+      streakEl.textContent = message;
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener("click", function () {
+        saveEntry(Number(b.getAttribute("data-level")));
+      });
+    });
+
+    note.addEventListener("input", saveNoteSoon);
+
+    deleteBtn.addEventListener("click", function () {
+      if (!window.confirm("Xoá toàn bộ nhật ký trên máy này? Không thể hoàn tác.")) return;
+      if (noteTimer) { clearTimeout(noteTimer); noteTimer = null; }
+      log = {};
+      try { localStorage.removeItem(KEY); } catch (e) {}
+      note.value = "";
+      paintButtons(0);
+      paintCount();
+      status.textContent = "Đã xoá toàn bộ nhật ký trên máy này.";
+      renderWeek();
+    });
+
+    renderToday();
+    renderWeek();
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden && noteTimer) {
+        clearTimeout(noteTimer);
+        noteTimer = null;
+        var entry = log[todayKey()];
+        if (isValid(entry)) {
+          entry.note = note.value.trim().slice(0, 140);
+          entry.updated = clock();
+          write();
+        }
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

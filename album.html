@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Album Reset — 30 ảnh để thở chậm lại</title>
   <meta name="description" content="30 tấm ảnh thiên nhiên, mưa, trà và những khoảng lặng — mở ra khi cần hạ nhiệt." />
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.className += " js";
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") d.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -12,6 +22,11 @@
 </head>
 <body class="album-page">
   <a class="skip" href="#album">Tới album</a>
+
+  <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Chuyển sang giao diện tối" title="Giao diện sáng đang bật">
+    <span class="theme-icon" aria-hidden="true">☾</span>
+    <span class="theme-text">Tối</span>
+  </button>
 
   <header class="album-hero">
     <div class="wrap">
@@ -366,5 +381,7 @@
       <p class="sign">30 ảnh · CC0 · nguồn mở, dùng tự do</p>
     </div>
   </footer>
+
+  <script src="theme.js"></script>
 </body>
 </html>

@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hạ nhiệt — 4 cách dịu lại khi áp lực đè nặng</title>
   <meta name="description" content="Ảnh, câu nói, âm nhạc và sách — bốn van xả áp nhẹ nhàng cho những ngày căng thẳng, dễ cáu gắt." />
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.className += " js";
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") d.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -12,6 +22,11 @@
 </head>
 <body>
   <a class="skip" href="#main">Tới nội dung</a>
+
+  <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Chuyển sang giao diện tối" title="Giao diện sáng đang bật">
+    <span class="theme-icon" aria-hidden="true">☾</span>
+    <span class="theme-text">Tối</span>
+  </button>
 
   <header class="hero">
     <div class="wrap">
@@ -219,5 +234,7 @@
       <p class="sign">stress-life-treatment · lưu lại cho những ngày cần</p>
     </div>
   </footer>
+
+  <script src="theme.js"></script>
 </body>
 </html>

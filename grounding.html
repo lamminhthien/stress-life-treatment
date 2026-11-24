@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neo lại 5-4-3-2-1 — bài tập grounding từng bước</title>
+  <meta name="description" content="Bài tập grounding 5-4-3-2-1: lần theo 5 thứ nhìn thấy, 4 thứ chạm được, 3 thứ nghe được, 2 thứ ngửi được, 1 thứ nếm được. Không bắt buộc gõ, dùng được một tay." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://lamminhthien.github.io/stress-life-treatment/grounding.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hạ nhiệt" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta property="og:title" content="Neo lại 5-4-3-2-1 — bài tập grounding từng bước" />
+  <meta property="og:description" content="Bài tập grounding 5-4-3-2-1: lần theo 5 thứ nhìn thấy, 4 thứ chạm được, 3 thứ nghe được, 2 thứ ngửi được, 1 thứ nếm được. Không bắt buộc gõ, dùng được một tay." />
+  <meta property="og:url" content="https://lamminhthien.github.io/stress-life-treatment/grounding.html" />
+  <meta property="og:image" content="https://lamminhthien.github.io/stress-life-treatment/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Dấu chân trên bãi biển lúc chiều, phủ lớp tối nhẹ ở chân ảnh." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Neo lại 5-4-3-2-1 — bài tập grounding từng bước" />
+  <meta name="twitter:description" content="Bài tập grounding 5-4-3-2-1: lần theo 5 thứ nhìn thấy, 4 thứ chạm được, 3 thứ nghe được, 2 thứ ngửi được, 1 thứ nếm được. Không bắt buộc gõ, dùng được một tay." />
+  <meta name="twitter:image" content="https://lamminhthien.github.io/stress-life-treatment/og-image.png" />
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.className += " js";
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") d.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="album-page">
+  <a class="skip" href="#bai-tap">Tới bài tập</a>
+
+  <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Chuyển sang giao diện tối" title="Giao diện sáng đang bật">
+    <span class="theme-icon" aria-hidden="true">☾</span>
+    <span class="theme-text">Tối</span>
+  </button>
+
+  <header class="album-hero">
+    <div class="wrap">
+      <a class="back" href="index.html">← Về trang chính</a>
+      <p class="eyebrow">Grounding · 5-4-3-2-1</p>
+      <h1>Đang rối?<br /><em>Neo lại bằng năm giác quan.</em></h1>
+      <p class="lede">
+        Khi đầu óc chạy vòng, việc cụ thể nhất là đưa sự chú ý ra ngoài: nhìn, chạm, nghe,
+        ngửi, nếm. Năm bước, khoảng hai đến ba phút. Không cần gõ gì cả — chỉ đọc và làm
+        theo cũng được.
+      </p>
+      <nav class="jump" aria-label="Mục lục">
+        <a href="#bai-tap">Làm từng bước</a>
+        <a href="#huong-dan">Hướng dẫn đọc</a>
+        <a href="#vi-sao">Vì sao cách này hiệu quả</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="bai-tap">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="num">05</span>
+          <h2>Đi từng bước, không cần vội</h2>
+          <p class="sub">Bỏ trống ô nào cũng được — không có gì bắt buộc</p>
+        </div>
+
+        <div class="ground-tool" data-ground>
+          <div class="ground-panel">
+            <div class="ground-top">
+              <p class="ground-count" data-step-count>Bước 1/5</p>
+              <button class="ground-speak" type="button" data-speak hidden>🔈 Nghe hướng dẫn bước này</button>
+            </div>
+
+            <div class="ground-progress" role="progressbar" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" aria-label="Tiến trình bài tập">
+              <span data-progress-bar></span>
+            </div>
+
+            <h3 class="ground-title" data-step-title>5 thứ bạn nhìn thấy</h3>
+            <p class="ground-hint" data-step-hint></p>
+
+            <div class="ground-fields" data-fields></div>
+
+            <label class="ground-readonly">
+              <input type="checkbox" data-readonly />
+              <span>Chỉ đọc hướng dẫn, không cần gõ</span>
+            </label>
+
+            <p class="ground-status" role="status" aria-live="polite" data-status></p>
+
+            <div class="ground-actions">
+              <button class="btn btn-soft" type="button" data-back disabled>← Lùi</button>
+              <button class="btn" type="button" data-next>Tiếp →</button>
+            </div>
+
+            <p class="ground-note">Những gì bạn gõ chỉ nằm trong phiên này, đóng tab là mất. Không lưu, không gửi đi đâu.</p>
+          </div>
+
+          <div class="ground-done" data-done hidden>
+            <h3>Đi hết năm bước rồi.</h3>
+            <p>
+              Không cần thấy khác ngay. Chỉ cần biết mình vừa làm được một việc cụ thể
+              trong lúc đầu đang rối. Nếu vẫn còn căng, làm lại lần nữa hoặc
+              <a href="index.html#tho">thở chậm 30 giây</a>.
+            </p>
+            <p class="album-cta">
+              <button class="btn" type="button" data-again>Làm lại từ đầu</button>
+              <a class="btn btn-soft" href="music.html">Nghe một bản nhạc</a>
+            </p>
+          </div>
+        </div>
+
+        <noscript>
+          <p class="tip">Phần bấm từng bước cần JavaScript. Danh sách hướng dẫn đầy đủ ngay bên dưới vẫn dùng được bình thường.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <section class="section alt" id="huong-dan">
+      <div class="wrap grid">
+        <div class="section-head">
+          <span class="num">∞</span>
+          <h2>Hướng dẫn đọc</h2>
+          <p class="sub">Không cần màn hình: đọc chậm và làm theo</p>
+        </div>
+        <div class="section-body">
+          <p>
+            Đọc to hoặc đọc thầm từng dòng, làm chậm hơn bình thường một chút. Nếu đang ở
+            ngoài đường, có thể làm mà không ai biết.
+          </p>
+          <ol class="ground-static">
+            <li>
+              <strong>5 thứ bạn nhìn thấy</strong>
+              <p>Nhìn quanh chậm rãi. Không cần tìm thứ đẹp — chỉ cần thứ đang ở đó: cái bàn, vệt sáng trên tường, mép cửa, màu áo của người đối diện.</p>
+            </li>
+            <li>
+              <strong>4 thứ bạn chạm được</strong>
+              <p>Đặt tay lên mặt bàn, mép áo, thành ghế, điện thoại trong túi. Để ý độ ấm, độ ráp, sức nặng.</p>
+            </li>
+            <li>
+              <strong>3 thứ bạn nghe được</strong>
+              <p>Có thể là tiếng xa: quạt trần, xe ngoài đường, tiếng chim. Không cần đoán nó là gì, chỉ cần nghe ra.</p>
+            </li>
+            <li>
+              <strong>2 thứ bạn ngửi được</strong>
+              <p>Nếu không ngửi thấy gì, cứ tính "không khí trong phòng" — vẫn là một thứ đang ở đó.</p>
+            </li>
+            <li>
+              <strong>1 thứ bạn nếm được</strong>
+              <p>Đầu lưỡi, hơi thở, vị trà còn lại. Không cần ăn hay uống gì thêm.</p>
+            </li>
+          </ol>
+          <aside class="tip">
+            <strong>Nếu đang hoảng nhiều hơn bình thường</strong>
+            <p>
+              Cứ làm chậm, không cần đủ số lượng. Nếu thấy chóng mặt hoặc khó thở, ngồi xuống
+              và thở ra dài hơn hít vào. <a href="index.html#tho">Bài thở 30 giây</a> có đếm nhịp
+              giúp bạn giữ tốc độ.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="vi-sao">
+      <div class="wrap grid">
+        <div class="section-head">
+          <span class="num">?</span>
+          <h2>Vì sao cách này hiệu quả</h2>
+          <p class="sub">Đưa sự chú ý về thứ đang có thật, ngay lúc này</p>
+        </div>
+        <div class="section-body">
+          <p>
+            Khi căng thẳng, sự chú ý bị hút vào các suy nghĩ vòng tròn: chuyện vừa xảy ra,
+            chuyện có thể xảy ra. Bài tập grounding không làm chuyện đó biến mất; nó chỉ
+            giành lại sự chú ý cho những gì đang có thật quanh bạn — và cơ thể thường
+            bớt báo động khi nhận ra "ở đây, lúc này, không có gì nguy hiểm ngay".
+          </p>
+          <p>
+            WHO đưa grounding vào nhóm kỹ năng tự chăm sóc trong hướng dẫn
+            <a href="https://www.who.int/publications/i/item/9789240003927" target="_blank" rel="noopener">Doing What Matters in Times of Stress</a>,
+            dùng được vài phút mỗi ngày. Đây là kỹ năng hỗ trợ, không phải điều trị.
+            Trang <a href="hieu-stress.html">Hiểu cơn căng thẳng</a> giải thích thêm phản ứng
+            của cơ thể và khi nào nên tìm hỗ trợ chuyên môn.
+          </p>
+          <p class="album-cta">
+            <a class="btn" href="index.html#chon-nhanh">Chọn theo mức độ căng thẳng →</a>
+            <a class="btn btn-soft" href="listen.html">Nghe một câu hãm phanh</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="closing">Không cần làm đủ năm bước mới được tính. Dừng ở bước nào thấy nhẹ hơn là được.</p>
+      <p class="sign">stress-life-treatment · grounding 5-4-3-2-1</p>
+    </div>
+  </footer>
+
+  <script src="theme.js"></script>
+
+  <script>
+  (function () {
+    var root = document.querySelector("[data-ground]");
+    if (!root) return;
+
+    var STEPS = [
+      {
+        count: 5,
+        title: "5 thứ bạn nhìn thấy",
+        hint: "Nhìn quanh chậm rãi. Không cần tìm thứ đẹp — chỉ cần thứ đang ở đó: cái bàn, vệt sáng trên tường, mép cửa."
+      },
+      {
+        count: 4,
+        title: "4 thứ bạn chạm được",
+        hint: "Đặt tay lên mặt bàn, mép áo, thành ghế, điện thoại trong túi. Để ý độ ấm, độ ráp, sức nặng."
+      },
+      {
+        count: 3,
+        title: "3 thứ bạn nghe được",
+        hint: "Có thể là tiếng xa: quạt trần, xe ngoài đường, tiếng chim. Không cần đoán, chỉ cần nghe ra."
+      },
+      {
+        count: 2,
+        title: "2 thứ bạn ngửi được",
+        hint: "Nếu không ngửi thấy gì, cứ tính \"không khí trong phòng\" — vẫn là một thứ đang ở đó."
+      },
+      {
+        count: 1,
+        title: "1 thứ bạn nếm được",
+        hint: "Đầu lưỡi, hơi thở, vị trà còn lại. Không cần ăn hay uống gì thêm."
+      }
+    ];
+
+    var answers = STEPS.map(function (s) { return new Array(s.count).fill(""); });
+    var step = 0;
+
+    var countEl = root.querySelector("[data-step-count]");
+    var progress = root.querySelector(".ground-progress");
+    var bar = root.querySelector("[data-progress-bar]");
+    var titleEl = root.querySelector("[data-step-title]");
+    var hintEl = root.querySelector("[data-step-hint]");
+    var fieldsEl = root.querySelector("[data-fields]");
+    var backBtn = root.querySelector("[data-back]");
+    var nextBtn = root.querySelector("[data-next]");
+    var readonly = root.querySelector("[data-readonly]");
+    var status = root.querySelector("[data-status]");
+    var doneEl = root.querySelector("[data-done]");
+    var panel = root.querySelector(".ground-panel");
+    var againBtn = root.querySelector("[data-again]");
+    var speakBtn = root.querySelector("[data-speak]");
+    var synth = window.speechSynthesis;
+
+    if (synth) speakBtn.hidden = false;
+
+    function render(focusField) {
+      var s = STEPS[step];
+      countEl.textContent = "Bước " + (step + 1) + "/" + STEPS.length + " · " + (s.count) + " " + senseWord(s);
+      progress.setAttribute("aria-valuenow", String(step + 1));
+      bar.style.width = ((step + 1) / STEPS.length * 100) + "%";
+      titleEl.textContent = s.title;
+      hintEl.textContent = s.hint;
+      backBtn.disabled = step === 0;
+      nextBtn.textContent = step === STEPS.length - 1 ? "Xong ✓" : "Tiếp →";
+
+      fieldsEl.textContent = "";
+      fieldsEl.hidden = readonly.checked;
+      if (!readonly.checked) {
+        for (var i = 0; i < s.count; i++) {
+          var label = document.createElement("label");
+          label.className = "ground-field";
+
+          var span = document.createElement("span");
+          span.textContent = "Thứ " + (i + 1);
+
+          var input = document.createElement("input");
+          input.type = "text";
+          input.maxLength = 60;
+          input.autocomplete = "off";
+          input.placeholder = "Không bắt buộc";
+          input.value = answers[step][i] || "";
+          input.setAttribute("data-input-index", String(i));
+          label.appendChild(span);
+          label.appendChild(input);
+          fieldsEl.appendChild(label);
+
+          if (focusField && i === 0) {
+            setTimeout(function (el) { el.focus(); }, 0, input);
+          }
+        }
+      }
+
+      status.textContent = "Bước " + (step + 1) + "/" + STEPS.length + ": " + s.title +
+        (readonly.checked ? " · chế độ chỉ đọc." : " · điền hay bỏ trống đều được.");
+    }
+
+    function senseWord(s) {
+      if (s.count === 5) return "thứ nhìn thấy";
+      if (s.count === 4) return "thứ chạm được";
+      if (s.count === 3) return "thứ nghe được";
+      if (s.count === 2) return "thứ ngửi được";
+      return "thứ nếm được";
+    }
+
+    function stopSpeech() {
+      if (synth) synth.cancel();
+    }
+
+    fieldsEl.addEventListener("input", function (e) {
+      var input = e.target;
+      if (!input || input.tagName !== "INPUT") return;
+      var idx = Number(input.getAttribute("data-input-index"));
+      if (answers[step] && idx >= 0) answers[step][idx] = input.value;
+    });
+
+    nextBtn.addEventListener("click", function () {
+      stopSpeech();
+      if (step < STEPS.length - 1) {
+        step += 1;
+        render(true);
+        return;
+      }
+      panel.hidden = true;
+      doneEl.hidden = false;
+      status.textContent = "";
+      var h = doneEl.querySelector("h3");
+      if (h) { h.setAttribute("tabindex", "-1"); h.focus(); }
+    });
+
+    backBtn.addEventListener("click", function () {
+      stopSpeech();
+      if (step > 0) {
+        step -= 1;
+        render(true);
+      }
+    });
+
+    readonly.addEventListener("change", function () {
+      if (readonly.checked) status.textContent = "Chế độ chỉ đọc: đọc hướng dẫn rồi bấm Tiếp. Không cần gõ gì.";
+      render(false);
+    });
+
+    speakBtn.addEventListener("click", function () {
+      if (!synth) return;
+      stopSpeech();
+      var s = STEPS[step];
+      var u = new SpeechSynthesisUtterance("Bước " + (step + 1) + ". " + s.title + ". " + s.hint);
+      u.lang = "vi-VN";
+      u.rate = 0.88;
+      u.pitch = 0.95;
+      synth.speak(u);
+    });
+
+    againBtn.addEventListener("click", function () {
+      stopSpeech();
+      step = 0;
+      answers = STEPS.map(function (s) { return new Array(s.count).fill(""); });
+      doneEl.hidden = true;
+      panel.hidden = false;
+      render(true);
+    });
+
+    render(false);
+
+    window.addEventListener("beforeunload", stopSpeech);
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) stopSpeech();
+    });
+  })();
+  </script>
+</body>
+</html>

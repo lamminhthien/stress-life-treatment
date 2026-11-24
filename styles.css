@@ -2462,3 +2462,96 @@ body.gallery-page {
 @media (prefers-reduced-motion: reduce) {
   .worry-mini { transition: none; }
 }
+
+/* ---------- Hiểu vòng lặp lo âu (hieu-lo-au page) ---------- */
+
+.ask-card {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.35rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent-warm);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow);
+}
+
+.ask-q {
+  margin: 0 0 1rem;
+  font-family: "Lora", Georgia, serif;
+  font-size: clamp(1.08rem, 2.6vw, 1.32rem);
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.ask-split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.ask-split strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.ask-split p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.card-do {
+  margin-top: 0.75rem !important;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--line);
+  font-size: 0.86rem !important;
+}
+
+.card-do strong {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  font-weight: 600;
+}
+
+.card-do a { color: var(--accent); }
+
+.symptom-list {
+  list-style: none;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.symptom-list li {
+  position: relative;
+  padding-left: 1.4rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.symptom-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: 0.68em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .ask-split { grid-template-columns: 1fr; }
+}

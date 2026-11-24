@@ -927,3 +927,219 @@ body.gallery-page {
 @media (max-width: 520px) {
   .album-cta .btn { width: 100%; text-align: center; }
 }
+
+/* ---------- Nghe thay vì đọc (listen page) ---------- */
+
+.listen-panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(1.3rem, 3.5vw, 2rem);
+}
+
+.listen-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.listen-actions .btn {
+  border: 1px solid transparent;
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.listen-actions .btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+  transform: none;
+}
+
+.listen-settings {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
+  gap: 1rem;
+  align-items: end;
+  margin-top: 1.4rem;
+  padding-top: 1.3rem;
+  border-top: 1px solid var(--line);
+}
+
+.field { display: flex; flex-direction: column; gap: 0.35rem; }
+
+.field > span {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.field select {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.86rem;
+}
+
+.field select:focus-visible,
+.switch input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  padding-bottom: 0.55rem;
+  cursor: pointer;
+}
+
+.switch input { width: 16px; height: 16px; accent-color: var(--accent); }
+
+.listen-status {
+  margin: 1.2rem 0 0;
+  font-family: "Lora", Georgia, serif;
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+  min-height: 1.6em;
+}
+
+.listen-note {
+  margin: 0.6rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.listen-note[hidden] { display: none; }
+
+.listen-group-title {
+  font-family: "Lora", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 2.5rem 0 0.2rem;
+}
+
+.listen-group-title:first-of-type { margin-top: 0; }
+
+.listen-list { margin-top: 0.9rem; }
+
+.listen-list li {
+  cursor: pointer;
+  padding-right: 3.2rem;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+}
+
+.listen-list li:hover { border-color: var(--accent); }
+
+.listen-list li.is-active {
+  background: rgba(111, 139, 106, 0.12);
+  border-color: var(--accent);
+  transform: translateX(2px);
+}
+
+.listen-list li.is-active::before { color: var(--accent); }
+
+.q-play {
+  position: absolute;
+  right: 0.85rem;
+  top: 0.82rem;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.q-play:hover { background: var(--accent); border-color: var(--accent); color: #fdfcf7; }
+
+.listen-list li.is-active .q-play {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fdfcf7;
+}
+
+/* ---------- Nguồn nghe online ---------- */
+
+.sources {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.sources a {
+  display: block;
+  padding: 1rem 1.15rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.sources a:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.sources a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.src-kind {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.src-title {
+  display: block;
+  font-family: "Lora", Georgia, serif;
+  font-weight: 600;
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.src-desc {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.83rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 720px) {
+  .listen-settings { grid-template-columns: 1fr; align-items: stretch; }
+  .switch { padding-bottom: 0; }
+  .listen-actions .btn { flex: 1 1 100%; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .listen-list li, .listen-list li.is-active, .sources a, .sources a:hover {
+    transition: none;
+    transform: none;
+  }
+}

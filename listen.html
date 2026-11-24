@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nghe thay vì đọc — 30 câu nói, một giọng đọc êm</title>
+  <meta name="description" content="Để máy đọc chậm 30 câu nói hãm phanh bằng giọng êm, kèm danh sách nguồn nghe online miễn phí: podcast và playlist YouTube." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="listen-page">
+  <a class="skip" href="#nghe">Tới phần nghe</a>
+
+  <header class="album-hero">
+    <div class="wrap">
+      <a class="back" href="index.html">← Về trang chính</a>
+      <p class="eyebrow">Nghe thay vì đọc</p>
+      <h1>Nhắm mắt lại.<br /><em>Để máy đọc cho nghe.</em></h1>
+      <p class="lede">
+        Ba mươi câu nói ngắn, đọc chậm, nghỉ một nhịp giữa mỗi câu — đủ để bạn thả lỏng vai
+        và thở ra. Giọng đọc là giọng có sẵn trong máy bạn: miễn phí, không cần đăng nhập,
+        không gửi dữ liệu đi đâu.
+      </p>
+      <nav class="jump" aria-label="Mục lục">
+        <a href="#nghe">Bảng nghe</a>
+        <a href="#danh-sach">30 câu nói</a>
+        <a href="#nguon-nghe">Nghe thêm online (free)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="nghe">
+    <section class="section">
+      <div class="wrap">
+        <div class="listen-panel">
+          <div class="listen-actions">
+            <button class="btn" id="play-all" type="button">▶ Đọc tất cả chậm rãi</button>
+            <button class="btn btn-soft" id="pause" type="button" disabled>Tạm dừng</button>
+            <button class="btn btn-soft" id="stop" type="button" disabled>Dừng</button>
+          </div>
+          <div class="listen-settings">
+            <label class="field">
+              <span>Giọng đọc</span>
+              <select id="voice"></select>
+            </label>
+            <label class="field">
+              <span>Tốc độ</span>
+              <select id="rate">
+                <option value="0.7">Rất chậm · êm</option>
+                <option value="0.85" selected>Chậm vừa</option>
+                <option value="1">Bình thường</option>
+                <option value="1.15">Hơi nhanh</option>
+              </select>
+            </label>
+            <label class="switch">
+              <input type="checkbox" id="gap" checked />
+              <span>Nghỉ ~3 giây giữa các câu</span>
+            </label>
+          </div>
+          <p class="listen-status" id="status" role="status" aria-live="polite">Sẵn sàng. Bấm nút để bắt đầu.</p>
+          <p class="listen-note" id="voice-note" hidden></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="danh-sach">
+      <div class="wrap">
+        <div class="section-head center">
+          <span class="num">30</span>
+          <h2>Câu nói để nghe</h2>
+          <p class="sub">Bấm vào từng câu nếu chỉ muốn nghe một câu</p>
+        </div>
+
+        <h3 class="listen-group-title">Khi đang nóng, cần hãm phanh ngay</h3>
+        <ol class="quotes listen-list" start="1">
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Mình dừng lại một nhịp đã. Chưa cần trả lời ai ngay lúc này.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Chuyện này có thật sự đáng để mình mất bình tĩnh trong mười phút tới không?</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Mình đang nóng với sự việc, hay đang mệt vì dồn quá nhiều thứ cùng lúc?</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Cơn giận này sẽ qua. Mình không cần hành động khi nó còn đang nóng.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Bây giờ mình chỉ cần thở ra chậm hơn thở vào một chút.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Mình có thể nói chậm lại. Không ai bắt mình phải nói xong ngay.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Mình đang thấy khó chịu, và điều đó không có nghĩa là mình sai hay người kia xấu.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Trước khi gửi tin nhắn này, mình để nó lại mười phút.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Mình chỉ kiểm soát được cách mình phản ứng, không kiểm soát được mọi thứ xảy ra.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Chưa cần giải quyết hết. Chỉ cần qua được mười phút này cho nhẹ đã.</span></li>
+        </ol>
+
+        <h3 class="listen-group-title">Khi mệt vì đã gồng quá lâu</h3>
+        <ol class="quotes listen-list" start="11" style="counter-reset: q 10">
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Mình mệt, không phải mình yếu.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Việc mình dễ cáu gần đây là một tín hiệu, không phải một khuyết điểm.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Mình đã gồng lâu lắm rồi. Hôm nay được phép mềm ra một chút.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Không phải chuyện nhỏ này làm mình nổi nóng. Là cả một ngày dài phía trước nó.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Mình có quyền nói: hôm nay mình không đủ sức cho việc này.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Nghỉ một chút không phải là bỏ cuộc.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Mình không cần làm hài lòng tất cả mọi người cùng một lúc.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Mình đang cố giữ mọi thứ cùng lúc. Có thể đặt xuống một thứ.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Hôm nay mình chỉ cần xong những việc thật sự cần xong.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Cơ thể mình đang nhắc mình chậm lại, không phải nhắc mình cố thêm.</span></li>
+        </ol>
+
+        <h3 class="listen-group-title">Khi cần dịu lại với chính mình</h3>
+        <ol class="quotes listen-list" start="21" style="counter-reset: q 20">
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Mình đã cố gắng nhiều hơn mình tưởng.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Ai cũng có những ngày nói ra điều mình không muốn nói. Mình học từ nó, không tự trách mãi.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Mình không cần trở thành phiên bản tốt hơn của mình ngay hôm nay.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Có một người đang rất cần mình tử tế. Là mình.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Mình đang ở đây, thở được, và thế là đủ cho lúc này.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Chuyện lớn đến đâu cũng chỉ cần đi qua từng bước nhỏ.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Mình không phải là cảm xúc của mình. Mình là người đang quan sát nó.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Hôm nay không ổn cũng không sao. Ngày mai là một lượt khác.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Mình được phép nghỉ ngơi trước khi mình kiệt sức.</span></li>
+          <li><button type="button" class="q-play" aria-label="Đọc câu này">🔈</button><span class="q-text">Xin chào buổi tối này. Mình sẽ để nó trôi chậm hơn một chút.</span></li>
+        </ol>
+
+        <aside class="tip">
+          <strong>Nếu máy chưa có giọng tiếng Việt</strong>
+          <p>
+            Trên Android: Cài đặt → Hệ thống → Ngôn ngữ và nhập liệu → Chuyển văn bản thành giọng nói
+            (Text-to-speech) → cài gói giọng tiếng Việt. Trên iPhone: Cài đặt → Trợ năng → Nội dung
+            đọc được → Giọng nói → Tiếng Việt. Sau đó tải lại trang này.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="nguon-nghe">
+      <div class="wrap grid">
+        <div class="section-head">
+          <span class="num">∞</span>
+          <h2>Nghe thêm, miễn phí</h2>
+          <p class="sub">Bấm vào là nghe, không cần tài khoản trả phí</p>
+        </div>
+        <div class="section-body">
+          <p>
+            Nếu muốn có người thật dẫn thiền hoặc nhạc nền dài cả tiếng, đây là vài nguồn mở
+            sẵn có. Tất cả đều nghe được trên trình duyệt, không cần cài gì.
+          </p>
+          <ul class="sources">
+            <li>
+              <a href="https://www.youtube.com/playlist?list=PLRmjWHCRdPZf5JQUfm_4ITaCj8bPENs6M" target="_blank" rel="noopener">
+                <span class="src-kind">YouTube playlist</span>
+                <span class="src-title">Nhạc thiền 528Hz chữa lành — Kim Ba Yoga</span>
+                <span class="src-desc">29 video nhạc thiền không lời, dùng như nền khi ngồi thở hoặc trước giờ ngủ.</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/playlist?list=PLRmjWHCRdPZf-SHIqJEfSXtp00w8UXpWr" target="_blank" rel="noopener">
+                <span class="src-kind">YouTube playlist</span>
+                <span class="src-title">Tuyển tập nhạc thiền ngủ ngon</span>
+                <span class="src-desc">Các bản dài, nhịp rất chậm — hợp cho lúc đầu óc vẫn còn chạy.</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@Fonos-Tuchualanh" target="_blank" rel="noopener">
+                <span class="src-kind">YouTube · kênh</span>
+                <span class="src-title">Fonos — Tự Chữa Lành</span>
+                <span class="src-desc">Thiền dẫn 5–30 phút, truyện ngủ, nhạc chủ đề. Giọng dẫn chậm, dễ nghe.</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://open.spotify.com/show/4CHSaA4Nkdagd6m7LKlLJo" target="_blank" rel="noopener">
+                <span class="src-kind">Podcast · Spotify</span>
+                <span class="src-title">Minh Niệm</span>
+                <span class="src-desc">Bài giảng về chữa lành và bình an, giọng trầm, nhịp chậm. Nghe được bản miễn phí.</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://open.spotify.com/show/3aFS1pJaPmOFbOCaJ1XvmI" target="_blank" rel="noopener">
+                <span class="src-kind">Podcast · Spotify</span>
+                <span class="src-title">Viết Chữa Lành</span>
+                <span class="src-desc">Các tập 10–20 phút về stress, burnout và những lần nóng giận nhỏ nhặt.</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/results?search_query=thi%E1%BB%81n+ng%E1%BB%A7+ngon+gi%E1%BB%8Dng+n%E1%BB%AF+%C3%AAm" target="_blank" rel="noopener">
+                <span class="src-kind">Tự tìm nhanh</span>
+                <span class="src-title">Tìm "thiền ngủ ngon giọng nữ êm" trên YouTube</span>
+                <span class="src-desc">Nếu muốn giọng khác gu mình, đây là từ khoá cho ra nhiều bản dẫn thiền giọng êm.</span>
+              </a>
+            </li>
+          </ul>
+          <p class="listen-note">
+            Các nguồn trên thuộc bên thứ ba và có thể thay đổi nội dung theo thời gian.
+            Trang này không sở hữu và không tải lại nội dung của họ.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="closing">Không cần đọc hết ba mươi câu. Nghe hai câu, thở một lần, cũng đủ.</p>
+      <p class="sign">30 câu nói · đọc bằng giọng có sẵn trong máy</p>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var items = Array.prototype.slice.call(document.querySelectorAll('.listen-list li'));
+    if (!items.length) return;
+
+    var playAll = document.getElementById('play-all');
+    var pauseBtn = document.getElementById('pause');
+    var stopBtn = document.getElementById('stop');
+    var voiceSel = document.getElementById('voice');
+    var rateSel = document.getElementById('rate');
+    var gapBox = document.getElementById('gap');
+    var status = document.getElementById('status');
+    var voiceNote = document.getElementById('voice-note');
+
+    var synth = window.speechSynthesis;
+    var index = 0;
+    var running = false;
+    var paused = false;
+    var gapTimer = null;
+    var talkToken = 0;
+
+    if (!synth) {
+      playAll.disabled = true;
+      status.textContent = 'Trình duyệt này không hỗ trợ đọc thành tiếng. Bạn có thể nghe các nguồn bên dưới.';
+      return;
+    }
+
+    function textOf(li) {
+      var el = li.querySelector('.q-text');
+      return el ? el.textContent.trim() : li.textContent.trim();
+    }
+
+    function setActive(i) {
+      items.forEach(function (li, n) {
+        li.classList.toggle('is-active', n === i);
+        if (n === i) li.setAttribute('aria-current', 'true');
+        else li.removeAttribute('aria-current');
+      });
+      if (i >= 0 && items[i]) {
+        items[i].scrollIntoView({ block: 'center', behavior: 'smooth' });
+      }
+    }
+
+    function fillVoices() {
+      var voices = synth.getVoices();
+      var vi = voices.filter(function (v) { return /^vi/i.test(v.lang); });
+      var rest = voices.filter(function (v) { return !/^vi/i.test(v.lang); });
+
+      voiceSel.innerHTML = '';
+      vi.concat(rest).forEach(function (v) {
+        var o = document.createElement('option');
+        o.value = v.name;
+        o.textContent = v.name + ' — ' + v.lang + (/^vi/i.test(v.lang) ? ' · tiếng Việt' : '');
+        voiceSel.appendChild(o);
+      });
+
+      if (!vi.length) {
+        voiceNote.hidden = false;
+        voiceNote.textContent = 'Máy này chưa cài giọng tiếng Việt. Bạn vẫn nghe được bằng giọng mặc định, nhưng phát âm có thể chưa chuẩn — xem hướng dẫn cài bên dưới.';
+      } else {
+        voiceNote.hidden = true;
+      }
+    }
+
+    function currentVoice() {
+      var name = voiceSel.value;
+      if (!name) return null;
+      return synth.getVoices().filter(function (v) { return v.name === name; })[0] || null;
+    }
+
+    function clearGap() {
+      if (gapTimer) { clearTimeout(gapTimer); gapTimer = null; }
+    }
+
+    /* Huỷ mọi câu đang đọc và vô hiệu hoá các callback cũ. */
+    function cancelSpeech() {
+      talkToken += 1;
+      clearGap();
+      synth.cancel();
+      if (synth.paused) synth.resume();
+      return talkToken;
+    }
+
+    function buttonsForPlay() {
+      pauseBtn.disabled = false;
+      pauseBtn.textContent = 'Tạm dừng';
+      stopBtn.disabled = false;
+    }
+
+    function idle(message) {
+      running = false;
+      paused = false;
+      cancelSpeech();
+      pauseBtn.disabled = true;
+      pauseBtn.textContent = 'Tạm dừng';
+      stopBtn.disabled = true;
+      setActive(-1);
+      status.textContent = message || 'Sẵn sàng. Bấm nút để bắt đầu.';
+    }
+
+    function finish() {
+      running = false;
+      paused = false;
+      clearGap();
+      pauseBtn.disabled = true;
+      pauseBtn.textContent = 'Tạm dừng';
+      stopBtn.disabled = true;
+      setActive(-1);
+      status.textContent = 'Đã đọc hết ' + items.length + ' câu. Bấm lại để nghe lượt nữa.';
+    }
+
+    function speak(i) {
+      var token = cancelSpeech();
+      index = Math.max(0, Math.min(items.length - 1, i));
+      setActive(index);
+      status.textContent = 'Câu ' + (index + 1) + '/' + items.length + ' · đang đọc…';
+
+      var u = new SpeechSynthesisUtterance(textOf(items[index]));
+      var v = currentVoice();
+      if (v) u.voice = v;
+      u.lang = (v && v.lang) ? v.lang : 'vi-VN';
+      u.rate = parseFloat(rateSel.value) || 0.85;
+      u.pitch = 0.92;
+      u.volume = 1;
+
+      u.onend = function () {
+        if (token !== talkToken) return;
+        if (!running) {
+          status.textContent = 'Đọc xong câu ' + (index + 1) + '.';
+          return;
+        }
+        if (index < items.length - 1) {
+          if (gapBox.checked && !paused) {
+            status.textContent = 'Nghỉ một nhịp… (' + (index + 1) + '/' + items.length + ')';
+            gapTimer = setTimeout(function () {
+              gapTimer = null;
+              if (token !== talkToken || paused) return;
+              speak(index + 1);
+            }, 3000);
+          } else {
+            speak(index + 1);
+          }
+        } else {
+          finish();
+        }
+      };
+
+      u.onerror = function () {
+        if (token !== talkToken || !running) return;
+        finish();
+        status.textContent = 'Giọng đọc bị ngắt giữa chừng. Bấm "Đọc tất cả" để thử lại.';
+      };
+
+      /* Chrome bỏ qua utterance nếu speak() gọi ngay sau cancel(). */
+      setTimeout(function () {
+        if (token !== talkToken) return;
+        synth.speak(u);
+      }, 70);
+    }
+
+    playAll.addEventListener('click', function () {
+      running = true;
+      paused = false;
+      buttonsForPlay();
+      speak(0);
+    });
+
+    pauseBtn.addEventListener('click', function () {
+      if (!running) return;
+      if (paused) {
+        paused = false;
+        pauseBtn.textContent = 'Tạm dừng';
+        var waiting = !gapTimer && !synth.speaking && !synth.pending;
+        if (waiting) {
+          speak(index + 1);
+        } else {
+          synth.resume();
+          status.textContent = 'Câu ' + (index + 1) + '/' + items.length + ' · đang đọc…';
+        }
+      } else {
+        paused = true;
+        pauseBtn.textContent = 'Tiếp tục';
+        if (gapTimer) {
+          clearGap();
+          status.textContent = 'Đang tạm dừng sau câu ' + (index + 1) + '.';
+        } else {
+          synth.pause();
+          status.textContent = 'Đang tạm dừng ở câu ' + (index + 1) + '.';
+        }
+      }
+    });
+
+    stopBtn.addEventListener('click', function () { idle(); });
+
+    items.forEach(function (li, i) {
+      var btn = li.querySelector('.q-play');
+      if (btn) {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          idle('Đang đọc câu ' + (i + 1) + '.');
+          speak(i);
+        });
+      }
+      li.addEventListener('click', function () {
+        idle('Đang đọc câu ' + (i + 1) + '.');
+        speak(i);
+      });
+    });
+
+    rateSel.addEventListener('change', function () {
+      if (running) speak(index);
+    });
+
+    voiceSel.addEventListener('change', function () {
+      if (running) speak(index);
+    });
+
+    fillVoices();
+    if (typeof synth.onvoiceschanged !== 'undefined') {
+      synth.onvoiceschanged = fillVoices;
+    }
+    setTimeout(function () { if (!voiceSel.options.length) fillVoices(); }, 600);
+
+    window.addEventListener('beforeunload', function () { synth.cancel(); });
+  })();
+  </script>
+</body>
+</html>

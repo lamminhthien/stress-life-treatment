@@ -55,6 +55,15 @@ tiếng Việt, trang hiện hướng dẫn cài trên Android/iPhone.
 Cuối trang có sẵn vài nguồn nghe miễn phí (playlist YouTube nhạc thiền, kênh
 Fonos — Tự Chữa Lành, podcast Minh Niệm và Viết Chữa Lành trên Spotify).
 
+## Chia sẻ và SEO
+
+- `favicon.svg` — vòng thở trên nền xanh đậm, khai báo `rel="icon"` ở mọi trang.
+- `og-image.png` 1200×630 cắt từ ảnh CC0 trong album; mọi trang có `og:title`,
+  `og:description`, `og:image`, `og:url`, `canonical` và `twitter:card`.
+- `404.html` cùng phong cách, link tuyệt đối về trang chủ (GitHub Pages phục vụ nó ở
+  mọi đường dẫn sai, kể cả đường dẫn lồng nhau).
+- `sitemap.xml` (6 trang) + `robots.txt` trỏ tới sitemap.
+
 ## Chọn nhanh theo mức độ
 
 Mục `#chon-nhanh` có 3 nút lớn (Hơi bực / Căng cứng / Rối bời cuối ngày). Bấm một nút

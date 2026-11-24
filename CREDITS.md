@@ -56,3 +56,10 @@ Ba bản nhạc dưới đây đều ở giấy phép **CC0 1.0** (phạm vi cô
 
 CC0 cho phép dùng, chỉnh sửa và phân phối lại mà không cần xin phép; phần ghi công
 này chỉ để bạn biết nguồn.
+
+## Ảnh xem trước khi chia sẻ
+
+`og-image.png` (1200×630) được cắt từ **Dấu chân trên cát** — Sergei Gussev,
+CC0 ([nguồn](https://stocksnap.io/photo/footprints-sand-GBUFTJIRSS)), thêm lớp tối
+chuyển sắc ở chân ảnh để tiêu đề trên thẻ chia sẻ đọc được. Ảnh gốc vẫn nằm trong
+`images/mo-02-dau-chan-cat.jpg`.

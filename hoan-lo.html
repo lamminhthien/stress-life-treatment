@@ -54,6 +54,9 @@
         lặp lại, cất nó vào một danh sách, rồi hẹn một khung giờ cố định trong ngày để lo.
         Việc này biến lo âu lan man thành một việc có điểm dừng — và có lúc bắt đầu.
       </p>
+      <p class="album-cta">
+        <button class="btn btn-soft" type="button" data-read-text>Đọc văn bản</button>
+      </p>
       <nav class="jump" aria-label="Mục lục">
         <a href="#cat-di">Ghi &amp; cất đi</a>
         <a href="#gio-lo">Tới giờ thì làm gì</a>
@@ -648,6 +651,56 @@
     document.addEventListener("visibilitychange", function () {
       if (!document.hidden) tick();
     });
+  })();
+  </script>
+
+  <script>
+  (function () {
+    var readBtn = document.querySelector("[data-read-text]");
+    if (!readBtn) return;
+    var synth = window.speechSynthesis;
+    if (!synth) { readBtn.disabled = true; readBtn.textContent = "Trình duyệt không hỗ trợ đọc"; return; }
+    var reading = false;
+    var token = 0;
+    function pageText() {
+      var main = document.querySelector("main") || document.body;
+      var clone = main.cloneNode(true);
+      return (clone.textContent || "").replace(/\s+/g, " ").trim();
+    }
+    function stopRead() {
+      token += 1;
+      synth.cancel();
+      reading = false;
+      readBtn.textContent = "Đọc văn bản";
+      readBtn.setAttribute("aria-pressed", "false");
+    }
+    readBtn.addEventListener("click", function () {
+      if (reading) { stopRead(); return; }
+      var text = pageText();
+      if (!text) return;
+      reading = true;
+      readBtn.textContent = "Dừng đọc";
+      readBtn.setAttribute("aria-pressed", "true");
+      var myToken = ++token;
+      var chunks = text.match(/[^.!?。]+[.!?。]?/g) || [text];
+      function speakNext(i) {
+        if (myToken !== token || !reading) return;
+        if (i >= chunks.length) { stopRead(); return; }
+        var chunk = (chunks[i] || "").trim();
+        if (!chunk) { speakNext(i + 1); return; }
+        var u = new SpeechSynthesisUtterance(chunk);
+        u.lang = "vi-VN";
+        u.rate = 0.9;
+        u.pitch = 0.95;
+        u.onend = function () { if (myToken === token && reading) speakNext(i + 1); };
+        u.onerror = function () { if (myToken === token) stopRead(); };
+        synth.speak(u);
+      }
+      synth.cancel();
+      setTimeout(function () { if (myToken === token && reading) speakNext(0); }, 50);
+    });
+    document.addEventListener("visibilitychange", function () { if (document.hidden && reading) stopRead(); });
+    window.addEventListener("beforeunload", function () { synth.cancel(); });
   })();
   </script>
 </body>

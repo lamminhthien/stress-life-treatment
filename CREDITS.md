@@ -43,6 +43,31 @@ Nguồn gốc mỗi ảnh được ghi bên dưới.
 - **Lupin dưới chân núi tuyết** — Laura Aziz · [nguồn](https://stocksnap.io/photo/lavender-field-MA1RNOBHJ6) · `images/cham-09-dong-lupin-nui-tuyet.jpg`
 - **Hoa sage và chú ong** — Jeffrey Betts · [nguồn](https://stocksnap.io/photo/lavender-field-R642Q1P0QG) · `images/cham-10-hoa-sage-va-ong.jpg`
 
+## Ảnh minh họa nội dung
+
+19 ảnh dưới đây cũng được tìm qua [Openverse](https://openverse.org), đều ở giấy phép
+**CC0 1.0** (phạm vi công cộng), đã nén WebP và lưu trong `images/`.
+
+- **Thở bên cửa sổ** — Burst · [nguồn](https://stocksnap.io/photo/woman-looking-GMAVOEQH7V) · CC0 1.0 · `images/minh-hoa-tho-cua-so.webp`
+- **Sách bên cửa sổ** — Lia Leslie · [nguồn](https://stocksnap.io/photo/books-reading-2XTL98GVVF) · CC0 1.0 · `images/minh-hoa-sach-cua-so.webp`
+- **Bắt đầu grounding** — Image Catalog · [nguồn](https://www.flickr.com/photos/132795455@N08/17878517048) · CC0 1.0 · `images/minh-hoa-grounding-mo-dau.webp`
+- **Bước 1 — Nhìn** — freestocks.org · [nguồn](https://www.flickr.com/photos/135396164@N05/34419804081) · CC0 1.0 · `images/minh-hoa-grounding-01-nhin.webp`
+- **Bước 2 — Chạm** — Alejandro Escamilla · [nguồn](https://stocksnap.io/photo/hands-writing-FE65E51CF9) · CC0 1.0 · `images/minh-hoa-grounding-02-cham.webp`
+- **Bước 3 — Nghe** — Steve Johnson · [nguồn](https://stocksnap.io/photo/rain-window-9WON97E89Q) · CC0 1.0 · `images/minh-hoa-grounding-03-nghe.webp`
+- **Bước 4 — Ngửi** — Không rõ tác giả · [nguồn](https://www.rawpixel.com/image/5910371/image-public-domain-floral-free) · CC0 1.0 · `images/minh-hoa-grounding-04-ngui.webp`
+- **Bước 5 — Nếm** — Maria Shanina · [nguồn](https://stocksnap.io/photo/tea-cup-YGNEZY5VY9) · CC0 1.0 · `images/minh-hoa-grounding-05-nem.webp`
+- **Ghi và cất đi** — Lisa Fotios · [nguồn](https://stocksnap.io/photo/notebook-pen-HNXFQDGG6O) · CC0 1.0 · `images/minh-hoa-hoan-lo-so-tay.webp`
+- **Tới giờ thì làm gì** — Image Catalog · [nguồn](https://www.flickr.com/photos/132795455@N08/20979939428) · CC0 1.0 · `images/minh-hoa-hoan-lo-dong-ho.webp`
+- **Lo bình thường và lo vòng tròn** — Ian Prince · [nguồn](https://stocksnap.io/photo/spiral-staircase-YB5JNCV2KQ) · CC0 1.0 · `images/minh-hoa-lo-vong-tron.webp`
+- **Suy nghĩ vòng tròn** — Ludde Lorentz · [nguồn](https://stocksnap.io/photo/spiral-staircase-COJQ6XJU0V) · CC0 1.0 · `images/minh-hoa-nghi-vong-tron.webp`
+- **Tình huống xấu nhất** — Bappy · [nguồn](https://wordpress.org/photos/photo/9936a0ffa6/) · CC0 1.0 · `images/minh-hoa-tinh-huong-xau-nhat.webp`
+- **Né tránh vì sợ** — mujuonly · [nguồn](https://wordpress.org/photos/photo/20167f4a8b/) · CC0 1.0 · `images/minh-hoa-ne-tranh.webp`
+- **Tản văn nhẹ nhàng** — freestocks.org · [nguồn](https://www.flickr.com/photos/135396164@N05/29364151550) · CC0 1.0 · `images/minh-hoa-sach-tan-van.webp`
+- **Truyện ngắn** — Matthew Henry · [nguồn](https://stocksnap.io/photo/people-father-CIJXEU9VRY) · CC0 1.0 · `images/minh-hoa-sach-truyen-ngan.webp`
+- **Tâm lý cảm xúc** — Aaron Burden · [nguồn](https://stocksnap.io/photo/books-notebook-GQVPIS7V8S) · CC0 1.0 · `images/minh-hoa-sach-tam-ly.webp`
+- **Nhật ký 30 giây** — Cathryn Lavery · [nguồn](https://stocksnap.io/photo/journal-notepad-DPKNIIN5X3) · CC0 1.0 · `images/minh-hoa-nhat-ky-so-bu.webp`
+- **Nghe thay vì đọc** — Burst · [nguồn](https://stocksnap.io/photo/woman-headphones-NOLZXJLYKF) · CC0 1.0 · `images/minh-hoa-listen-tai-nghe.webp`
+
 ## Nhạc nền (trang trình chiếu)
 
 Ba bản nhạc dưới đây đều ở giấy phép **CC0 1.0** (phạm vi công cộng), tìm qua

@@ -20,7 +20,7 @@ xem ảnh, câu nói "hãm phanh", âm nhạc và đọc sách.
 - `hieu-lo-au.html` — giải thích lo bình thường khác lo vòng tròn, phân biệt lo hữu ích
   với lo vô ích, ba kiểu nghĩ quen thuộc kèm việc làm được ngay, kèm nguồn WHO/NHS/APA
 - `audio/` — 3 bản nhạc ambient/piano, giấy phép CC0
-- `images/` — 30 ảnh, giấy phép CC0 (nguồn ghi trong `CREDITS.md`)
+- `images/` — 30 ảnh album + 19 ảnh minh họa nội dung, giấy phép CC0 (nguồn ghi trong `CREDITS.md`)
 - `styles.css` — giao diện, responsive cho điện thoại
 
 ## Chạy thử tại máy
@@ -39,8 +39,9 @@ Trang được phục vụ bằng GitHub Pages từ nhánh `main`, thư mục g�
 
 ## Ảnh
 
-30 ảnh trong album được tìm qua [Openverse](https://openverse.org), đều ở giấy phép
-CC0 1.0 (phạm vi công cộng). Danh sách tác giả và link nguồn: [`CREDITS.md`](CREDITS.md).
+30 ảnh trong album và 19 ảnh minh họa nội dung được tìm qua
+[Openverse](https://openverse.org), đều ở giấy phép CC0 1.0 (phạm vi công cộng).
+Danh sách tác giả và link nguồn: [`CREDITS.md`](CREDITS.md).
 
 ## Danh sách sách
 

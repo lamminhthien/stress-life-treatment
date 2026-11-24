@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Trình chiếu — ảnh và nhạc để thở chậm</title>
+  <meta name="description" content="Trình chiếu 30 ảnh thư giãn kèm nhạc nền không bản quyền (CC0). Bật lên, thở chậm, rồi quay lại." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="gallery-page">
+
+  <div class="stage" id="stage">
+
+    <div class="slides" id="slides" aria-hidden="true"></div>
+    <div class="shade" aria-hidden="true"></div>
+
+    <header class="g-bar">
+      <a class="g-back" href="album.html">← Album</a>
+      <p class="g-count" id="count">1 / 30</p>
+      <button class="g-music" id="musicBtn" type="button" aria-pressed="false">
+        <span class="g-eq" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span id="musicLabel">Nhạc: tắt</span>
+      </button>
+    </header>
+
+    <div class="g-info">
+      <p class="g-group" id="groupName">Không gian mở</p>
+      <h2 class="g-title" id="slideTitle"></h2>
+      <p class="g-cap" id="slideCap"></p>
+      <a class="g-credit" id="slideCredit" href="#" target="_blank" rel="noopener nofollow"></a>
+    </div>
+
+    <div class="g-controls">
+      <button class="g-btn" id="prev" type="button" aria-label="Ảnh trước">‹</button>
+      <button class="g-btn g-btn-main" id="play" type="button" aria-label="Tạm dừng">❚❚</button>
+      <button class="g-btn" id="next" type="button" aria-label="Ảnh sau">›</button>
+      <button class="g-btn g-btn-track" id="track" type="button" aria-label="Đổi bản nhạc">♪›</button>
+      <div class="g-progress" aria-hidden="true"><i id="bar"></i></div>
+    </div>
+
+    <div class="g-start" id="startCard">
+      <div class="g-card">
+        <p class="eyebrow">Chế độ thư giãn</p>
+        <h1>Ảnh và nhạc,<br /><em>cùng một nhịp</em>.</h1>
+        <p class="g-lede">
+          30 ảnh đi chậm qua màn hình, mỗi ảnh 9 giây, kèm nhạc nền ambient và piano
+          không bản quyền. Không cần làm gì — chỉ cần thở.
+        </p>
+        <button class="btn" id="startAll" type="button">Bắt đầu — ảnh + nhạc</button>
+        <button class="g-ghost" id="startMuted" type="button">Chỉ xem ảnh</button>
+        <p class="g-hint">
+          Nhấn <kbd>←</kbd> <kbd>→</kbd> để đổi ảnh, <kbd>Space</kbd> để tạm dừng,
+          <kbd>M</kbd> để bật/tắt nhạc, <kbd>Esc</kbd> để về album.
+          Nhạc phát ở âm lượng nhỏ, lặp lại và tự chuyển bài.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <audio id="audio" preload="metadata"></audio>
+  <p class="sr-only" id="live" role="status" aria-live="polite"></p>
+
+  <script>
+    const SLIDES = [
+  {
+    "src": "images/mo-01-bien-lang.jpg",
+    "group": "Không gian mở",
+    "title": "Biển lặng",
+    "cap": "Mặt nước phẳng lặng, đường chân trời mở ra.",
+    "credit": "Ảnh: Matt Moloney · CC0",
+    "creditUrl": "https://stocksnap.io/photo/ocean-water-LMMFQHNLEX"
+  },
+  {
+    "src": "images/mo-02-dau-chan-cat.jpg",
+    "group": "Không gian mở",
+    "title": "Dấu chân trên cát",
+    "cap": "Một lối đi nhỏ, không cần đến đâu vội.",
+    "credit": "Ảnh: Sergei Gussev · CC0",
+    "creditUrl": "https://stocksnap.io/photo/footprints-sand-GBUFTJIRSS"
+  },
+  {
+    "src": "images/mo-03-bien-tu-tren-cao.jpg",
+    "group": "Không gian mở",
+    "title": "Biển nhìn từ trên cao",
+    "cap": "Nước xanh chuyển dần sang màu ngọc.",
+    "credit": "Ảnh: JJ Skys the Limit · CC0",
+    "creditUrl": "https://stocksnap.io/photo/ocean-water-4I0HL37YBO"
+  },
+  {
+    "src": "images/mo-04-cau-tau-hoang-hon.jpg",
+    "group": "Không gian mở",
+    "title": "Cầu tàu lúc hoàng hôn",
+    "cap": "Nắng cuối ngày trải dài trên mặt nước.",
+    "credit": "Ảnh: Arnaud Mesureur · CC0",
+    "creditUrl": "https://stocksnap.io/photo/nature-water-GKF942UMHC"
+  },
+  {
+    "src": "images/mo-05-dam-nuoc-ven-bien.jpg",
+    "group": "Không gian mở",
+    "title": "Đầm nước ven biển",
+    "cap": "Một vũng nước trong, vài gợn sóng nhỏ.",
+    "credit": "Ảnh: Bernard Spragg · CC0",
+    "creditUrl": "https://stocksnap.io/photo/beach-coast-HGJ08ZTX4C"
+  },
+  {
+    "src": "images/mo-06-bien-duoi-trang.jpg",
+    "group": "Không gian mở",
+    "title": "Biển dưới trăng",
+    "cap": "Ánh trăng rải bạc, mọi thứ chậm lại.",
+    "credit": "Ảnh: JJ Skys the Limit · CC0",
+    "creditUrl": "https://stocksnap.io/photo/moon-ocean-JLUHRYXJE1"
+  },
+  {
+    "src": "images/mo-07-cot-go-trong-suong.webp",
+    "group": "Không gian mở",
+    "title": "Cột gỗ trong sương",
+    "cap": "Sương phủ kín, chỉ còn những đường nét mảnh.",
+    "credit": "Ảnh: Không rõ tác giả · CC0",
+    "creditUrl": "https://www.rawpixel.com/image/3286665/free-photo-image-beauty-calm"
+  },
+  {
+    "src": "images/mo-08-bien-chieu-tim.jpg",
+    "group": "Không gian mở",
+    "title": "Biển chiều tím",
+    "cap": "Khoảng lặng giữa tím và hồng.",
+    "credit": "Ảnh: James Huff · CC0",
+    "creditUrl": "https://wordpress.org/photos/photo/48067842ab/"
+  },
+  {
+    "src": "images/mo-09-nui-trong-may.webp",
+    "group": "Không gian mở",
+    "title": "Núi trong mây",
+    "cap": "Mây nuốt dần ngọn núi, rất khẽ.",
+    "credit": "Ảnh: Không rõ tác giả · CC0",
+    "creditUrl": "https://www.rawpixel.com/image/3290697/free-photo-image-adventure-bad-cc0"
+  },
+  {
+    "src": "images/mo-10-dong-lupin-tim.jpg",
+    "group": "Không gian mở",
+    "title": "Đồng lupin tím",
+    "cap": "Sắc tím trải đến chân núi tuyết.",
+    "credit": "Ảnh: Ghost Presenter · CC0",
+    "creditUrl": "https://stocksnap.io/photo/lavender-field-G1Z1H18HCQ"
+  },
+  {
+    "src": "images/xanh-01-nang-xuyen-rung-thu.webp",
+    "group": "Xanh và ánh sáng",
+    "title": "Nắng xuyên rừng thu",
+    "cap": "Tia sáng rơi thành từng vệt.",
+    "credit": "Ảnh: Không rõ tác giả · CC0",
+    "creditUrl": "https://www.rawpixel.com/image/6028604/photo-image-light-public-domain-leaves"
+  },
+  {
+    "src": "images/xanh-02-loi-rung-nang.webp",
+    "group": "Xanh và ánh sáng",
+    "title": "Lối rừng ngập nắng",
+    "cap": "Con đường nhỏ dẫn vào chỗ sáng.",
+    "credit": "Ảnh: Không rõ tác giả · CC0",
+    "creditUrl": "https://www.rawpixel.com/image/6018685/photo-image-light-public-domain-leaves"
+  },
+  {
+    "src": "images/xanh-03-anh-sang-qua-tan-la.webp",
+    "group": "Xanh và ánh sáng",
+    "title": "Ánh sáng qua tán lá",
+    "cap": "Lá xanh lọc nắng thành màu vàng nhạt.",
+    "credit": "Ảnh: Không rõ tác giả · CC0",
+    "creditUrl": "https://www.rawpixel.com/image/6017667/photo-image-light-public-domain-leaves"
+  },
+  {
+    "src": "images/xanh-04-tia-nang-rong.jpg",
+    "group": "Xanh và ánh sáng",
+    "title": "Tia nắng rộng",
+    "cap": "Nắng bung ra giữa những thân cây.",
+    "credit": "Ảnh: Blake Verdoorn · CC0",
+    "creditUrl": "https://stocksnap.io/photo/sunrays-sunlight-3NJJ3EY8MM"
+  },
+  {
+    "src": "images/xanh-05-thong-trong-suong.jpg",
+    "group": "Xanh và ánh sáng",
+    "title": "Thông trong sương",
+    "cap": "Rừng thông mờ dần vào hơi nước.",
+    "credit": "Ảnh: Johannes Plenio · CC0",
+    "creditUrl": "https://stocksnap.io/photo/misty-morning-KPUOS5LKI1"
+  },
+  {
+    "src": "images/xanh-06-ho-nuoc-suong-mo.webp",
+    "group": "Xanh và ánh sáng",
+    "title": "Hồ nước sương mờ",
+    "cap": "Mặt hồ phẳng như tấm gương.",
+    "credit": "Ảnh: Sergeant Matt Hecht · CC0",
+    "creditUrl": "https://www.rawpixel.com/image/3583239/free-photo-image-lake-abies"
+  },
+  {
+    "src": "images/xanh-07-song-nuoc-hoang-hon.webp",
+    "group": "Xanh và ánh sáng",
+    "title": "Sông nước hoàng hôn",
+    "cap": "Ánh vàng tan dần trên mặt nước.",
+    "credit": "Ảnh: Không rõ tác giả · CC0",
+    "creditUrl": "https://www.rawpixel.com/image/5953637/free-public-domain-cc0-photo"
+  },
+  {
+    "src": "images/xanh-08-la-phong-bokeh.jpg",
+    "group": "Xanh và ánh sáng",
+    "title": "Lá phong mờ ảo",
+    "cap": "Một chiếc lá rõ nét giữa nền sáng mềm.",
+    "credit": "Ảnh: Nature's Beauty · CC0",
+    "creditUrl": "https://stocksnap.io/photo/maple-leaf-NF8XYQYAMW"
+  },
+  {
+    "src": "images/xanh-09-canh-dong-oai-huong.jpg",
+    "group": "Xanh và ánh sáng",
+    "title": "Cánh đồng oải hương",
+    "cap": "Tím ngát đến tận rặng cây.",
+    "credit": "Ảnh: Andrew Ridley · CC0",
+    "creditUrl": "https://stocksnap.io/photo/lavender-field-T5J75YI5H0"
+  },
+  {
+    "src": "images/xanh-10-oai-huong-trong-xanh.webp",
+    "group": "Xanh và ánh sáng",
+    "title": "Oải hương và mây trắng",
+    "cap": "Những bông tím vươn lên nền trời xanh.",
+    "credit": "Ảnh: Không rõ tác giả · CC0",
+    "creditUrl": "https://www.rawpixel.com/image/6035944/photo-image-background-flower-public-domain"
+  },
+  {
+    "src": "images/cham-01-mua-tren-cua-kinh.webp",
+    "group": "Nhịp sống chậm",
+    "title": "Mưa trên cửa kính",
+    "cap": "Từng giọt bám lại, thế giới nhòe đi.",
+    "credit": "Ảnh: Không rõ tác giả · CC0",
+    "creditUrl": "https://www.rawpixel.com/image/3298420/free-photo-image-water-droplets-rain-texture"
+  },
+  {
+    "src": "images/cham-02-mua-bokeh-vang.jpg",
+    "group": "Nhịp sống chậm",
+    "title": "Mưa và ánh vàng",
+    "cap": "Ánh đèn qua màn mưa thành những vòng sáng.",
+    "credit": "Ảnh: Guste Cibulskyte · CC0",
+    "creditUrl": "https://wordpress.org/photos/photo/16568ae38a/"
+  },
+  {
+    "src": "images/cham-03-giot-mua-macro.jpg",
+    "group": "Nhịp sống chậm",
+    "title": "Giọt mưa",
+    "cap": "Chỉ còn tiếng mưa và hơi thở.",
+    "credit": "Ảnh: AJ Montpetit · CC0",
+    "creditUrl": "https://stocksnap.io/photo/rain-drops-A3GM7T9ZDV"
+  },
+  {
+    "src": "images/cham-04-mua-xanh-la.jpg",
+    "group": "Nhịp sống chậm",
+    "title": "Mưa trên nền lá",
+    "cap": "Xanh mướt sau một cơn mưa.",
+    "credit": "Ảnh: Pawel Kadysz · CC0",
+    "creditUrl": "https://stocksnap.io/photo/raining-raindrops-3AKFOCTZEQ"
+  },
+  {
+    "src": "images/cham-05-tra-thao-moc.jpg",
+    "group": "Nhịp sống chậm",
+    "title": "Trà thảo mộc",
+    "cap": "Quế, hồi và một chút mật ong.",
+    "credit": "Ảnh: Holiday Scenes · CC0",
+    "creditUrl": "https://stocksnap.io/photo/holiday-table-GTDO1RYTPB"
+  },
+  {
+    "src": "images/cham-06-tra-sach-ben-cua-so.webp",
+    "group": "Nhịp sống chậm",
+    "title": "Trà và sách bên cửa sổ",
+    "cap": "Hơi trà bay lên trong nắng sớm.",
+    "credit": "Ảnh: Không rõ tác giả · CC0",
+    "creditUrl": "https://www.rawpixel.com/image/3237388/free-photo-image-tea-open-book-bed"
+  },
+  {
+    "src": "images/cham-07-ho-sang-som.jpg",
+    "group": "Nhịp sống chậm",
+    "title": "Hồ lúc sáng sớm",
+    "cap": "Sương còn trên mặt nước, vài con chim lặng lẽ.",
+    "credit": "Ảnh: Ian Livesey · CC0",
+    "creditUrl": "https://stocksnap.io/photo/lake-swans-Y8E6VWNPDP"
+  },
+  {
+    "src": "images/cham-08-ho-lieu-nang-chieu.jpg",
+    "group": "Nhịp sống chậm",
+    "title": "Hồ và hàng liễu",
+    "cap": "Nắng chiều rơi qua tán liễu.",
+    "credit": "Ảnh: Mike Moloney · CC0",
+    "creditUrl": "https://stocksnap.io/photo/river-landscape-FVPL0XV8RF"
+  },
+  {
+    "src": "images/cham-09-dong-lupin-nui-tuyet.jpg",
+    "group": "Nhịp sống chậm",
+    "title": "Lupin dưới chân núi tuyết",
+    "cap": "Tím, xanh và trắng xếp thành tầng.",
+    "credit": "Ảnh: Laura Aziz · CC0",
+    "creditUrl": "https://stocksnap.io/photo/lavender-field-MA1RNOBHJ6"
+  },
+  {
+    "src": "images/cham-10-hoa-sage-va-ong.jpg",
+    "group": "Nhịp sống chậm",
+    "title": "Hoa sage và chú ong",
+    "cap": "Một nhịp sống rất nhỏ, rất chậm.",
+    "credit": "Ảnh: Jeffrey Betts · CC0",
+    "creditUrl": "https://stocksnap.io/photo/lavender-field-R642Q1P0QG"
+  }
+];
+    const TRACKS = [
+      { src: "audio/dunes.mp3", title: "Dunes", by: "Andrewkn" },
+      { src: "audio/piano-nhe.mp3", title: "Relaxing Piano", by: "AngeloRizzo" },
+      { src: "audio/parallel-universe.mp3", title: "Parallel Universe", by: "Andrewkn" }
+    ];
+    const DURATION = 9000;
+
+    const stage = document.getElementById("stage");
+    const slidesBox = document.getElementById("slides");
+    const countEl = document.getElementById("count");
+    const groupEl = document.getElementById("groupName");
+    const titleEl = document.getElementById("slideTitle");
+    const capEl = document.getElementById("slideCap");
+    const creditEl = document.getElementById("slideCredit");
+    const barEl = document.getElementById("bar");
+    const playBtn = document.getElementById("play");
+    const musicBtn = document.getElementById("musicBtn");
+    const musicLabel = document.getElementById("musicLabel");
+    const trackBtn = document.getElementById("track");
+    const startCard = document.getElementById("startCard");
+    const live = document.getElementById("live");
+
+    const audio = document.getElementById("audio");
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let index = 0;
+    let elapsed = 0;
+    let last = 0;
+    let playing = false;
+    let musicOn = false;
+    let trackIndex = 0;
+    let started = false;
+
+    /* ---------- slides ---------- */
+
+    SLIDES.forEach((s, i) => {
+      const el = document.createElement("div");
+      el.className = "slide";
+      el.style.backgroundImage = `url("${s.src}")`;
+      const img = document.createElement("img");
+      img.src = s.src;
+      img.alt = `${s.title} — ${s.cap}`;
+      img.decoding = "async";
+      img.loading = i === 0 ? "eager" : "lazy";
+      el.appendChild(img);
+      slidesBox.appendChild(el);
+    });
+
+    const slideEls = [...slidesBox.children];
+
+    function preload(i) {
+      const s = SLIDES[(i + SLIDES.length) % SLIDES.length];
+      const im = new Image();
+      im.src = s.src;
+    }
+
+    function show(i, announce) {
+      index = (i + SLIDES.length) % SLIDES.length;
+      const s = SLIDES[index];
+      slideEls.forEach((el, n) => el.classList.toggle("is-active", n === index));
+      groupEl.textContent = s.group;
+      titleEl.textContent = s.title;
+      capEl.textContent = s.cap;
+      creditEl.textContent = s.credit;
+      creditEl.href = s.creditUrl || "#";
+      countEl.textContent = `${index + 1} / ${SLIDES.length}`;
+      elapsed = 0;
+      barEl.style.width = "0%";
+      preload(index + 1);
+      preload(index + 2);
+      if (announce) live.textContent = `${s.title}. Ảnh ${index + 1} trên ${SLIDES.length}.`;
+    }
+
+    function next() { show(index + 1, true); }
+    function prev() { show(index - 1, true); }
+
+    /* ---------- playback ---------- */
+
+    function setPlaying(on) {
+      playing = on;
+      stage.classList.toggle("paused", !on);
+      playBtn.textContent = on ? "❚❚" : "▶";
+      playBtn.setAttribute("aria-label", on ? "Tạm dừng" : "Tiếp tục");
+    }
+
+    function tick(t) {
+      if (playing && started) {
+        if (!last) last = t;
+        elapsed += t - last;
+        last = t;
+        barEl.style.width = Math.min(100, (elapsed / DURATION) * 100) + "%";
+        if (elapsed >= DURATION) next();
+      } else {
+        last = t;
+      }
+      requestAnimationFrame(tick);
+    }
+
+    function begin(withMusic) {
+      startCard.classList.add("is-gone");
+      started = true;
+      setPlaying(true);
+      if (withMusic) playMusic();
+      preload(index + 1);
+      preload(index + 2);
+    }
+
+    /* ---------- music ---------- */
+
+    function loadTrack(i, autoplay) {
+      trackIndex = (i + TRACKS.length) % TRACKS.length;
+      audio.src = TRACKS[trackIndex].src;
+      audio.load();
+      updateMusicLabel();
+      if (autoplay) playMusic();
+    }
+
+    function updateMusicLabel() {
+      const t = TRACKS[trackIndex];
+      musicLabel.textContent = musicOn ? `Nhạc: ${t.title}` : "Nhạc: tắt";
+      musicBtn.classList.toggle("is-on", musicOn);
+      musicBtn.setAttribute("aria-pressed", String(musicOn));
+      trackBtn.setAttribute("aria-label", `Đổi bản nhạc (đang là ${t.title} của ${t.by})`);
+    }
+
+    function fadeTo(target, ms = 1200) {
+      const startVol = audio.volume;
+      const t0 = performance.now();
+      (function step(now) {
+        const k = Math.min(1, (now - t0) / ms);
+        audio.volume = startVol + (target - startVol) * k;
+        if (k < 1 && !audio.paused) requestAnimationFrame(step);
+      })(t0);
+    }
+
+    function playMusic() {
+      if (!audio.src) loadTrack(trackIndex, false);
+      audio.volume = 0;
+      const p = audio.play();
+      if (p && p.then) {
+        p.then(() => {
+          musicOn = true;
+          updateMusicLabel();
+          fadeTo(0.45);
+        }).catch(() => {
+          musicOn = false;
+          updateMusicLabel();
+          musicLabel.textContent = "Nhấn để bật nhạc";
+        });
+      }
+    }
+
+    function pauseMusic() {
+      fadeTo(0, 400);
+      setTimeout(() => audio.pause(), 420);
+      musicOn = false;
+      updateMusicLabel();
+    }
+
+    function toggleMusic() {
+      if (audio.paused) playMusic(); else pauseMusic();
+    }
+
+    audio.addEventListener("ended", () => loadTrack(trackIndex + 1, true));
+    audio.addEventListener("play", () => { musicOn = true; updateMusicLabel(); });
+    audio.addEventListener("pause", () => { if (!audio.ended) { musicOn = false; updateMusicLabel(); } });
+
+    /* ---------- controls ---------- */
+
+    document.getElementById("startAll").addEventListener("click", () => begin(true));
+    document.getElementById("startMuted").addEventListener("click", () => begin(false));
+    document.getElementById("next").addEventListener("click", next);
+    document.getElementById("prev").addEventListener("click", prev);
+    playBtn.addEventListener("click", () => setPlaying(!playing));
+    musicBtn.addEventListener("click", toggleMusic);
+    trackBtn.addEventListener("click", () => loadTrack(trackIndex + 1, musicOn));
+
+    document.addEventListener("keydown", (e) => {
+      const k = e.key;
+      if (k === "ArrowRight") { next(); }
+      else if (k === "ArrowLeft") { prev(); }
+      else if (k === " ") { e.preventDefault(); setPlaying(!playing); }
+      else if (k === "m" || k === "M") { toggleMusic(); }
+      else if (k === "Escape") { location.href = "album.html"; }
+    });
+
+    let touchX = null;
+    stage.addEventListener("touchstart", (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+    stage.addEventListener("touchend", (e) => {
+      if (touchX === null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 45) (dx < 0 ? next : prev)();
+      touchX = null;
+    }, { passive: true });
+
+    // Tránh nhảy ảnh khi quay lại tab (rAF dừng khi tab bị ẩn).
+    document.addEventListener("visibilitychange", () => { last = 0; });
+
+    /* ---------- boot ---------- */
+
+    show(0, false);
+    updateMusicLabel();
+    requestAnimationFrame(tick);
+    if (reduced) document.body.classList.add("less-motion");
+  </script>
+</body>
+</html>

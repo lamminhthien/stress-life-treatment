@@ -42,3 +42,17 @@ Nguồn gốc mỗi ảnh được ghi bên dưới.
 - **Hồ và hàng liễu** — Mike Moloney · [nguồn](https://stocksnap.io/photo/river-landscape-FVPL0XV8RF) · `images/cham-08-ho-lieu-nang-chieu.jpg`
 - **Lupin dưới chân núi tuyết** — Laura Aziz · [nguồn](https://stocksnap.io/photo/lavender-field-MA1RNOBHJ6) · `images/cham-09-dong-lupin-nui-tuyet.jpg`
 - **Hoa sage và chú ong** — Jeffrey Betts · [nguồn](https://stocksnap.io/photo/lavender-field-R642Q1P0QG) · `images/cham-10-hoa-sage-va-ong.jpg`
+
+## Nhạc nền (trang trình chiếu)
+
+Ba bản nhạc dưới đây đều ở giấy phép **CC0 1.0** (phạm vi công cộng), tìm qua
+[Openverse](https://openverse.org), tải từ Freesound và lưu trong `audio/`:
+
+| Tệp | Bài | Tác giả | Nguồn |
+| --- | --- | --- | --- |
+| `audio/dunes.mp3` | Dunes | Andrewkn | https://freesound.org/people/Andrewkn/sounds/447511 |
+| `audio/piano-nhe.mp3` | Relaxing piano AR22-2_43 | AngeloRizzo | https://freesound.org/people/AngeloRizzo/sounds/717150 |
+| `audio/parallel-universe.mp3` | Parallel Universe | Andrewkn | https://freesound.org/people/Andrewkn/sounds/404458 |
+
+CC0 cho phép dùng, chỉnh sửa và phân phối lại mà không cần xin phép; phần ghi công
+này chỉ để bạn biết nguồn.

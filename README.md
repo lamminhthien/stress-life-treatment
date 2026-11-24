@@ -15,6 +15,8 @@ xem ảnh, câu nói "hãm phanh", âm nhạc và đọc sách.
   và nhịp đọc gợi ý
 - `music.html` — nghe riêng 3 bản nhạc CC0: play/pause, tua, âm lượng, chuyển bài mà
   vẫn giữ vị trí đang nghe
+- `hoan-lo.html` — công cụ "Hoãn lo": ghi suy nghĩ đang lặp, hẹn khung giờ lo và đếm
+  ngược tới giờ đó; danh sách lưu bằng `localStorage`, xem lại và đóng từng mục
 - `audio/` — 3 bản nhạc ambient/piano, giấy phép CC0
 - `images/` — 30 ảnh, giấy phép CC0 (nguồn ghi trong `CREDITS.md`)
 - `styles.css` — giao diện, responsive cho điện thoại

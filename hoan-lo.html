@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hoãn lo 10 phút — cất suy nghĩ lại, hẹn giờ rồi lo</title>
+  <meta name="description" content="Ghi vắn tắt suy nghĩ đang lặp, cất đi và hẹn một khung giờ cố định để lo. Danh sách chỉ lưu trên máy bạn, có nhắc khi tới giờ và chỗ ghi lại một dòng để đóng vòng lặp." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://lamminhthien.github.io/stress-life-treatment/hoan-lo.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hạ nhiệt" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta property="og:title" content="Hoãn lo 10 phút — cất suy nghĩ lại, hẹn giờ rồi lo" />
+  <meta property="og:description" content="Ghi vắn tắt suy nghĩ đang lặp, cất đi và hẹn một khung giờ cố định để lo. Danh sách chỉ lưu trên máy bạn, có nhắc khi tới giờ." />
+  <meta property="og:url" content="https://lamminhthien.github.io/stress-life-treatment/hoan-lo.html" />
+  <meta property="og:image" content="https://lamminhthien.github.io/stress-life-treatment/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Dấu chân trên bãi biển lúc chiều, phủ lớp tối nhẹ ở chân ảnh." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hoãn lo 10 phút — cất suy nghĩ lại, hẹn giờ rồi lo" />
+  <meta name="twitter:description" content="Ghi vắn tắt suy nghĩ đang lặp, cất đi và hẹn một khung giờ cố định để lo. Danh sách chỉ lưu trên máy bạn, có nhắc khi tới giờ." />
+  <meta name="twitter:image" content="https://lamminhthien.github.io/stress-life-treatment/og-image.png" />
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.className += " js";
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") d.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="album-page">
+  <a class="skip" href="#cat-di">Tới phần hoãn lo</a>
+
+  <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Chuyển sang giao diện tối" title="Giao diện sáng đang bật">
+    <span class="theme-icon" aria-hidden="true">☾</span>
+    <span class="theme-text">Tối</span>
+  </button>
+
+  <header class="album-hero">
+    <div class="wrap">
+      <a class="back" href="index.html">← Về trang chính</a>
+      <p class="eyebrow">Hoãn lo · 10 phút mỗi tối</p>
+      <h1>Cất suy nghĩ lại.<br /><em>Hẹn giờ rồi lo.</em></h1>
+      <p class="lede">
+        Cố bảo mình "đừng nghĩ nữa" thường không có tác dụng. Dễ hơn là ghi vắn tắt điều đang
+        lặp lại, cất nó vào một danh sách, rồi hẹn một khung giờ cố định trong ngày để lo.
+        Việc này biến lo âu lan man thành một việc có điểm dừng — và có lúc bắt đầu.
+      </p>
+      <nav class="jump" aria-label="Mục lục">
+        <a href="#cat-di">Ghi &amp; cất đi</a>
+        <a href="#gio-lo">Tới giờ thì làm gì</a>
+        <a href="#cach-dung">Cách dùng &amp; riêng tư</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="cat-di">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="num">10'</span>
+          <h2>Ghi một dòng, cất đi</h2>
+          <p class="sub">Mất chưa tới 30 giây — không cần viết hay, càng ngắn càng dễ nhớ</p>
+        </div>
+
+        <div class="worry-tool" data-worry>
+          <div class="worry-card">
+            <label class="worry-label" for="worry-text">Suy nghĩ đang lặp lại</label>
+            <textarea id="worry-text" rows="2" maxlength="160" autocomplete="off" placeholder="Ví dụ: sợ mai họp bị hỏi câu mình không biết trả lời."></textarea>
+
+            <div class="worry-row">
+              <label class="worry-field" for="worry-time">
+                <span>Khung giờ lo</span>
+                <input type="time" id="worry-time" value="20:00" />
+              </label>
+              <label class="worry-field" for="worry-minutes">
+                <span>Dài</span>
+                <select id="worry-minutes">
+                  <option value="5">5 phút</option>
+                  <option value="10" selected>10 phút</option>
+                  <option value="15">15 phút</option>
+                  <option value="20">20 phút</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="worry-actions">
+              <button class="btn" type="button" data-add>Cất đi, tối nay lo</button>
+              <button class="worry-mini worry-clear" type="button" data-clear>Xoá dữ liệu</button>
+            </div>
+
+            <p class="worry-countdown" role="timer" data-countdown aria-live="off"></p>
+            <p class="worry-status" role="status" aria-live="polite" data-status></p>
+
+            <div class="worry-due" data-due hidden>
+              <h3>Tới giờ lo rồi.</h3>
+              <p>
+                Mở danh sách bên dưới, xem từng mục một. Không cần giải quyết hết — chỉ cần
+                ghi lại một dòng rồi đóng mục đó lại.
+              </p>
+              <p class="worry-due-action">
+                <button class="btn btn-soft" type="button" data-review-all>Xem lại ngay</button>
+              </p>
+            </div>
+
+            <h3 class="worry-list-head">
+              Đang chờ lo
+              <span class="worry-list-count" data-count></span>
+            </h3>
+            <ul class="worry-list" data-list></ul>
+            <p class="worry-empty" data-empty>Chưa có gì đang chờ. Ghi một suy nghĩ đang lặp ở trên rồi cất đi.</p>
+
+            <div data-done-wrap hidden>
+              <h3 class="worry-list-head">Đã đóng</h3>
+              <ul class="worry-list" data-done-list></ul>
+            </div>
+
+            <p class="worry-hint">
+              Danh sách chỉ nằm trong trình duyệt này, trên máy bạn. Không có tài khoản,
+              không gửi lên máy chủ, không ai khác đọc được.
+            </p>
+            <p class="worry-hint">
+              Cách này dựa trên kỹ thuật "worry time" mà
+              <a href="https://www.nhsinform.scot/illnesses-and-conditions/mental-health/mental-health-self-help-guides/anxiety-self-help-guide" target="_blank" rel="noopener">NHS inform</a>
+              hướng dẫn: chọn một khung 10–15 phút cố định mỗi ngày, hoãn lo sang đó.
+            </p>
+          </div>
+        </div>
+
+        <noscript>
+          <p class="tip">
+            Phần ghi và nhắc giờ cần JavaScript. Phần hướng dẫn tĩnh bên dưới vẫn dùng được:
+            bạn có thể ghi ra giấy hoặc ghi chú trong điện thoại theo đúng năm bước.
+          </p>
+        </noscript>
+      </div>
+    </section>
+
+    <section class="section alt" id="gio-lo">
+      <div class="wrap grid">
+        <div class="section-head">
+          <span class="num">?</span>
+          <h2>Tới giờ thì làm gì</h2>
+          <p class="sub">Xem lại, không cần giải quyết hết</p>
+        </div>
+        <div class="section-body">
+          <p>
+            Khung giờ lo không phải lúc để tìm ra giải pháp cho mọi thứ. Nó là lúc để bạn
+            nhìn thẳng vào từng mục một, xem mục nào còn đáng lo và mục nào đã tự nhẹ đi.
+          </p>
+          <ol class="worry-steps">
+            <li>
+              <strong>Mở danh sách, đọc chậm từng mục</strong>
+              <p>Đọc thành tiếng nếu ở một mình. Nhiều mục sẽ thấy nhỏ hơn lúc nó vừa xuất hiện trong đầu.</p>
+            </li>
+            <li>
+              <strong>Hỏi: việc này mình kiểm soát được phần nào?</strong>
+              <p>Nếu có một việc làm được, ghi đúng một bước nhỏ. Nếu không có gì làm được ngay, đó là dấu hiệu để đóng mục lại.</p>
+            </li>
+            <li>
+              <strong>Hỏi: nếu mai mới biết thì sao?</strong>
+              <p>Câu này giúp tách "chưa biết" khỏi "chắc chắn xấu". Phần lớn chuyện chỉ cần chờ thêm thông tin.</p>
+            </li>
+            <li>
+              <strong>Ghi một dòng "giờ mình nghĩ sao" rồi đóng mục</strong>
+              <p>Một dòng là đủ. Đóng mục là cách nói với bộ não: việc này đã được xem xét, không cần nhắc lại nữa.</p>
+            </li>
+            <li>
+              <strong>Hết giờ thì dừng, làm việc khác</strong>
+              <p>Pha một ly nước, đi vài bước, hoặc <a href="index.html#tho">thở 30 giây</a>. Đừng để khung 10 phút kéo dài thành cả buổi tối.</p>
+            </li>
+          </ol>
+          <aside class="tip">
+            <strong>Hai câu hỏi mang theo</strong>
+            <p>
+              "Việc này mình kiểm soát được phần nào?" và "Nếu mai mới biết thì sao?" —
+              dùng được cả lúc đang lo giữa ngày, không cần đợi tới giờ hẹn.
+            </p>
+          </aside>
+          <p class="album-cta">
+            <a class="btn" href="hieu-lo-au.html">Hiểu vì sao đầu óc cứ nghĩ mãi →</a>
+            <a class="btn btn-soft" href="grounding.html">Neo lại 5-4-3-2-1</a>
+            <a class="btn btn-soft" href="nhat-ky.html">Ghi cảm xúc hôm nay</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cach-dung">
+      <div class="wrap grid">
+        <div class="section-head">
+          <span class="num">∞</span>
+          <h2>Cách dùng &amp; riêng tư</h2>
+          <p class="sub">Một khung giờ, một danh sách, không cần hoàn hảo</p>
+        </div>
+        <div class="section-body">
+          <ul class="cards">
+            <li class="card">
+              <span class="icon" aria-hidden="true">⏱️</span>
+              <h3>Cùng một giờ mỗi ngày</h3>
+              <p>Mặc định 20:00, dài 10 phút. Giữ cố định để não biết "chưa tới giờ thì chưa cần lo". Đổi giờ lúc nào cũng được, các mục đang chờ sẽ dời theo.</p>
+            </li>
+            <li class="card">
+              <span class="icon" aria-hidden="true">🔒</span>
+              <h3>Chỉ nằm trên máy bạn</h3>
+              <p>Lưu bằng <code>localStorage</code> của trình duyệt. Xoá dữ liệu trình duyệt là mất; nút "Xoá dữ liệu" cũng xoá sạch ngay.</p>
+            </li>
+            <li class="card">
+              <span class="icon" aria-hidden="true">🌙</span>
+              <h3>Đừng chọn sát giờ ngủ</h3>
+              <p>Để khung giờ lo cách giờ đi ngủ ít nhất một tiếng. Lo xong mà leo lên giường ngay thì dễ mang theo.</p>
+            </li>
+            <li class="card">
+              <span class="icon" aria-hidden="true">🫁</span>
+              <h3>Đang rất nặng?</h3>
+              <p>Hoãn lo giúp bớt bị kéo đi, nhưng không thay cho hỗ trợ. Nếu lo gần như mọi ngày, hãy xem <a href="hieu-lo-au.html#khi-nao">khi nào nên tìm hỗ trợ</a>.</p>
+            </li>
+          </ul>
+          <aside class="tip">
+            <strong>Đây không phải công cụ chẩn đoán</strong>
+            <p>
+              Trang này giúp bạn tự sắp xếp suy nghĩ, không đưa lời khuyên điều trị và không
+              thay cho tư vấn y khoa. Nếu nhiều ngày liền cảm thấy nặng, mất ngủ hoặc không
+              làm nổi việc thường ngày, hãy tìm người hỗ trợ chuyên môn.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="closing">Không phải mọi suy nghĩ đều cần trả lời ngay. Có cái chỉ cần một chỗ để nằm chờ.</p>
+      <p class="sign">stress-life-treatment · hoãn lo, lưu trên máy bạn</p>
+    </div>
+  </footer>
+
+  <script src="theme.js"></script>
+
+  <script>
+  (function () {
+    var root = document.querySelector("[data-worry]");
+    if (!root) return;
+
+    var KEY = "worry-postpone-v1";
+    var MAX_TEXT = 160;
+    var MAX_REVIEW = 200;
+
+    var textEl = root.querySelector("#worry-text");
+    var timeEl = root.querySelector("#worry-time");
+    var minutesEl = root.querySelector("#worry-minutes");
+    var addBtn = root.querySelector("[data-add]");
+    var clearBtn = root.querySelector("[data-clear]");
+    var countdownEl = root.querySelector("[data-countdown]");
+    var statusEl = root.querySelector("[data-status]");
+    var dueEl = root.querySelector("[data-due]");
+    var reviewAllBtn = root.querySelector("[data-review-all]");
+    var listEl = root.querySelector("[data-list]");
+    var emptyEl = root.querySelector("[data-empty]");
+    var countEl = root.querySelector("[data-count]");
+    var doneWrap = root.querySelector("[data-done-wrap]");
+    var doneListEl = root.querySelector("[data-done-list]");
+
+    var state = load();
+    var manualReview = false;
+    var announced = {};
+
+    function pad(n) { return n < 10 ? "0" + n : String(n); }
+
+    function validTime(t) {
+      return typeof t === "string" && /^([01]\d|2[0-3]):[0-5]\d$/.test(t);
+    }
+
+    function clampMinutes(m) {
+      m = Number(m);
+      return m === 5 || m === 10 || m === 15 || m === 20 ? m : 10;
+    }
+
+    function atTime(fromMs, time) {
+      var parts = time.split(":");
+      var d = new Date(fromMs);
+      d.setHours(Number(parts[0]), Number(parts[1]), 0, 0);
+      return d.getTime();
+    }
+
+    function nextWindow(fromMs, time) {
+      var today = atTime(fromMs, time);
+      if (today > fromMs) return today;
+      var tomorrow = new Date(fromMs);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      return atTime(tomorrow.getTime(), time);
+    }
+
+    function formatClock(ms) {
+      var d = new Date(ms);
+      return pad(d.getHours()) + ":" + pad(d.getMinutes());
+    }
+
+    function dayWord(ms) {
+      var d = new Date(ms);
+      var now = new Date();
+      var a = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+      var b = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      var diff = Math.round((a - b) / 86400000);
+      if (diff === 0) return "hôm nay";
+      if (diff === 1) return "mai";
+      return "ngày " + d.getDate() + "/" + (d.getMonth() + 1);
+    }
+
+    function humanGap(ms) {
+      var mins = Math.ceil(Math.max(0, ms) / 60000);
+      if (mins < 1) return "dưới 1 phút";
+      var h = Math.floor(mins / 60);
+      var m = mins % 60;
+      if (h <= 0) return m + " phút";
+      if (m === 0) return h + " giờ";
+      return h + " giờ " + m + " phút";
+    }
+
+    function load() {
+      var fallback = { time: "20:00", minutes: 10, items: [] };
+      try {
+        var raw = localStorage.getItem(KEY);
+        if (!raw) return fallback;
+        var data = JSON.parse(raw);
+        if (!data || typeof data !== "object") return fallback;
+
+        var out = {
+          time: validTime(data.time) ? data.time : "20:00",
+          minutes: clampMinutes(data.minutes),
+          items: []
+        };
+
+        if (Object.prototype.toString.call(data.items) === "[object Array]") {
+          data.items.forEach(function (it) {
+            if (!it || typeof it.text !== "string" || !it.text.trim()) return;
+            out.items.push({
+              id: String(it.id || ("w" + Math.random().toString(36).slice(2, 9))),
+              text: it.text.slice(0, MAX_TEXT),
+              createdAt: Number(it.createdAt) || Date.now(),
+              dueAt: Number(it.dueAt) || nextWindow(Date.now(), out.time),
+              review: typeof it.review === "string" ? it.review.slice(0, MAX_REVIEW) : "",
+              done: !!it.done,
+              doneAt: Number(it.doneAt) || null
+            });
+          });
+        }
+        return out;
+      } catch (e) {
+        return fallback;
+      }
+    }
+
+    function write() {
+      try {
+        localStorage.setItem(KEY, JSON.stringify(state));
+        return true;
+      } catch (e) {
+        statusEl.textContent = "Trình duyệt không cho lưu dữ liệu (chế độ riêng tư?). Danh sách này sẽ mất khi tải lại.";
+        return false;
+      }
+    }
+
+    function find(id) {
+      for (var i = 0; i < state.items.length; i++) {
+        if (state.items[i].id === id) return state.items[i];
+      }
+      return null;
+    }
+
+    function pending() {
+      return state.items.filter(function (i) { return !i.done; });
+    }
+
+    function duePending(now) {
+      return pending().filter(function (i) { return i.dueAt <= now; });
+    }
+
+    function collectReviews() {
+      var inputs = root.querySelectorAll("[data-review-id]");
+      for (var i = 0; i < inputs.length; i++) {
+        var item = find(inputs[i].getAttribute("data-review-id"));
+        if (item && !item.done) item.review = inputs[i].value.slice(0, MAX_REVIEW);
+      }
+    }
+
+    function reviewBlock(item) {
+      var box = document.createElement("div");
+      box.className = "worry-review";
+
+      var prompts = document.createElement("ul");
+      prompts.className = "worry-prompts";
+      ["Việc này mình kiểm soát được phần nào?", "Nếu mai mới biết thì sao?"].forEach(function (q) {
+        var li = document.createElement("li");
+        li.textContent = q;
+        prompts.appendChild(li);
+      });
+      box.appendChild(prompts);
+
+      var inputId = "review-" + item.id;
+      var label = document.createElement("label");
+      label.setAttribute("for", inputId);
+      label.textContent = "Giờ mình nghĩ sao? (một dòng)";
+
+      var input = document.createElement("input");
+      input.type = "text";
+      input.id = inputId;
+      input.maxLength = MAX_REVIEW;
+      input.autocomplete = "off";
+      input.value = item.review || "";
+      input.placeholder = "Ví dụ: chỉ cần chuẩn bị 3 ý, phần còn lại để tới lúc đó.";
+      input.setAttribute("data-review-id", item.id);
+
+      var closeBtn = document.createElement("button");
+      closeBtn.type = "button";
+      closeBtn.className = "worry-mini";
+      closeBtn.textContent = "Đóng mục này";
+      closeBtn.addEventListener("click", function () {
+        closeItem(item.id, input.value);
+      });
+
+      var actions = document.createElement("div");
+      actions.className = "worry-item-actions";
+      actions.appendChild(closeBtn);
+
+      box.appendChild(label);
+      box.appendChild(input);
+      box.appendChild(actions);
+      return box;
+    }
+
+    function itemNode(item, now) {
+      var li = document.createElement("li");
+      li.className = "worry-item" + (item.done ? " is-done" : "");
+
+      var text = document.createElement("p");
+      text.className = "worry-item-text";
+      text.textContent = item.text;
+      li.appendChild(text);
+
+      var meta = document.createElement("p");
+      meta.className = "worry-item-meta";
+      if (item.done) {
+        meta.textContent = "Đã đóng" +
+          (item.doneAt ? " lúc " + formatClock(item.doneAt) : "") +
+          " · cất lúc " + formatClock(item.createdAt);
+      } else if (item.dueAt <= now) {
+        meta.textContent = "Đến giờ lo · hẹn " + formatClock(item.dueAt) + " " + dayWord(item.dueAt);
+      } else {
+        meta.textContent = "Hẹn " + dayWord(item.dueAt) + " lúc " + formatClock(item.dueAt);
+      }
+      li.appendChild(meta);
+
+      if (item.done) {
+        if (item.review) {
+          var note = document.createElement("p");
+          note.className = "worry-review-note";
+          note.textContent = "“" + item.review + "”";
+          li.appendChild(note);
+        }
+      } else if (manualReview || item.dueAt <= now) {
+        li.appendChild(reviewBlock(item));
+      }
+
+      var actions = document.createElement("div");
+      actions.className = "worry-item-actions";
+      var del = document.createElement("button");
+      del.type = "button";
+      del.className = "worry-mini";
+      del.textContent = "Xoá mục này";
+      del.addEventListener("click", function () { deleteItem(item.id); });
+      actions.appendChild(del);
+      li.appendChild(actions);
+
+      return li;
+    }
+
+    function paintCountdown(now) {
+      var due = duePending(now);
+      if (due.length) {
+        countdownEl.textContent = "Đã tới giờ lo · " + due.length + " mục đang chờ bạn xem lại.";
+        return;
+      }
+      var pend = pending();
+      var target;
+      if (pend.length) {
+        target = pend.reduce(function (min, i) { return Math.min(min, i.dueAt); }, Infinity);
+        countdownEl.textContent = "Còn " + humanGap(target - now) + " tới " +
+          dayWord(target) + " lúc " + formatClock(target) + ".";
+      } else {
+        target = nextWindow(now, state.time);
+        countdownEl.textContent = "Chưa có gì đang chờ. Khung giờ lo kế tiếp: " +
+          dayWord(target) + " lúc " + formatClock(target) + " · " + state.minutes + " phút.";
+      }
+    }
+
+    function render() {
+      collectReviews();
+      var now = Date.now();
+      var pend = pending().slice().sort(function (a, b) {
+        return a.dueAt - b.dueAt || a.createdAt - b.createdAt;
+      });
+      var done = state.items.filter(function (i) { return i.done; })
+        .sort(function (a, b) { return (b.doneAt || 0) - (a.doneAt || 0); });
+
+      listEl.textContent = "";
+      pend.forEach(function (item) { listEl.appendChild(itemNode(item, now)); });
+
+      countEl.textContent = pend.length ? pend.length + " mục" : "";
+      emptyEl.hidden = pend.length > 0;
+
+      dueEl.hidden = duePending(now).length === 0;
+
+      doneListEl.textContent = "";
+      done.forEach(function (item) { doneListEl.appendChild(itemNode(item, now)); });
+      doneWrap.hidden = done.length === 0;
+
+      paintCountdown(now);
+    }
+
+    function addItem() {
+      var text = textEl.value.trim();
+      if (!text) {
+        statusEl.textContent = "Ghi một dòng trước đã — ngắn thôi, đủ để nhớ.";
+        textEl.focus();
+        return;
+      }
+      if (!validTime(timeEl.value)) {
+        statusEl.textContent = "Chọn một khung giờ hợp lệ, ví dụ 20:00.";
+        timeEl.focus();
+        return;
+      }
+
+      var now = Date.now();
+      state.time = timeEl.value;
+      state.minutes = clampMinutes(minutesEl.value);
+
+      var item = {
+        id: "w" + now + Math.random().toString(36).slice(2, 6),
+        text: text.slice(0, MAX_TEXT),
+        createdAt: now,
+        dueAt: nextWindow(now, state.time),
+        review: "",
+        done: false,
+        doneAt: null
+      };
+      state.items.push(item);
+      manualReview = false;
+      write();
+      textEl.value = "";
+      statusEl.textContent = "Đã cất. Hẹn " + dayWord(item.dueAt) + " lúc " +
+        formatClock(item.dueAt) + " — trong lúc chờ, quay lại việc đang làm.";
+      render();
+      textEl.focus();
+    }
+
+    function closeItem(id, review) {
+      var item = find(id);
+      if (!item || item.done) return;
+      item.review = String(review || "").trim().slice(0, MAX_REVIEW);
+      item.done = true;
+      item.doneAt = Date.now();
+      if (write()) {
+        statusEl.textContent = "Đã đóng mục này. Không cần nghĩ thêm cho tới khi nó quay lại.";
+      }
+      render();
+    }
+
+    function deleteItem(id) {
+      state.items = state.items.filter(function (i) { return i.id !== id; });
+      write();
+      statusEl.textContent = "Đã xoá mục này khỏi danh sách trên máy.";
+      render();
+    }
+
+    function syncSettings() {
+      if (!validTime(timeEl.value)) return;
+      state.time = timeEl.value;
+      state.minutes = clampMinutes(minutesEl.value);
+      var now = Date.now();
+      state.items.forEach(function (item) {
+        if (!item.done) item.dueAt = nextWindow(now, state.time);
+      });
+      write();
+      statusEl.textContent = "Khung giờ lo: " + state.time + " · " + state.minutes +
+        " phút. Các mục đang chờ dời theo.";
+      render();
+    }
+
+    function tick() {
+      var now = Date.now();
+      paintCountdown(now);
+
+      var due = duePending(now);
+      var fresh = due.filter(function (i) { return !announced[i.id]; });
+      if (fresh.length) {
+        fresh.forEach(function (i) { announced[i.id] = true; });
+        statusEl.textContent = "Tới giờ lo. " + due.length +
+          " mục đang chờ — mở danh sách để xem lại từng mục.";
+        render();
+      }
+      dueEl.hidden = due.length === 0;
+    }
+
+    addBtn.addEventListener("click", addItem);
+
+    textEl.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        addItem();
+      }
+    });
+
+    clearBtn.addEventListener("click", function () {
+      if (!window.confirm("Xoá toàn bộ danh sách đang chờ lo trên máy này? Không thể hoàn tác.")) return;
+      state.items = [];
+      manualReview = false;
+      write();
+      statusEl.textContent = "Đã xoá toàn bộ danh sách trên máy này.";
+      render();
+    });
+
+    reviewAllBtn.addEventListener("click", function () {
+      manualReview = true;
+      statusEl.textContent = "Đang mở phần xem lại. Ghi một dòng rồi đóng từng mục.";
+      render();
+    });
+
+    timeEl.addEventListener("change", syncSettings);
+    minutesEl.addEventListener("change", syncSettings);
+
+    timeEl.value = state.time;
+    minutesEl.value = String(state.minutes);
+
+    duePending(Date.now()).forEach(function (i) { announced[i.id] = true; });
+    render();
+    setInterval(tick, 1000);
+
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) tick();
+    });
+  })();
+  </script>
+</body>
+</html>

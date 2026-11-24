@@ -217,54 +217,7 @@
 
   <script src="theme.js"></script>
 
-  <script>
-  (function () {
-    var readBtn = document.querySelector("[data-read-text]");
-    if (!readBtn) return;
-    var synth = window.speechSynthesis;
-    if (!synth) { readBtn.disabled = true; readBtn.textContent = "Trình duyệt không hỗ trợ đọc"; return; }
-    var reading = false;
-    var token = 0;
-    function pageText() {
-      var main = document.querySelector("main") || document.body;
-      var clone = main.cloneNode(true);
-      return (clone.textContent || "").replace(/\s+/g, " ").trim();
-    }
-    function stopRead() {
-      token += 1;
-      synth.cancel();
-      reading = false;
-      readBtn.textContent = "Đọc văn bản";
-      readBtn.setAttribute("aria-pressed", "false");
-    }
-    readBtn.addEventListener("click", function () {
-      if (reading) { stopRead(); return; }
-      var text = pageText();
-      if (!text) return;
-      reading = true;
-      readBtn.textContent = "Dừng đọc";
-      readBtn.setAttribute("aria-pressed", "true");
-      var myToken = ++token;
-      var chunks = text.match(/[^.!?。]+[.!?。]?/g) || [text];
-      function speakNext(i) {
-        if (myToken !== token || !reading) return;
-        if (i >= chunks.length) { stopRead(); return; }
-        var chunk = (chunks[i] || "").trim();
-        if (!chunk) { speakNext(i + 1); return; }
-        var u = new SpeechSynthesisUtterance(chunk);
-        u.lang = "vi-VN";
-        u.rate = 0.9;
-        u.pitch = 0.95;
-        u.onend = function () { if (myToken === token && reading) speakNext(i + 1); };
-        u.onerror = function () { if (myToken === token) stopRead(); };
-        synth.speak(u);
-      }
-      synth.cancel();
-      setTimeout(function () { if (myToken === token && reading) speakNext(0); }, 50);
-    });
-    document.addEventListener("visibilitychange", function () { if (document.hidden && reading) stopRead(); });
-    window.addEventListener("beforeunload", function () { synth.cancel(); });
-  })();
-  </script>
+  
+  <script src="read-text.js"></script>
 </body>
 </html>

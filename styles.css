@@ -1234,3 +1234,60 @@ body.gallery-page {
 @media (prefers-reduced-motion: reduce) {
   .theme-toggle, .footer { transition: none; }
 }
+
+/* ---------- Trang danh sách sách ---------- */
+
+.books {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.7rem, 1.8vw, 1.1rem);
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.35rem 1.3rem;
+  box-shadow: var(--shadow);
+}
+
+.book h3 {
+  font-family: "Lora", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  margin: 0 0 0.2rem;
+}
+
+.book .book-by {
+  margin: 0 0 0.7rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.book p {
+  margin: 0 0 0.8rem;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.book .book-pace {
+  margin: auto 0 0;
+  padding-top: 0.7rem;
+  border-top: 1px dashed var(--line);
+  font-size: 0.76rem;
+  color: var(--accent-warm);
+}
+
+@media (max-width: 760px) {
+  .books { grid-template-columns: 1fr; }
+}

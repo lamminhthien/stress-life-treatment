@@ -10,6 +10,9 @@ xem ảnh, câu nói "hãm phanh", âm nhạc và đọc sách.
 - `gallery.html` — chế độ trình chiếu toàn màn hình, chạy ảnh cùng nhạc nền
 - `listen.html` — nghe thay vì đọc: 30 câu nói, máy đọc bằng giọng có sẵn trong máy
   (Web Speech API, miễn phí, không cần mạng), kèm danh sách nguồn nghe online free
+- `books.html` — danh sách 15 đầu sách cụ thể theo 3 nhóm: tản văn nhẹ, truyện ngắn
+  slice-of-life, tâm lý cảm xúc dễ hiểu; mỗi cuốn có ghi chú vì sao hợp lúc căng thẳng
+  và nhịp đọc gợi ý
 - `audio/` — 3 bản nhạc ambient/piano, giấy phép CC0
 - `images/` — 30 ảnh, giấy phép CC0 (nguồn ghi trong `CREDITS.md`)
 - `styles.css` — giao diện, responsive cho điện thoại
@@ -32,6 +35,12 @@ Trang được phục vụ bằng GitHub Pages từ nhánh `main`, thư mục g�
 
 30 ảnh trong album được tìm qua [Openverse](https://openverse.org), đều ở giấy phép
 CC0 1.0 (phạm vi công cộng). Danh sách tác giả và link nguồn: [`CREDITS.md`](CREDITS.md).
+
+## Danh sách sách
+
+`books.html` chia 15 đầu sách theo đúng 3 nhóm ở mục 04 của trang chủ. Mỗi cuốn ghi
+tên, tác giả, 1–2 câu vì sao hợp lúc mệt và nhịp đọc (số trang/độ dài ước lượng).
+Không có link mua sách — chỉ là danh sách để chọn.
 
 ## Nghe thay vì đọc
 

@@ -42,6 +42,7 @@
         khoảng lặng tái tạo năng lượng, để kéo nhịp thở và tâm trí về trạng thái cân bằng.
       </p>
       <nav class="jump" aria-label="Mục lục">
+        <a href="#tho">Thở 30 giây</a>
         <a href="#anh">01 · Ảnh</a>
         <a href="#cau-noi">02 · Câu nói</a>
         <a href="#nhac">03 · Âm nhạc</a>
@@ -56,6 +57,42 @@
   </header>
 
   <main id="main">
+    <section id="tho" class="section breath-section">
+      <div class="wrap">
+        <div class="breath-card" data-breath>
+          <div class="breath-copy">
+            <span class="num">00</span>
+            <h2>Thở 30 giây trước khi làm gì tiếp</h2>
+            <p>
+              Không cần ngồi thiền. Chỉ cần một vòng thở dài hơn bình thường: hít 4 giây,
+              giữ 4, thở ra 6. Thở ra dài hơn hít vào là tín hiệu "an toàn" gửi xuống cơ thể.
+            </p>
+            <p class="breath-hint">
+              Làm hai vòng là khoảng 28 giây — đủ để nhịp tim chậm lại một chút trước khi
+              trả lời tin nhắn hay mở cuộc họp.
+            </p>
+          </div>
+
+          <div class="breath-stage">
+            <div class="breath-circle" data-breath-circle data-phase="rest" aria-hidden="true">
+              <span class="breath-word" data-breath-word>Bắt đầu</span>
+              <span class="breath-count" data-breath-count>30</span>
+            </div>
+            <p class="breath-phase" data-breath-phase role="status" aria-live="polite">
+              Nhịp 4 – 4 – 6. Bấm bắt đầu khi bạn đã ngồi thoải mái.
+            </p>
+            <div class="breath-actions">
+              <button class="btn" type="button" data-breath-start>Bắt đầu thở</button>
+              <button class="btn btn-soft" type="button" data-breath-stop disabled>Dừng</button>
+            </div>
+            <p class="breath-fallback">
+              Không dùng được nút? Cứ đếm trong đầu: hít 4 — giữ 4 — thở 6, hai lần là đủ.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="anh" class="section">
       <div class="wrap grid">
         <div class="section-head">
@@ -85,7 +122,7 @@
             <strong>Mẹo dùng nhanh</strong>
             <p>
               Lưu sẵn một album riêng tên <em>"Reset"</em> trên điện thoại; mỗi khi thấy bực bội,
-              mở xem 3–5 ảnh và thở chậm 30 giây trước khi phản hồi bất cứ ai.
+              mở xem 3–5 ảnh và <a href="#tho">thở chậm 30 giây</a> trước khi phản hồi bất cứ ai.
             </p>
           </aside>
           <p class="album-cta">
@@ -246,5 +283,96 @@
   </footer>
 
   <script src="theme.js"></script>
+
+  <script>
+  (function () {
+    var root = document.querySelector("[data-breath]");
+    if (!root) return;
+
+    var circle = root.querySelector("[data-breath-circle]");
+    var wordEl = root.querySelector("[data-breath-word]");
+    var countEl = root.querySelector("[data-breath-count]");
+    var phaseEl = root.querySelector("[data-breath-phase]");
+    var startBtn = root.querySelector("[data-breath-start]");
+    var stopBtn = root.querySelector("[data-breath-stop]");
+
+    var CYCLE = [
+      { key: "in", word: "Hít vào", seconds: 4 },
+      { key: "hold", word: "Giữ", seconds: 4 },
+      { key: "out", word: "Thở ra", seconds: 6 }
+    ];
+    var TOTAL = 30;
+
+    var elapsed = 0;
+    var timer = null;
+    var lastKey = "";
+
+    function phaseAt(t) {
+      var cycle = 14;
+      var at = t % cycle;
+      if (at < 4) return { index: 0, left: 4 - at };
+      if (at < 8) return { index: 1, left: 8 - at };
+      return { index: 2, left: 14 - at };
+    }
+
+    function render() {
+      var left = Math.max(0, TOTAL - elapsed);
+      countEl.textContent = String(left);
+      var at = phaseAt(elapsed);
+      var phase = CYCLE[at.index];
+      wordEl.textContent = phase.word;
+      circle.setAttribute("data-phase", left === 0 ? "done" : phase.key);
+      if (phase.key !== lastKey) {
+        phaseEl.textContent = phase.word + " " + phase.seconds + " giây.";
+        lastKey = phase.key;
+      }
+    }
+
+    function stop(announce) {
+      if (timer) clearInterval(timer);
+      timer = null;
+      startBtn.disabled = false;
+      stopBtn.disabled = true;
+      startBtn.textContent = elapsed > 0 && elapsed < TOTAL ? "Tiếp tục" : "Bắt đầu thở";
+      if (announce) {
+        phaseEl.textContent = "Đã dừng ở giây thứ " + elapsed + ". Bấm tiếp tục khi sẵn lòng.";
+        wordEl.textContent = "Tạm dừng";
+        circle.setAttribute("data-phase", "rest");
+      }
+    }
+
+    function finish() {
+      if (timer) clearInterval(timer);
+      timer = null;
+      wordEl.textContent = "Xong";
+      countEl.textContent = "0";
+      circle.setAttribute("data-phase", "done");
+      phaseEl.textContent = "Đủ 30 giây. Vai hạ xuống một chút là được, không cần thêm.";
+      startBtn.disabled = false;
+      stopBtn.disabled = true;
+      startBtn.textContent = "Làm lại 30 giây";
+    }
+
+    function start() {
+      if (elapsed >= TOTAL) elapsed = 0;
+      startBtn.disabled = true;
+      stopBtn.disabled = false;
+      lastKey = "";
+      render();
+      timer = setInterval(function () {
+        elapsed += 1;
+        if (elapsed >= TOTAL) { elapsed = TOTAL; render(); finish(); return; }
+        render();
+      }, 1000);
+    }
+
+    startBtn.addEventListener("click", start);
+    stopBtn.addEventListener("click", function () { stop(true); });
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden && timer) stop(true);
+    });
+  })();
+  </script>
 </body>
 </html>

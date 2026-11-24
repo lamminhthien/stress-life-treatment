@@ -55,6 +55,13 @@ tiếng Việt, trang hiện hướng dẫn cài trên Android/iPhone.
 Cuối trang có sẵn vài nguồn nghe miễn phí (playlist YouTube nhạc thiền, kênh
 Fonos — Tự Chữa Lành, podcast Minh Niệm và Viết Chữa Lành trên Spotify).
 
+## Khối thở 30 giây
+
+Đầu trang chủ có khối `#tho` hướng dẫn nhịp 4 – 4 – 6 và một vòng tròn co giãn theo nhịp:
+hít 4 giây, giữ 4, thở ra 6, chạy đủ 30 giây (khoảng hai vòng). Đếm ngược và nhịp hiện
+thành chữ nên vẫn dùng được khi bật `prefers-reduced-motion` (khi đó vòng tròn không co
+giãn, chỉ đổi trạng thái). Chuyển sang tab khác thì đồng hồ tự dừng để không đếm lệch.
+
 ## Nghe nhạc riêng
 
 `music.html` phát trực tiếp 3 bản trong `audio/` mà không cần bật trình chiếu. Mỗi bản

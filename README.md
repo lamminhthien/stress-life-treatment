@@ -55,6 +55,14 @@ tiếng Việt, trang hiện hướng dẫn cài trên Android/iPhone.
 Cuối trang có sẵn vài nguồn nghe miễn phí (playlist YouTube nhạc thiền, kênh
 Fonos — Tự Chữa Lành, podcast Minh Niệm và Viết Chữa Lành trên Spotify).
 
+## Chọn nhanh theo mức độ
+
+Mục `#chon-nhanh` có 3 nút lớn (Hơi bực / Căng cứng / Rối bời cuối ngày). Bấm một nút
+sẽ chèn đúng một gợi ý từ `<template>` tương ứng kèm nút dẫn thẳng tới khối thở, trang
+nghe nhạc, trình chiếu hoặc danh sách sách. Nút dùng `aria-pressed`, kết quả nằm trong
+vùng `aria-live="polite"`. Bảng tĩnh 3 dòng vẫn còn trong DOM và chỉ ẩn khi có JS
+(`.js .table-fallback`) nên không có script vẫn đọc được.
+
 ## Khối thở 30 giây
 
 Đầu trang chủ có khối `#tho` hướng dẫn nhịp 4 – 4 – 6 và một vòng tròn co giãn theo nhịp:

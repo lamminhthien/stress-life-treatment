@@ -239,7 +239,72 @@
           <span class="num">∞</span>
           <h2>Bảng chọn nhanh theo mức độ "nóng"</h2>
         </div>
-        <div class="table-scroll">
+
+        <div class="picker" data-picker>
+          <p class="picker-q" id="picker-q">Giờ bạn đang ở mức nào?</p>
+          <div class="picker-btns" role="group" aria-labelledby="picker-q">
+            <button class="pick" type="button" data-level="low" aria-pressed="false">
+              <span class="dot low" aria-hidden="true"></span>
+              <span class="pick-label">Hơi bực</span>
+              <span class="pick-sub">bắt đầu thấy khó chịu</span>
+            </button>
+            <button class="pick" type="button" data-level="mid" aria-pressed="false">
+              <span class="dot mid" aria-hidden="true"></span>
+              <span class="pick-label">Căng cứng</span>
+              <span class="pick-sub">mệt mỏi tích tụ</span>
+            </button>
+            <button class="pick" type="button" data-level="high" aria-pressed="false">
+              <span class="dot high" aria-hidden="true"></span>
+              <span class="pick-label">Rối bời cuối ngày</span>
+              <span class="pick-sub">mọi thứ đến cùng lúc</span>
+            </button>
+          </div>
+
+          <div class="picker-result" data-picker-result aria-live="polite">
+            <p class="picker-placeholder">Bấm một mức để nhận đúng một việc nên làm ngay — không phải cả danh sách.</p>
+          </div>
+        </div>
+
+        <template data-level-result="low">
+          <p class="picker-kicker">Mức 1 · hơi bực</p>
+          <h3>Thở 30 giây rồi hẵng trả lời</h3>
+          <p>
+            Cáu thường bùng lên trong khoảng 30 giây đầu. Đừng gõ tin nhắn vội —
+            hít 4, giữ 4, thở 6 một vòng, rồi xem câu trả lời của mình có còn cần thiết không.
+          </p>
+          <p class="album-cta">
+            <a class="btn" href="#tho">Thở 30 giây ngay →</a>
+            <a class="btn btn-soft" href="listen.html">Nghe một câu "hãm phanh"</a>
+          </p>
+        </template>
+
+        <template data-level-result="mid">
+          <p class="picker-kicker">Mức 2 · căng cứng</p>
+          <h3>Đổi khung hình cho mắt và tai</h3>
+          <p>
+            Khi đầu óc đã mệt, đọc thêm chữ chỉ làm nặng hơn. Bật nhạc không lời,
+            để mắt nhìn thứ có không gian mở — 2 phút là đủ để nhịp thở xuống.
+          </p>
+          <p class="album-cta">
+            <a class="btn" href="music.html">Nghe một bản CC0 →</a>
+            <a class="btn btn-soft" href="gallery.html">Xem trình chiếu ảnh + nhạc</a>
+          </p>
+        </template>
+
+        <template data-level-result="high">
+          <p class="picker-kicker">Mức 3 · rối bời cuối ngày</p>
+          <h3>Đọc vài trang, không cần hết chương</h3>
+          <p>
+            Đừng chọn sách dày hay sách kỹ năng lúc này. Mở một cuốn tản văn, đọc
+            đúng ba trang, gấp lại. Mục tiêu chỉ là tách khỏi công việc, không phải học gì.
+          </p>
+          <p class="album-cta">
+            <a class="btn" href="books.html">Chọn một cuốn mỏng →</a>
+            <a class="btn btn-soft" href="#tho">Thở 30 giây trước đã</a>
+          </p>
+        </template>
+
+        <div class="table-scroll table-fallback">
           <table>
             <thead>
               <tr>
@@ -283,6 +348,33 @@
   </footer>
 
   <script src="theme.js"></script>
+
+  <script>
+  (function () {
+    var picker = document.querySelector("[data-picker]");
+    if (!picker) return;
+
+    var result = picker.querySelector("[data-picker-result]");
+    var buttons = Array.prototype.slice.call(picker.querySelectorAll("[data-level]"));
+
+    function choose(button) {
+      var level = button.getAttribute("data-level");
+      var template = document.querySelector('[data-level-result="' + level + '"]');
+      if (!template) return;
+
+      buttons.forEach(function (item) {
+        item.setAttribute("aria-pressed", String(item === button));
+      });
+
+      result.textContent = "";
+      result.appendChild(template.content.cloneNode(true));
+    }
+
+    buttons.forEach(function (button) {
+      button.addEventListener("click", function () { choose(button); });
+    });
+  })();
+  </script>
 
   <script>
   (function () {

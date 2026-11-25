@@ -2631,3 +2631,156 @@ body.gallery-page {
 @media (max-width: 640px) {
   .ask-split { grid-template-columns: 1fr; }
 }
+
+/* ---------- Âm thanh thiên nhiên (am-thanh page) ---------- */
+
+.sound-tool { display: none; }
+.js .sound-tool { display: block; }
+
+.sound-panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(1.25rem, 3.5vw, 2rem);
+}
+
+.sound-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem 1.2rem;
+}
+
+.sound-toggle {
+  border: 1px solid transparent;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.sound-status {
+  flex: 1 1 16rem;
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.sound-layers {
+  list-style: none;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.sound-layer {
+  display: grid;
+  grid-template-columns: minmax(9rem, 12rem) minmax(0, 1fr) 3rem;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.sound-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.92rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.sound-switch input {
+  width: 1.05rem;
+  height: 1.05rem;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.sound-layer input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.sound-layer input[type="range"]:focus-visible,
+.sound-switch input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.sound-pct {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.sound-timer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.7rem;
+  margin-top: 1.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px dashed var(--line);
+}
+
+.sound-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
+}
+
+.sound-field select {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.sound-field select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.sound-timer .btn {
+  border: 1px solid transparent;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.sound-timer .btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+  transform: none;
+}
+
+.sound-countdown {
+  flex: 1 1 100%;
+  margin: 0.2rem 0 0;
+  font-family: "Lora", Georgia, serif;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.sound-note {
+  margin: 1rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 560px) {
+  .sound-layer { grid-template-columns: minmax(0, 1fr) 3rem; }
+  .sound-layer input[type="range"] { grid-column: 1 / -1; }
+  .sound-timer .btn { flex: 1 1 100%; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sound-layer input[type="range"] { transition: none; }
+}

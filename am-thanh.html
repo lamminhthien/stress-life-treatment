@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Âm thanh thiên nhiên — mưa, sóng, suối tự tạo trong trình duyệt</title>
+  <meta name="description" content="Trộn mưa, sóng biển, suối, tiếng ồn trắng và nâu ngay trong trình duyệt. Chỉnh âm lượng từng lớp, hẹn giờ tắt 10–60 phút, chạy offline và không gửi dữ liệu đi đâu." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://lamminhthien.github.io/stress-life-treatment/am-thanh.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hạ nhiệt" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta property="og:title" content="Âm thanh thiên nhiên — mưa, sóng, suối tự tạo trong trình duyệt" />
+  <meta property="og:description" content="Trộn mưa, sóng biển, suối, tiếng ồn trắng và nâu, hẹn giờ tắt 10–60 phút — chạy offline, không gửi dữ liệu đi đâu." />
+  <meta property="og:url" content="https://lamminhthien.github.io/stress-life-treatment/am-thanh.html" />
+  <meta property="og:image" content="https://lamminhthien.github.io/stress-life-treatment/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Dấu chân trên bãi biển lúc chiều, phủ lớp tối nhẹ ở chân ảnh." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Âm thanh thiên nhiên — mưa, sóng, suối tự tạo trong trình duyệt" />
+  <meta name="twitter:description" content="Trộn mưa, sóng biển, suối, tiếng ồn trắng và nâu, hẹn giờ tắt 10–60 phút — chạy offline." />
+  <meta name="twitter:image" content="https://lamminhthien.github.io/stress-life-treatment/og-image.png" />
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.className += " js";
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") d.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="album-page">
+  <a class="skip" href="#nghe">Tới phần trộn âm thanh</a>
+
+  <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Chuyển sang giao diện tối" title="Giao diện sáng đang bật">
+    <span class="theme-icon" aria-hidden="true">☾</span>
+    <span class="theme-text">Tối</span>
+  </button>
+
+  <header class="album-hero">
+    <div class="wrap">
+      <a class="back" href="index.html">← Về trang chính</a>
+      <p class="eyebrow">Âm thanh · tự tạo</p>
+      <h1>Mưa, sóng và suối.<br /><em>Tự tạo ngay trong máy.</em></h1>
+      <p class="lede">
+        Không cần tải tệp nào, không cần mạng: trình duyệt tự tạo tiếng mưa, sóng biển, suối
+        và tiếng ồn nền, rồi trộn theo ý bạn. Bật một lớp để ngủ, hoặc trộn vài lớp cho dễ
+        tập trung — hẹn giờ tắt để không phải mở mắt lúc đã buồn ngủ.
+      </p>
+      <nav class="jump" aria-label="Mục lục">
+        <a href="#nghe">Trộn âm thanh</a>
+        <a href="#cach-dung">Cách dùng &amp; riêng tư</a>
+        <a href="music.html">3 bản nhạc CC0</a>
+        <a href="index.html#chon-nhanh">Chọn theo mức căng thẳng</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="nghe">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="num">∞</span>
+          <h2>Bảng trộn âm thanh</h2>
+          <p class="sub">Bật lớp nào nghe lớp đó — trộn bao nhiêu lớp cũng được</p>
+        </div>
+
+        <figure class="minh-hoa">
+          <img src="images/cham-01-mua-tren-cua-kinh.webp" alt="Những giọt mưa đọng trên mặt kính, phông nền mờ" width="960" height="640" loading="lazy" decoding="async" />
+          <figcaption>Tiếng mưa đều đặn che bớt những tiếng động giật cục xung quanh.</figcaption>
+        </figure>
+
+        <div class="sound-tool" data-sound>
+          <div class="sound-panel">
+            <div class="sound-top">
+              <button class="btn sound-toggle" type="button" data-sound-toggle aria-pressed="false">▶ Bắt đầu nghe</button>
+              <p class="sound-status" role="status" aria-live="polite" data-sound-status>
+                Chọn lớp bên dưới rồi bấm bắt đầu. Âm thanh chỉ phát sau khi bạn bấm.
+              </p>
+            </div>
+
+            <ul class="sound-layers">
+              <li class="sound-layer">
+                <label class="sound-switch">
+                  <input type="checkbox" data-layer-on="rain" checked />
+                  <span>Mưa</span>
+                </label>
+                <input type="range" min="0" max="100" step="1" value="45" data-layer-vol="rain" aria-label="Âm lượng mưa" />
+                <span class="sound-pct" data-layer-pct="rain">45%</span>
+              </li>
+              <li class="sound-layer">
+                <label class="sound-switch">
+                  <input type="checkbox" data-layer-on="ocean" />
+                  <span>Sóng biển</span>
+                </label>
+                <input type="range" min="0" max="100" step="1" value="55" data-layer-vol="ocean" aria-label="Âm lượng sóng biển" />
+                <span class="sound-pct" data-layer-pct="ocean">55%</span>
+              </li>
+              <li class="sound-layer">
+                <label class="sound-switch">
+                  <input type="checkbox" data-layer-on="stream" />
+                  <span>Suối</span>
+                </label>
+                <input type="range" min="0" max="100" step="1" value="50" data-layer-vol="stream" aria-label="Âm lượng suối" />
+                <span class="sound-pct" data-layer-pct="stream">50%</span>
+              </li>
+              <li class="sound-layer">
+                <label class="sound-switch">
+                  <input type="checkbox" data-layer-on="white" />
+                  <span>Tiếng ồn trắng</span>
+                </label>
+                <input type="range" min="0" max="100" step="1" value="35" data-layer-vol="white" aria-label="Âm lượng tiếng ồn trắng" />
+                <span class="sound-pct" data-layer-pct="white">35%</span>
+              </li>
+              <li class="sound-layer">
+                <label class="sound-switch">
+                  <input type="checkbox" data-layer-on="brown" />
+                  <span>Tiếng ồn nâu</span>
+                </label>
+                <input type="range" min="0" max="100" step="1" value="45" data-layer-vol="brown" aria-label="Âm lượng tiếng ồn nâu" />
+                <span class="sound-pct" data-layer-pct="brown">45%</span>
+              </li>
+            </ul>
+
+            <div class="sound-timer">
+              <label class="sound-field" for="sound-minutes">
+                <span>Tắt sau</span>
+                <select id="sound-minutes" data-sound-minutes>
+                  <option value="10">10 phút</option>
+                  <option value="20" selected>20 phút</option>
+                  <option value="30">30 phút</option>
+                  <option value="45">45 phút</option>
+                  <option value="60">60 phút</option>
+                </select>
+              </label>
+              <button class="btn" type="button" data-sound-timer>Hẹn giờ tắt</button>
+              <button class="btn btn-soft" type="button" data-sound-cancel disabled>Huỷ hẹn giờ</button>
+              <p class="sound-countdown" role="timer" aria-live="off" data-sound-countdown>Chưa hẹn giờ.</p>
+            </div>
+
+            <p class="sound-note">
+              Tiếng ồn trắng là dải âm đều ở mọi tần số; tiếng ồn nâu trầm hơn, giống tiếng
+              thác nước ở xa. Mỗi lớp được tạo tại máy bạn bằng Web Audio — không có tệp âm
+              thanh nào được tải về.
+            </p>
+          </div>
+        </div>
+
+        <noscript>
+          <p class="tip">
+            Phần tạo và trộn âm thanh cần JavaScript. Bạn vẫn có thể nghe 3 bản nhạc CC0 có sẵn ở
+            <a href="music.html">trang Nghe nhạc</a>, hoặc mở sẵn video tiếng mưa trên máy khi
+            không có mạng.
+          </p>
+        </noscript>
+      </div>
+    </section>
+
+    <section class="section alt" id="cach-dung">
+      <div class="wrap grid">
+        <div class="section-head">
+          <span class="num">?</span>
+          <h2>Cách dùng &amp; riêng tư</h2>
+          <p class="sub">Một lớp là đủ; trộn nhiều lớp chỉ để dễ chịu hơn</p>
+        </div>
+        <div class="section-body">
+          <ul class="cards">
+            <li class="card">
+              <span class="icon" aria-hidden="true">🌧️</span>
+              <h3>Bắt đầu bằng một lớp</h3>
+              <p>Mưa hoặc tiếng ồn nâu thường dễ nghe khi mới thử. Bật thêm lớp khác sau, khi tai đã quen với lớp đầu tiên.</p>
+            </li>
+            <li class="card">
+              <span class="icon" aria-hidden="true">🎚️</span>
+              <h3>Để âm lượng vừa đủ</h3>
+              <p>Chọn mức mà bạn vẫn nghe được tiếng thở của mình — không cần to hơn tiếng quạt. Máy nhớ mức âm lượng cho lần sau.</p>
+            </li>
+            <li class="card">
+              <span class="icon" aria-hidden="true">🌙</span>
+              <h3>Hẹn giờ trước khi nằm</h3>
+              <p>Đặt 20–30 phút, tắt đèn rồi nghe. Tới giờ âm thanh nhỏ dần trong khoảng một giây rưỡi rồi tắt hẳn, không giật tiếng.</p>
+            </li>
+            <li class="card">
+              <span class="icon" aria-hidden="true">🔒</span>
+              <h3>Không gửi gì đi đâu</h3>
+              <p>Toàn bộ âm thanh và mức âm lượng nằm trong trình duyệt này. Không tài khoản, không máy chủ, không theo dõi.</p>
+            </li>
+          </ul>
+
+          <aside class="tip">
+            <strong>Âm thanh không thay cho hỗ trợ khi mất ngủ kéo dài</strong>
+            <p>
+              Tiếng ồn nền giúp dễ chịu hơn, nhưng nếu nhiều tuần liền khó ngủ, ngủ không đủ
+              hoặc ban ngày kiệt sức, hãy nói với người có chuyên môn. Xem thêm
+              <a href="hieu-lo-au.html#khi-nao">khi nào nên tìm hỗ trợ</a>.
+            </p>
+          </aside>
+
+          <p class="album-cta">
+            <a class="btn" href="music.html">Nghe thêm 3 bản nhạc CC0 →</a>
+            <a class="btn btn-soft" href="index.html#tho">Thở 30 giây trước đã</a>
+            <a class="btn btn-soft" href="grounding.html">Neo lại 5-4-3-2-1</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="closing">Không cần chọn đúng lớp nào. Đến lúc thấy vai hạ xuống thì tắt cũng được.</p>
+      <p class="sign">stress-life-treatment · âm thanh tạo tại máy, không cần mạng</p>
+    </div>
+  </footer>
+
+  <script src="theme.js"></script>
+
+  <script>
+  (function () {
+    var root = document.querySelector("[data-sound]");
+    if (!root) return;
+
+    var KEY = "nature-sound-v1";
+    var LAYER_KEYS = ["rain", "ocean", "stream", "white", "brown"];
+    var TRIM = { rain: 0.55, ocean: 0.9, stream: 0.45, white: 0.32, brown: 0.7 };
+
+    var toggleBtn = root.querySelector("[data-sound-toggle]");
+    var statusEl = root.querySelector("[data-sound-status]");
+    var minutesEl = root.querySelector("[data-sound-minutes]");
+    var timerBtn = root.querySelector("[data-sound-timer]");
+    var cancelBtn = root.querySelector("[data-sound-cancel]");
+    var countdownEl = root.querySelector("[data-sound-countdown]");
+
+    var ranges = {};
+    var checks = {};
+    var pcts = {};
+
+    LAYER_KEYS.forEach(function (key) {
+      ranges[key] = root.querySelector('[data-layer-vol="' + key + '"]');
+      checks[key] = root.querySelector('[data-layer-on="' + key + '"]');
+      pcts[key] = root.querySelector('[data-layer-pct="' + key + '"]');
+    });
+
+    var AC = window.AudioContext || window.webkitAudioContext;
+    var state = load();
+    var ctx = null;
+    var master = null;
+    var nodes = {};
+    var playing = false;
+    var token = 0;
+    var timerEnd = 0;
+    var timerTick = null;
+
+    if (!AC) {
+      toggleBtn.disabled = true;
+      timerBtn.disabled = true;
+      toggleBtn.textContent = "Trình duyệt không hỗ trợ";
+      statusEl.textContent = "Trình duyệt này không hỗ trợ Web Audio. Bạn vẫn nghe được 3 bản nhạc CC0 ở trang Nghe nhạc.";
+      return;
+    }
+
+    function clampVolume(value) {
+      value = Number(value);
+      if (!isFinite(value)) return 50;
+      return Math.max(0, Math.min(100, Math.round(value)));
+    }
+
+    function load() {
+      var defaults = {
+        minutes: 20,
+        volumes: { rain: 45, ocean: 55, stream: 50, white: 35, brown: 45 },
+        layers: { rain: true, ocean: false, stream: false, white: false, brown: false }
+      };
+      try {
+        var raw = localStorage.getItem(KEY);
+        if (!raw) return defaults;
+        var data = JSON.parse(raw);
+        if (!data || typeof data !== "object") return defaults;
+
+        LAYER_KEYS.forEach(function (key) {
+          if (data.volumes) defaults.volumes[key] = clampVolume(data.volumes[key]);
+          if (data.layers) defaults.layers[key] = !!data.layers[key];
+        });
+        if ([10, 20, 30, 45, 60].indexOf(Number(data.minutes)) !== -1) {
+          defaults.minutes = Number(data.minutes);
+        }
+        return defaults;
+      } catch (e) {
+        return defaults;
+      }
+    }
+
+    function save() {
+      try {
+        localStorage.setItem(KEY, JSON.stringify({
+          minutes: state.minutes,
+          volumes: state.volumes,
+          layers: state.layers
+        }));
+      } catch (e) {}
+    }
+
+    function paint() {
+      LAYER_KEYS.forEach(function (key) {
+        ranges[key].value = String(state.volumes[key]);
+        checks[key].checked = !!state.layers[key];
+        pcts[key].textContent = state.volumes[key] + "%";
+      });
+      minutesEl.value = String(state.minutes);
+    }
+
+    function targetGain(key) {
+      if (!state.layers[key]) return 0;
+      var v = state.volumes[key] / 100;
+      return Math.pow(v, 1.6) * TRIM[key];
+    }
+
+    function ramp(param, value, seconds) {
+      var now = ctx.currentTime;
+      if (typeof param.cancelAndHoldAtTime === "function") {
+        param.cancelAndHoldAtTime(now);
+      } else {
+        param.cancelScheduledValues(now);
+        param.setValueAtTime(param.value, now);
+      }
+      param.linearRampToValueAtTime(value, now + seconds);
+    }
+
+    function noiseBuffer(kind) {
+      var seconds = 2;
+      var len = Math.floor(ctx.sampleRate * seconds);
+      var buffer = ctx.createBuffer(1, len, ctx.sampleRate);
+      var data = buffer.getChannelData(0);
+      var i;
+
+      if (kind === "brown") {
+        var last = 0;
+        for (i = 0; i < len; i++) {
+          var white = Math.random() * 2 - 1;
+          last = (last + 0.02 * white) / 1.02;
+          data[i] = last * 3.2;
+        }
+      } else {
+        for (i = 0; i < len; i++) data[i] = Math.random() * 2 - 1;
+      }
+
+      var fade = Math.min(4000, Math.floor(len / 10));
+      for (i = 0; i < fade; i++) {
+        var t = i / fade;
+        data[i] = data[i] * t + data[len - fade + i] * (1 - t);
+      }
+      return buffer;
+    }
+
+    function source(buffer) {
+      var src = ctx.createBufferSource();
+      src.buffer = buffer;
+      src.loop = true;
+      src.start(0);
+      return src;
+    }
+
+    function layerGain() {
+      var gain = ctx.createGain();
+      gain.gain.value = 0;
+      gain.connect(master);
+      return gain;
+    }
+
+    function buildNodes() {
+      var white = noiseBuffer("white");
+      var brown = noiseBuffer("brown");
+
+      var rainGain = layerGain();
+      var rainHP = ctx.createBiquadFilter();
+      rainHP.type = "highpass";
+      rainHP.frequency.value = 1000;
+      var rainLP = ctx.createBiquadFilter();
+      rainLP.type = "lowpass";
+      rainLP.frequency.value = 7000;
+      source(white).connect(rainHP).connect(rainLP).connect(rainGain);
+      nodes.rain = { gain: rainGain };
+
+      var oceanGain = layerGain();
+      var oceanLP = ctx.createBiquadFilter();
+      oceanLP.type = "lowpass";
+      oceanLP.frequency.value = 600;
+      var oceanMod = ctx.createGain();
+      oceanMod.gain.value = 0.7;
+      source(brown).connect(oceanLP).connect(oceanMod).connect(oceanGain);
+      var oceanLFO = ctx.createOscillator();
+      oceanLFO.frequency.value = 0.07;
+      var oceanDepth = ctx.createGain();
+      oceanDepth.gain.value = 0.32;
+      oceanLFO.connect(oceanDepth).connect(oceanMod.gain);
+      oceanLFO.start(0);
+      nodes.ocean = { gain: oceanGain };
+
+      var streamGain = layerGain();
+      var streamHP = ctx.createBiquadFilter();
+      streamHP.type = "highpass";
+      streamHP.frequency.value = 600;
+      var streamBP = ctx.createBiquadFilter();
+      streamBP.type = "bandpass";
+      streamBP.frequency.value = 2200;
+      streamBP.Q.value = 0.7;
+      var streamMod = ctx.createGain();
+      streamMod.gain.value = 0.9;
+      source(white).connect(streamHP).connect(streamBP).connect(streamMod).connect(streamGain);
+      var streamLFO = ctx.createOscillator();
+      streamLFO.frequency.value = 0.7;
+      var streamDepth = ctx.createGain();
+      streamDepth.gain.value = 0.12;
+      streamLFO.connect(streamDepth).connect(streamMod.gain);
+      streamLFO.start(0);
+      nodes.stream = { gain: streamGain };
+
+      var whiteGain = layerGain();
+      var whiteLP = ctx.createBiquadFilter();
+      whiteLP.type = "lowpass";
+      whiteLP.frequency.value = 9000;
+      source(white).connect(whiteLP).connect(whiteGain);
+      nodes.white = { gain: whiteGain };
+
+      var brownGain = layerGain();
+      var brownLP = ctx.createBiquadFilter();
+      brownLP.type = "lowpass";
+      brownLP.frequency.value = 1200;
+      source(brown).connect(brownLP).connect(brownGain);
+      nodes.brown = { gain: brownGain };
+    }
+
+    function ensureContext() {
+      if (ctx) return;
+      ctx = new AC();
+      master = ctx.createGain();
+      master.gain.value = 0;
+      master.connect(ctx.destination);
+      buildNodes();
+    }
+
+    function applyGains() {
+      LAYER_KEYS.forEach(function (key) {
+        ramp(nodes[key].gain.gain, targetGain(key), 0.3);
+      });
+    }
+
+    function selectedCount() {
+      return LAYER_KEYS.filter(function (key) { return state.layers[key]; }).length;
+    }
+
+    function updateButton() {
+      toggleBtn.textContent = playing
+        ? "❚❚ Tạm dừng"
+        : (ctx ? "▶ Tiếp tục nghe" : "▶ Bắt đầu nghe");
+      toggleBtn.setAttribute("aria-pressed", String(playing));
+    }
+
+    function start() {
+      ensureContext();
+      var resumed = ctx.state === "suspended" ? ctx.resume() : Promise.resolve();
+      Promise.resolve(resumed).then(function () {
+        applyGains();
+        ramp(master.gain, 1, 1.1);
+        playing = true;
+        token += 1;
+        updateButton();
+        var count = selectedCount();
+        statusEl.textContent = count
+          ? "Đang phát " + count + " lớp. Chỉnh âm lượng từng lớp nếu cần."
+          : "Chưa bật lớp nào. Chọn ít nhất một lớp để nghe thấy tiếng.";
+      }).catch(function () {
+        statusEl.textContent = "Trình duyệt chặn phát âm thanh. Bấm lại lần nữa.";
+      });
+    }
+
+    function pause(byTimer) {
+      if (!ctx || !playing) {
+        updateButton();
+        return;
+      }
+      playing = false;
+      var my = ++token;
+      ramp(master.gain, 0, byTimer ? 1.5 : 0.45);
+      updateButton();
+      setTimeout(function () {
+        if (my === token && ctx && ctx.state === "running" && !playing) ctx.suspend();
+      }, byTimer ? 1600 : 550);
+      if (!byTimer) statusEl.textContent = "Đã tạm dừng. Bấm tiếp tục khi muốn nghe lại.";
+    }
+
+    function formatLeft(ms) {
+      var secs = Math.max(0, Math.ceil(ms / 1000));
+      var m = Math.floor(secs / 60);
+      var s = secs % 60;
+      return m + ":" + (s < 10 ? "0" + s : s);
+    }
+
+    function stopTimer(text) {
+      if (timerTick) clearInterval(timerTick);
+      timerTick = null;
+      timerEnd = 0;
+      cancelBtn.disabled = true;
+      if (text) countdownEl.textContent = text;
+    }
+
+    function tickTimer() {
+      if (!timerEnd) return;
+      var left = timerEnd - Date.now();
+      if (left <= 0) {
+        stopTimer("Đã tắt theo hẹn giờ.");
+        if (playing) {
+          pause(true);
+          statusEl.textContent = "Hết giờ hẹn — âm thanh tắt dần. Chúc bạn ngủ ngon.";
+        } else {
+          statusEl.textContent = "Đã hết giờ hẹn. Âm thanh đang tắt.";
+        }
+        return;
+      }
+      countdownEl.textContent = "Còn " + formatLeft(left) + " nữa thì tắt.";
+    }
+
+    toggleBtn.addEventListener("click", function () {
+      if (playing) pause(false);
+      else start();
+    });
+
+    LAYER_KEYS.forEach(function (key) {
+      ranges[key].addEventListener("input", function () {
+        state.volumes[key] = clampVolume(ranges[key].value);
+        pcts[key].textContent = state.volumes[key] + "%";
+        if (ctx) ramp(nodes[key].gain.gain, targetGain(key), 0.2);
+        save();
+      });
+
+      checks[key].addEventListener("change", function () {
+        state.layers[key] = checks[key].checked;
+        if (ctx) ramp(nodes[key].gain.gain, targetGain(key), 0.25);
+        save();
+        if (playing) {
+          var count = selectedCount();
+          statusEl.textContent = count
+            ? "Đang phát " + count + " lớp."
+            : "Đã tắt hết lớp. Bật lại một lớp để nghe tiếp.";
+        }
+      });
+    });
+
+    minutesEl.addEventListener("change", function () {
+      state.minutes = Number(minutesEl.value) || 20;
+      save();
+    });
+
+    timerBtn.addEventListener("click", function () {
+      var mins = Number(minutesEl.value);
+      if (!mins) {
+        statusEl.textContent = "Chọn số phút trước khi hẹn giờ.";
+        minutesEl.focus();
+        return;
+      }
+      state.minutes = mins;
+      save();
+      timerEnd = Date.now() + mins * 60000;
+      cancelBtn.disabled = false;
+      if (timerTick) clearInterval(timerTick);
+      timerTick = setInterval(tickTimer, 500);
+      tickTimer();
+      statusEl.textContent = "Đã hẹn tắt sau " + mins + " phút. Cứ nghe tiếp, tới giờ âm thanh nhỏ dần rồi tắt.";
+    });
+
+    cancelBtn.addEventListener("click", function () {
+      stopTimer("Chưa hẹn giờ.");
+      statusEl.textContent = "Đã huỷ hẹn giờ. Âm thanh vẫn phát nếu đang bật.";
+    });
+
+    window.addEventListener("pagehide", function () {
+      stopTimer("Chưa hẹn giờ.");
+      playing = false;
+      token += 1;
+      if (ctx) {
+        try { ctx.close(); } catch (e) {}
+      }
+      ctx = null;
+      master = null;
+      nodes = {};
+      updateButton();
+    });
+
+    paint();
+    updateButton();
+  })();
+  </script>
+</body>
+</html>

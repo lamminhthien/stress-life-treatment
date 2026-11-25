@@ -116,6 +116,37 @@
           </div>
         </div>
 
+        <figure class="diagram diagram-breath anim-loop">
+          <svg viewBox="0 0 560 150" role="img" aria-labelledby="d-breath-title d-breath-desc">
+            <title id="d-breath-title">Sơ đồ nhịp thở 4 – 4 – 6</title>
+            <desc id="d-breath-desc">Hít vào 4 giây, giữ hơi 4 giây, thở ra chậm trong 6 giây; một vòng mất 14 giây.</desc>
+            <text class="t-label" x="88" y="24" text-anchor="middle">Hít vào</text>
+            <text class="t-small" x="88" y="40" text-anchor="middle">4 giây · qua mũi</text>
+            <text class="t-label" x="260" y="24" text-anchor="middle">Giữ hơi</text>
+            <text class="t-small" x="260" y="40" text-anchor="middle">4 giây · nhẹ, không gồng</text>
+            <text class="t-label" x="452" y="24" text-anchor="middle">Thở ra</text>
+            <text class="t-small" x="452" y="40" text-anchor="middle">6 giây · chậm hơn hít vào</text>
+
+            <rect class="seg" x="8" y="56" width="155" height="18" rx="9" />
+            <rect class="seg seg-hold" x="163" y="56" width="155" height="18" rx="9" />
+            <rect class="seg seg-out" x="318" y="56" width="234" height="18" rx="9" />
+
+            <g class="marker-wrap">
+              <circle class="marker-halo" cx="8" cy="65" r="13" />
+              <circle class="marker" cx="8" cy="65" r="6" />
+            </g>
+
+            <path d="M8 100H552" stroke="var(--line)" stroke-width="1" />
+            <path d="M8 95v10M163 95v10M318 95v10M552 95v10" stroke="var(--line)" stroke-width="1" />
+            <text class="t-small" x="8" y="124">0s</text>
+            <text class="t-small" x="163" y="124" text-anchor="middle">4s</text>
+            <text class="t-small" x="318" y="124" text-anchor="middle">8s</text>
+            <text class="t-small" x="552" y="124" text-anchor="end">14s</text>
+            <text class="t-small" x="8" y="143">Hai vòng liên tiếp là khoảng 28 giây — đủ cho một cú hãm phanh.</text>
+          </svg>
+          <figcaption>Thở ra dài hơn hít vào là phần quan trọng nhất; giữ hơi chỉ cần nhẹ, đừng gồng.</figcaption>
+        </figure>
+
         <figure class="minh-hoa">
           <img src="images/minh-hoa-tho-cua-so.webp" alt="Người phụ nữ ngồi yên bên cửa sổ, ánh sáng tự nhiên chiếu vào" width="960" height="640" loading="lazy" decoding="async" />
           <figcaption>Một khoảng yên bên cửa sổ — đủ để mắt và hơi thở chậm lại trước khi bắt đầu.</figcaption>
@@ -138,12 +169,10 @@
           </p>
           <ul class="cards">
             <li class="card">
-              <span class="icon" aria-hidden="true">🌄</span>
               <h3>Thiên nhiên rộng mở</h3>
               <p>Đường chân trời, mặt biển, rừng cây, mây trôi hoặc ánh nắng chiều xiên qua tán lá.</p>
             </li>
             <li class="card">
-              <span class="icon" aria-hidden="true">🪟</span>
               <h3>Nhịp sống chậm &amp; tĩnh lặng</h3>
               <p>Một góc bàn gọn gàng có ly nước ấm, vệt nắng trên tường, hoặc cảnh vật yên ắng không người qua lại.</p>
             </li>
@@ -203,17 +232,14 @@
           </p>
           <ul class="cards three">
             <li class="card">
-              <span class="icon" aria-hidden="true">🎧</span>
               <h3>Lo-fi · Ambient · Không lời</h3>
               <p>Ít lời ca để não không phải xử lý thêm ngôn từ, giúp giảm cảm giác bị thúc ép.</p>
             </li>
             <li class="card">
-              <span class="icon" aria-hidden="true">🌧️</span>
               <h3>Tiếng ồn trắng &amp; âm thanh tự nhiên</h3>
               <p>Mưa rơi, sóng vỗ, gió — một lớp nền đều đặn, che bớt các tiếng động giật cục xung quanh.</p>
             </li>
             <li class="card">
-              <span class="icon" aria-hidden="true">📼</span>
               <h3>Nhạc chill quen thuộc</h3>
               <p>Những bài đã nghe nhiều lần và gắn với cảm giác an toàn thường dễ kéo tâm trí hạ nhiệt hơn nhạc lạ.</p>
             </li>
@@ -245,17 +271,14 @@
           </figure>
           <ul class="cards three">
             <li class="card">
-              <span class="icon" aria-hidden="true">📖</span>
               <h3>Tản văn nhẹ nhàng</h3>
               <p>Những trang viết ngắn, quan sát đời sống tinh tế, đọc vài trang rồi gấp lại cũng không bị đứt mạch.</p>
             </li>
             <li class="card">
-              <span class="icon" aria-hidden="true">🏡</span>
               <h3>Truyện ngắn · Slice-of-life</h3>
               <p>Nhịp kể chậm rãi, tập trung vào sinh hoạt, cảm xúc đời thường và không gian sống.</p>
             </li>
             <li class="card">
-              <span class="icon" aria-hidden="true">🧠</span>
               <h3>Tâm lý cảm xúc dễ hiểu</h3>
               <p>Giúp nhận diện cơ chế giận dữ và căng thẳng một cách khách quan, bớt tự trách bản thân.</p>
             </li>
@@ -385,8 +408,7 @@
   </footer>
 
   <script src="theme.js"></script>
-
-  
+  <script src="motion.js"></script>
 
   <script>
   (function () {

@@ -2959,3 +2959,195 @@ body.gallery-page {
 @media (prefers-reduced-motion: reduce) {
   .q-share, .share-format-btn { transition: none; }
 }
+
+/* ---------- Hệ minh họa SVG & chuyển động nhẹ ---------- */
+
+.diagram {
+  margin: 1.6rem 0;
+  padding: 1rem 1rem 0.85rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.diagram svg { display: block; width: 100%; height: auto; }
+
+.diagram text {
+  font-family: "Be Vietnam Pro", system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  fill: var(--ink);
+}
+
+.diagram .t-small { font-size: 11px; fill: var(--ink-soft); }
+.diagram .t-label { font-size: 13px; font-weight: 600; }
+.diagram .t-serif { font-family: "Lora", Georgia, serif; }
+
+.diagram figcaption {
+  padding-top: 0.65rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+/* Chỉ chạy khi khối đang trong màn hình; JS bật .is-visible. */
+.anim-loop * { animation-play-state: paused; }
+.anim-loop.is-visible * { animation-play-state: running; }
+
+/* Sơ đồ thở 4–4–6 */
+.diagram-breath .seg { fill: var(--accent); opacity: 0.22; }
+.diagram-breath .seg-hold { fill: var(--accent-warm); opacity: 0.28; }
+.diagram-breath .seg-out { fill: var(--accent); opacity: 0.35; }
+.diagram-breath .marker { fill: var(--accent-warm); }
+.diagram-breath .marker-halo { fill: var(--accent-warm); opacity: 0.25; }
+.diagram-breath .marker-wrap { animation: breath-travel 14s linear infinite; }
+.diagram-breath .marker-halo { animation: breath-halo 14s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+
+@keyframes breath-travel {
+  0% { transform: translateX(0); }
+  28.6% { transform: translateX(155px); }
+  57.1% { transform: translateX(311px); }
+  100% { transform: translateX(544px); }
+}
+
+@keyframes breath-halo {
+  0%, 100% { transform: scale(0.7); opacity: 0.15; }
+  25% { transform: scale(1.35); opacity: 0.3; }
+}
+
+/* Sơ đồ 3 nhánh */
+.branch-node { fill: var(--accent); fill-opacity: 0.14; stroke: var(--accent); }
+.branch-line { fill: none; stroke: var(--line); stroke-width: 2; stroke-dasharray: 4 5; }
+.branch-box { fill: var(--card); stroke: var(--line); }
+.branch-box-a { stroke: var(--accent-warm); }
+.branch-num { fill: var(--accent-warm); }
+.branch-num-text { fill: var(--invert-ink); font-size: 11px; font-weight: 600; }
+
+/* Bản đồ cơ thể */
+.body-map {
+  display: grid;
+  grid-template-columns: minmax(0, 230px) minmax(0, 1fr);
+  gap: 1.1rem 1.6rem;
+  align-items: center;
+}
+
+.body-map > svg { max-width: 230px; margin: 0 auto; width: 100%; height: auto; overflow: visible; }
+
+.body-map .silhouette {
+  fill: var(--accent);
+  fill-opacity: 0.1;
+  stroke: var(--line);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.body-map .hotspot { cursor: pointer; transition: opacity 0.2s; }
+
+.body-map .hotspot circle.dot { fill: var(--card); stroke: var(--accent-warm); stroke-width: 2; }
+.body-map .hotspot circle.ring {
+  fill: none;
+  stroke: var(--accent-warm);
+  stroke-width: 1.4;
+  opacity: 0.45;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hotspot-pulse 3.2s ease-out infinite;
+}
+.body-map .hotspot text { font-size: 10px; font-weight: 600; fill: var(--ink); }
+.body-map .hotspot:hover circle.dot,
+.body-map .hotspot:focus-visible circle.dot,
+.body-map .hotspot.is-active circle.dot { fill: var(--accent-warm); }
+.body-map .hotspot:hover text,
+.body-map .hotspot:focus-visible text,
+.body-map .hotspot.is-active text { fill: var(--invert-ink); }
+.body-map .hotspot:focus { outline: none; }
+.body-map .hotspot:focus-visible circle.dot { stroke: var(--ink); stroke-width: 3; }
+
+@keyframes hotspot-pulse {
+  0% { transform: scale(0.85); opacity: 0.55; }
+  70%, 100% { transform: scale(1.7); opacity: 0; }
+}
+
+.body-map-legend { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
+
+.body-map-legend button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.84rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.body-map-legend button:hover,
+.body-map-legend button:focus-visible { border-color: var(--accent-warm); background: var(--bg-alt); }
+.body-map-legend .num {
+  flex: none;
+  width: 1.4rem;
+  height: 1.4rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent-warm);
+  color: var(--invert-ink);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.body-map-status { margin: 0.75rem 0 0; font-size: 0.8rem; color: var(--ink-soft); min-height: 1.3em; }
+
+.card.is-flash { outline: 2px solid var(--accent-warm); outline-offset: 3px; }
+
+/* Nút bật/tắt chuyển động, nằm dưới nút đổi giao diện */
+.motion-toggle {
+  position: fixed;
+  top: calc(3.5rem + env(safe-area-inset-top));
+  right: calc(0.75rem + env(safe-area-inset-right));
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.motion-toggle:hover { color: var(--ink); border-color: var(--accent); }
+.motion-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.motion-icon { font-size: 0.7rem; line-height: 1; }
+
+@media (max-width: 560px) {
+  .motion-text { display: none; }
+  .motion-toggle { padding: 0.42rem 0.55rem; }
+}
+
+body.less-motion *,
+body.less-motion *::before,
+body.less-motion *::after { animation-play-state: paused !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-loop *, .body-map .hotspot circle.ring { animation: none !important; }
+  body.less-motion * { animation: none !important; }
+}
+
+@media (max-width: 620px) {
+  .body-map { grid-template-columns: 1fr; }
+  .body-map > svg { max-width: 200px; }
+}
+
+.body-map figcaption { grid-column: 1 / -1; }

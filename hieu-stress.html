@@ -89,7 +89,6 @@
 
           <ul class="cards three">
             <li class="card">
-              <span class="icon" aria-hidden="true">⚔️</span>
               <h3>Chiến đấu</h3>
               <p>
                 Người nóng lên, giọng to hơn, muốn phản bác ngay. Cơ thể nạp năng lượng cho một
@@ -97,7 +96,6 @@
               </p>
             </li>
             <li class="card">
-              <span class="icon" aria-hidden="true">🏃</span>
               <h3>Bỏ chạy</h3>
               <p>
                 Chân muốn bước ra khỏi phòng, tay muốn đóng tab. Né giúp nhẹ ngay, nhưng để lâu
@@ -105,7 +103,6 @@
               </p>
             </li>
             <li class="card">
-              <span class="icon" aria-hidden="true">🧊</span>
               <h3>Đóng băng</h3>
               <p>
                 Đầu óc trống rỗng, người đứng yên, không nói được gì. Đây cũng là phản ứng khi
@@ -113,6 +110,43 @@
               </p>
             </li>
           </ul>
+
+          <figure class="diagram">
+            <svg viewBox="0 0 560 240" role="img" aria-labelledby="d-branch-title d-branch-desc">
+              <title id="d-branch-title">Ba nhánh phản ứng với căng thẳng: chiến đấu, bỏ chạy, đóng băng</title>
+              <desc id="d-branch-desc">Khi cơ thể cảm thấy bị đe dọa, nó có thể chọn đối đầu, rút lui hoặc đứng yên; cả ba đều là phản ứng bảo vệ tự động.</desc>
+
+              <rect class="branch-node" x="180" y="6" width="200" height="40" rx="20" />
+              <text class="t-label" x="280" y="31" text-anchor="middle">Cơ thể thấy bị đe dọa</text>
+
+              <path class="branch-line" d="M280 46v22M100 68h360M100 68v22M280 68v22M460 68v22" />
+
+              <rect class="branch-box branch-box-a" x="20" y="92" width="160" height="128" rx="12" />
+              <circle class="branch-num" cx="46" cy="114" r="12" />
+              <text class="branch-num-text" x="46" y="118.5" text-anchor="middle">1</text>
+              <text class="t-label" x="66" y="119">Chiến đấu</text>
+              <text class="t-small" x="36" y="152">Người nóng lên,</text>
+              <text class="t-small" x="36" y="170">giọng to hơn, muốn</text>
+              <text class="t-small" x="36" y="188">phản bác ngay.</text>
+
+              <rect class="branch-box" x="200" y="92" width="160" height="128" rx="12" />
+              <circle class="branch-num" cx="226" cy="114" r="12" />
+              <text class="branch-num-text" x="226" y="118.5" text-anchor="middle">2</text>
+              <text class="t-label" x="246" y="119">Bỏ chạy</text>
+              <text class="t-small" x="216" y="152">Chân muốn rời</text>
+              <text class="t-small" x="216" y="170">phòng, tay muốn</text>
+              <text class="t-small" x="216" y="188">đóng tab.</text>
+
+              <rect class="branch-box branch-box-a" x="380" y="92" width="160" height="128" rx="12" />
+              <circle class="branch-num" cx="406" cy="114" r="12" />
+              <text class="branch-num-text" x="406" y="118.5" text-anchor="middle">3</text>
+              <text class="t-label" x="426" y="119">Đóng băng</text>
+              <text class="t-small" x="396" y="152">Đầu óc trống</text>
+              <text class="t-small" x="396" y="170">rỗng, người đứng</text>
+              <text class="t-small" x="396" y="188">yên, khó nói.</text>
+            </svg>
+            <figcaption>Cả ba nhánh đều là phản ứng bảo vệ tự động. Nhận ra mình đang ở nhánh nào là bước đầu để chọn cách hạ xuống.</figcaption>
+          </figure>
 
           <figure class="minh-hoa">
             <img src="images/minh-hoa-tinh-huong-xau-nhat.webp" alt="Mây bão tối phủ trên rặng cây xanh" width="960" height="720" loading="lazy" decoding="async" />
@@ -140,8 +174,7 @@
         </div>
 
         <ul class="cards">
-          <li class="card">
-            <span class="icon" aria-hidden="true">💓</span>
+          <li class="card" id="symptom-tim">
             <h3>Tim đập nhanh, đập mạnh</h3>
             <p>
               Adrenaline làm tim đập nhanh, mạnh hơn và huyết áp tăng để cơ thể sẵn sàng hành
@@ -153,8 +186,7 @@
               giúp cơ thể chậm lại.
             </p>
           </li>
-          <li class="card">
-            <span class="icon" aria-hidden="true">🫁</span>
+          <li class="card" id="symptom-phoi">
             <h3>Thở gấp, tức ngực</h3>
             <p>
               Adrenaline cũng làm nhịp thở nhanh lên (NHS); thở quá nhanh có thể gây chóng mặt,
@@ -167,8 +199,7 @@
               <a href="grounding.html">neo lại 5-4-3-2-1</a>.
             </p>
           </li>
-          <li class="card">
-            <span class="icon" aria-hidden="true">🔥</span>
+          <li class="card" id="symptom-da">
             <h3>Người nóng, đổ mồ hôi, mặt đỏ</h3>
             <p>
               Mạch máu ở da giãn ra và tuyến mồ hôi tăng hoạt động, nên người nóng bừng và đổ mồ
@@ -180,8 +211,7 @@
               lớp áo.
             </p>
           </li>
-          <li class="card">
-            <span class="icon" aria-hidden="true">🧱</span>
+          <li class="card" id="symptom-vai">
             <h3>Vai, cổ, hàm cứng</h3>
             <p>
               Cơ vai, cổ và hàm co lại như để che chắn. Thường bạn chỉ nhận ra khi vai mỏi nhừ
@@ -194,8 +224,7 @@
               <a href="am-thanh.html">tiếng mưa, sóng</a> vài phút.
             </p>
           </li>
-          <li class="card">
-            <span class="icon" aria-hidden="true">🌫️</span>
+          <li class="card" id="symptom-dau">
             <h3>Đầu óc trống rỗng, khó nói, khó chọn</h3>
             <p>
               Kiểu "đóng băng" khi hệ thần kinh quá tải: cơ thể đứng yên thay vì chiến đấu hay
@@ -210,6 +239,54 @@
             </p>
           </li>
         </ul>
+
+        <figure class="diagram body-map" data-body-map>
+          <svg viewBox="0 0 220 330" aria-hidden="true" focusable="false">
+            <circle class="silhouette" cx="110" cy="36" r="20" />
+            <path class="silhouette" d="M82 62c13-4 43-4 56 0l8 38q4 28-6 58-30 12-60 0-10-30-6-58z" />
+            <path d="M82 70c-18 12-26 38-32 70l-6 38" fill="none" stroke="var(--accent)" stroke-opacity="0.18" stroke-width="14" stroke-linecap="round" />
+            <path d="M138 70c18 12 26 38 32 70l6 38" fill="none" stroke="var(--accent)" stroke-opacity="0.18" stroke-width="14" stroke-linecap="round" />
+            <path d="M95 164 88 240l-6 66M125 164l7 76 6 66" fill="none" stroke="var(--accent)" stroke-opacity="0.18" stroke-width="16" stroke-linecap="round" />
+
+            <g class="hotspot" data-target="symptom-tim" data-label="Tim đập nhanh">
+              <circle class="ring" cx="94" cy="122" r="13" />
+              <circle class="dot" cx="94" cy="122" r="9" />
+              <text x="94" y="125.5" text-anchor="middle">1</text>
+            </g>
+            <g class="hotspot" data-target="symptom-phoi" data-label="Thở gấp, tức ngực">
+              <circle class="ring" cx="128" cy="102" r="13" />
+              <circle class="dot" cx="128" cy="102" r="9" />
+              <text x="128" y="105.5" text-anchor="middle">2</text>
+            </g>
+            <g class="hotspot" data-target="symptom-da" data-label="Người nóng, đổ mồ hôi">
+              <circle class="ring" cx="54" cy="140" r="13" />
+              <circle class="dot" cx="54" cy="140" r="9" />
+              <text x="54" y="143.5" text-anchor="middle">3</text>
+            </g>
+            <g class="hotspot" data-target="symptom-vai" data-label="Vai, cổ, hàm cứng">
+              <circle class="ring" cx="72" cy="74" r="13" />
+              <circle class="dot" cx="72" cy="74" r="9" />
+              <text x="72" y="77.5" text-anchor="middle">4</text>
+            </g>
+            <g class="hotspot" data-target="symptom-dau" data-label="Đầu óc trống rỗng">
+              <circle class="ring" cx="110" cy="36" r="13" />
+              <circle class="dot" cx="110" cy="36" r="9" />
+              <text x="110" y="39.5" text-anchor="middle">5</text>
+            </g>
+          </svg>
+
+          <div>
+            <ul class="body-map-legend">
+              <li><button type="button" data-target="symptom-tim" data-label="Tim đập nhanh"><span class="num">1</span>Tim đập nhanh, đập mạnh</button></li>
+              <li><button type="button" data-target="symptom-phoi" data-label="Thở gấp, tức ngực"><span class="num">2</span>Thở gấp, tức ngực</button></li>
+              <li><button type="button" data-target="symptom-da" data-label="Người nóng, đổ mồ hôi"><span class="num">3</span>Người nóng, mặt đỏ, đổ mồ hôi</button></li>
+              <li><button type="button" data-target="symptom-vai" data-label="Vai, cổ, hàm cứng"><span class="num">4</span>Vai, cổ, hàm cứng</button></li>
+              <li><button type="button" data-target="symptom-dau" data-label="Đầu óc trống rỗng"><span class="num">5</span>Đầu óc trống rỗng, khó chọn</button></li>
+            </ul>
+            <p class="body-map-status" data-body-status role="status" aria-live="polite">Bấm vào một điểm trên hình hoặc tên bên cạnh để xem giải thích ngay bên dưới.</p>
+          </div>
+          <figcaption>Năm vùng cơ thể thường phản ứng rõ nhất khi căng thẳng. Đây là tham khảo, không phải công cụ chẩn đoán.</figcaption>
+        </figure>
 
         <aside class="tip">
           <strong>Đừng tự kết luận mọi triệu chứng là do căng thẳng</strong>
@@ -398,6 +475,49 @@
   </footer>
 
   <script src="theme.js"></script>
+  <script src="motion.js"></script>
+  <script>
+  (function () {
+    var map = document.querySelector("[data-body-map]");
+    if (!map) return;
+    var status = map.querySelector("[data-body-status]");
+    var hotspots = Array.prototype.slice.call(map.querySelectorAll(".hotspot"));
+    var buttons = Array.prototype.slice.call(map.querySelectorAll(".body-map-legend button"));
+    var timer = null;
+
+    function pick(target, label) {
+      var card = document.getElementById(target);
+      if (!card) return;
+      Array.prototype.forEach.call(document.querySelectorAll(".card.is-flash"), function (c) {
+        c.classList.remove("is-flash");
+      });
+      card.classList.add("is-flash");
+      hotspots.forEach(function (h) {
+        h.classList.toggle("is-active", h.getAttribute("data-target") === target);
+      });
+      if (status) status.textContent = "Đang chỉ tới: " + label + ".";
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(function () {
+        card.classList.remove("is-flash");
+        hotspots.forEach(function (h) { h.classList.remove("is-active"); });
+      }, 2600);
+      var reduce = document.body.classList.contains("less-motion");
+      card.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+    }
+
+    map.addEventListener("click", function (e) {
+      var spot = e.target.closest ? e.target.closest("[data-target]") : null;
+      if (!spot || !map.contains(spot)) return;
+      pick(spot.getAttribute("data-target"), spot.getAttribute("data-label") || "");
+    });
+
+    buttons.forEach(function (b) {
+      b.addEventListener("click", function () {
+        pick(b.getAttribute("data-target"), b.getAttribute("data-label") || "");
+      });
+    });
+  })();
+  </script>
 
   <script src="read-text.js"></script>
 </body>

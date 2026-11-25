@@ -105,6 +105,44 @@
             </li>
           </ul>
 
+          <figure class="diagram diagram-loop anim-loop">
+            <svg viewBox="0 0 560 300" role="img" aria-labelledby="d-loop-title d-loop-desc">
+              <title id="d-loop-title">Vòng lặp lo âu</title>
+              <desc id="d-loop-desc">Chuyện chưa chắc chắn dẫn tới nghĩ thêm, rồi kiểm tra hoặc trấn an, rồi lo và mệt hơn — mà không có dữ kiện mới, nên vòng lặp quay lại từ đầu.</desc>
+              <ellipse class="loop-spin" cx="280" cy="150" rx="248" ry="122" />
+
+              <rect class="loop-box" x="20" y="20" width="230" height="72" rx="12" />
+              <text class="t-label" x="135" y="49" text-anchor="middle">Chuyện chưa chắc chắn</text>
+              <text class="t-small" x="135" y="70" text-anchor="middle">Có thể xảy ra, chưa xảy ra</text>
+
+              <rect class="loop-box" x="310" y="20" width="230" height="72" rx="12" />
+              <text class="t-label" x="425" y="49" text-anchor="middle">Nghĩ thêm cho rõ</text>
+              <text class="t-small" x="425" y="70" text-anchor="middle">Cố tìm câu trả lời chắc chắn</text>
+
+              <rect class="loop-box loop-box-accent" x="310" y="208" width="230" height="72" rx="12" />
+              <text class="t-label" x="425" y="237" text-anchor="middle">Kiểm tra / trấn an</text>
+              <text class="t-small" x="425" y="258" text-anchor="middle">Hỏi lại, xem lại, tự trấn an</text>
+
+              <rect class="loop-box loop-box-accent" x="20" y="208" width="230" height="72" rx="12" />
+              <text class="t-label" x="135" y="237" text-anchor="middle">Lo nhiều hơn, mệt hơn</text>
+              <text class="t-small" x="135" y="258" text-anchor="middle">Nhưng không có dữ kiện mới</text>
+
+              <defs>
+                <marker id="arrow-loop" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0 0 10 5 0 10z" fill="var(--accent-warm)" />
+                </marker>
+              </defs>
+              <path class="loop-arrow" d="M252 56h52" marker-end="url(#arrow-loop)" />
+              <path class="loop-arrow" d="M425 94v108" marker-end="url(#arrow-loop)" />
+              <path class="loop-arrow" d="M308 244h-52" marker-end="url(#arrow-loop)" />
+              <path class="loop-arrow" d="M135 206V100" marker-end="url(#arrow-loop)" />
+
+              <text class="t-serif" x="280" y="145" text-anchor="middle">Không có dữ kiện mới</text>
+              <text class="t-small" x="280" y="166" text-anchor="middle">nên vòng lặp tự quay lại</text>
+            </svg>
+            <figcaption>Điểm mấu chốt không phải là cố nghĩ ít hơn, mà là thêm một dữ kiện mới hoặc một bước làm được để vòng lặp có lối ra.</figcaption>
+          </figure>
+
           <figure class="minh-hoa">
             <img src="images/minh-hoa-lo-vong-tron.webp" alt="Cầu thang xoắn ốc nhìn từ trên xuống, các bậc uốn thành vòng tròn" width="960" height="720" loading="lazy" decoding="async" />
             <figcaption>Lo bình thường có lối ra; lo vòng tròn cứ quay lại một chỗ.</figcaption>
@@ -159,6 +197,38 @@
               </div>
             </div>
           </div>
+
+          <figure class="diagram">
+            <svg viewBox="0 0 560 230" role="img" aria-labelledby="d-split-title d-split-desc">
+              <title id="d-split-title">Một câu hỏi tách lo hữu ích khỏi lo vòng tròn</title>
+              <desc id="d-split-desc">Nếu trong 24 giờ tới có một việc cụ thể làm được thì đó là lo hữu ích; nếu không có việc nào thì nhiều khả năng là lo vòng tròn.</desc>
+
+              <rect class="split-question" x="50" y="8" width="460" height="48" rx="24" />
+              <text class="t-label" x="280" y="38" text-anchor="middle">Trong 24 giờ tới, có việc cụ thể nào làm được?</text>
+
+              <defs>
+                <marker id="arrow-split" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path class="split-arrow" d="M0 0 10 5 0 10z" />
+                </marker>
+              </defs>
+              <path class="split-line" d="M280 56v20M140 76h280M140 76v20M420 76v20" />
+              <path class="loop-arrow" d="M140 90v6" marker-end="url(#arrow-split)" />
+              <path class="loop-arrow" d="M420 90v6" marker-end="url(#arrow-split)" />
+
+              <rect class="split-box-good" x="20" y="102" width="240" height="110" rx="12" />
+              <text class="t-label" x="40" y="130">Có → lo hữu ích</text>
+              <text class="t-small" x="40" y="156">Ghi đúng một bước nhỏ,</text>
+              <text class="t-small" x="40" y="174">làm được trong hôm nay,</text>
+              <text class="t-small" x="40" y="192">rồi làm bước đó.</text>
+
+              <rect class="split-box-loop" x="300" y="102" width="240" height="110" rx="12" />
+              <text class="t-label" x="320" y="130">Không → lo vòng tròn</text>
+              <text class="t-small" x="320" y="156">Đừng cố nghĩ thêm;</text>
+              <text class="t-small" x="320" y="174">hẹn giờ lo, hoặc neo</text>
+              <text class="t-small" x="320" y="192">lại bằng giác quan.</text>
+            </svg>
+            <figcaption>Câu hỏi này không cần trả lời hoàn hảo. Chỉ cần tách được "có việc làm được" khỏi "chưa có gì để làm ngay".</figcaption>
+          </figure>
 
           <p>
             Có chuyện vừa có phần làm được vừa phải chờ — lấy phần làm được, phần còn lại hẹn
@@ -255,6 +325,26 @@
             <a href="hieu-stress.html">trang Hiểu cơn căng thẳng</a> giải thích vì sao và khi nào
             nên tìm hỗ trợ.
           </p>
+          <figure class="diagram">
+            <svg viewBox="0 0 560 250" role="img" aria-labelledby="d-tl-title d-tl-desc">
+              <title id="d-tl-title">Đèn giao thông cho mức căng thẳng</title>
+              <desc id="d-tl-desc">Xanh là đang ổn và có thể tiếp tục; vàng là căng lên, nên thở và neo lại; đỏ là quá tải, nên dừng và tìm hỗ trợ.</desc>
+              <rect class="tl-body" x="30" y="15" width="100" height="220" rx="26" />
+              <circle class="tl-light-off tl-green" cx="80" cy="65" r="22" />
+              <circle class="tl-light-off tl-amber" cx="80" cy="125" r="22" />
+              <circle class="tl-red" cx="80" cy="185" r="22" />
+
+              <text class="tl-label" x="160" y="58">Xanh · đang ổn</text>
+              <text class="t-small" x="160" y="78">Lo bình thường — làm tiếp việc đang có.</text>
+              <text class="tl-label" x="160" y="118">Vàng · căng lên</text>
+              <text class="t-small" x="160" y="138">Thở 30 giây, neo 5-4-3-2-1, hoãn lo.</text>
+              <text class="tl-label" x="160" y="178">Đỏ · quá tải</text>
+              <text class="t-small" x="160" y="198">Dừng lại, nói với một người tin cậy.</text>
+              <text class="t-small" x="160" y="216">Nếu có ý nghĩ làm hại bản thân: gọi 115.</text>
+            </svg>
+            <figcaption>Đọc theo mức đang nặng, không phải để chấm điểm bản thân. Đèn đỏ là lúc cần người khác cùng giữ an toàn.</figcaption>
+          </figure>
+
           <ul class="symptom-list">
             <li>Lo gần như mọi ngày, khó gạt sang một bên dù đã thử nhiều cách.</li>
             <li>Mất ngủ nhiều đêm, ăn uống thay đổi rõ rệt, hoặc luôn thấy mệt.</li>
@@ -351,6 +441,7 @@
   </footer>
 
   <script src="theme.js"></script>
+  <script src="motion.js"></script>
 
   
   <script src="read-text.js"></script>

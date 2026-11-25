@@ -3151,3 +3151,61 @@ body.less-motion *::after { animation-play-state: paused !important; }
 }
 
 .body-map figcaption { grid-column: 1 / -1; }
+
+/* ---------- Phase 2: sơ đồ lo âu, giác quan, đèn giao thông ---------- */
+
+/* Vòng lặp lo âu */
+.loop-box { fill: var(--bg); stroke: var(--line); }
+.loop-box-accent { stroke: var(--accent-warm); }
+.loop-arrow { fill: none; stroke: var(--accent-warm); stroke-width: 2; }
+.loop-center { fill: var(--accent); fill-opacity: 0.08; }
+.loop-spin {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.2;
+  stroke-dasharray: 3 7;
+  opacity: 0.6;
+  animation: loop-spin 60s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.loop-dot { fill: var(--accent-warm); }
+
+@keyframes loop-spin { to { transform: rotate(360deg); } }
+
+/* Sơ đồ tách lo hữu ích / vòng tròn */
+.split-question { fill: var(--accent); fill-opacity: 0.12; stroke: var(--accent); }
+.split-box-good { fill: var(--accent); fill-opacity: 0.08; stroke: var(--accent); }
+.split-box-loop { fill: var(--accent-warm); fill-opacity: 0.08; stroke: var(--accent-warm); }
+.split-line { fill: none; stroke: var(--line); stroke-width: 2; stroke-dasharray: 5 5; }
+.split-arrow { fill: var(--ink-soft); }
+
+/* Năm giác quan */
+.senses-spoke { stroke: var(--line); stroke-width: 1.5; stroke-dasharray: 4 5; }
+.senses-node { fill: var(--card); stroke: var(--line); }
+.senses-node-a { stroke: var(--accent); }
+.senses-node-b { stroke: var(--accent-warm); }
+.senses-center { fill: var(--accent); fill-opacity: 0.12; stroke: var(--accent); }
+.senses-num { font-size: 18px; font-weight: 600; fill: var(--accent-warm); }
+
+/* Timeline hoãn lo */
+.worry-line { stroke: var(--line); stroke-width: 2; }
+.worry-point { fill: var(--card); stroke: var(--accent-warm); stroke-width: 2.5; }
+.worry-point-now { fill: var(--accent-warm); }
+.worry-num { font-size: 11px; font-weight: 600; fill: var(--ink); }
+.worry-num-now { fill: var(--invert-ink); }
+.clock-face { fill: var(--bg); stroke: var(--accent); stroke-width: 2; }
+.clock-tick { stroke: var(--ink-soft); stroke-width: 1.4; }
+.clock-hand { stroke: var(--accent-warm); stroke-width: 2; stroke-linecap: round; }
+
+/* Đèn giao thông */
+.tl-body { fill: var(--bg-alt); stroke: var(--line); }
+.tl-light-off { opacity: 0.28; }
+.tl-green { fill: var(--accent); }
+.tl-amber { fill: var(--accent-warm); }
+.tl-red { fill: #c0675c; }
+.tl-label { font-size: 13px; font-weight: 600; fill: var(--ink); }
+
+@media (max-width: 620px) {
+  .diagram svg text { font-size: 12px; }
+}

@@ -168,6 +168,39 @@
             <img src="images/minh-hoa-hoan-lo-dong-ho.webp" alt="Chiếc đồng hồ báo thức kiểu cổ đặt trên mặt bàn" width="960" height="714" loading="lazy" decoding="async" />
             <figcaption>Một khung giờ cố định giúp bộ não biết khi nào được lo.</figcaption>
           </figure>
+          <figure class="diagram">
+            <svg viewBox="0 0 560 180" role="img" aria-labelledby="d-worry-title d-worry-desc">
+              <title id="d-worry-title">Dòng thời gian của một lần hoãn lo</title>
+              <desc id="d-worry-desc">Bây giờ ghi ra và hẹn giờ; đến giờ thì xem lại trong mười phút; hết giờ thì đóng lại và làm việc khác.</desc>
+
+              <circle class="clock-face" cx="48" cy="70" r="26" />
+              <path class="clock-tick" d="M48 50v5M48 85v5M28 70h5M63 70h5" />
+              <path class="clock-hand" d="M48 70V54M48 70l-9 5" />
+              <text class="t-small" x="48" y="116" text-anchor="middle">20:00</text>
+
+              <path class="worry-line" d="M100 70h440" />
+              <circle class="worry-point worry-point-now" cx="150" cy="70" r="13" />
+              <text class="worry-num worry-num-now" x="150" y="74" text-anchor="middle">1</text>
+              <circle class="worry-point" cx="320" cy="70" r="13" />
+              <text class="worry-num" x="320" y="74" text-anchor="middle">2</text>
+              <circle class="worry-point" cx="470" cy="70" r="13" />
+              <text class="worry-num" x="470" y="74" text-anchor="middle">3</text>
+
+              <text class="t-label" x="150" y="108" text-anchor="middle">Bây giờ</text>
+              <text class="t-small" x="150" y="126" text-anchor="middle">Ghi ra, cất vào danh sách</text>
+              <text class="t-small" x="150" y="142" text-anchor="middle">và hẹn giờ.</text>
+
+              <text class="t-label" x="320" y="108" text-anchor="middle">Đến giờ lo</text>
+              <text class="t-small" x="320" y="126" text-anchor="middle">Mở danh sách, xem từng mục</text>
+              <text class="t-small" x="320" y="142" text-anchor="middle">trong 10 phút.</text>
+
+              <text class="t-label" x="470" y="108" text-anchor="middle">Hết giờ</text>
+              <text class="t-small" x="470" y="126" text-anchor="middle">Đóng lại, đứng lên,</text>
+              <text class="t-small" x="470" y="142" text-anchor="middle">làm việc khác.</text>
+            </svg>
+            <figcaption>Ba mốc cố định để bộ não biết khi nào được lo và khi nào phải dừng — không phải lo liên tục cả ngày.</figcaption>
+          </figure>
+
           <ol class="worry-steps">
             <li>
               <strong>Mở danh sách, đọc chậm từng mục</strong>
@@ -253,6 +286,7 @@
   </footer>
 
   <script src="theme.js"></script>
+  <script src="motion.js"></script>
 
   <script>
   (function () {
